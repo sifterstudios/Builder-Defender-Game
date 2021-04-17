@@ -1,0 +1,4 @@
+# Starting compiling Sirenix.OdinInspector.CompatibilityLayer.Editor.dll
+/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-6e974ea3a45d24c779700383dc6e6fbc
+# Starting compiling Assembly-CSharp-Editor-firstpass.dll
+/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-3a6dd4aaffff040aa8ccdc36177f19a4
