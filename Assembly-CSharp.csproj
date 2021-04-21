@@ -36,8 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
      <Compile Include="Assets\01 GAME\Scripts\BuildingManager.cs" />
+     <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\BuildingTypeSO.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\BuildingTypeListSO.cs" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.Web.Entity.xml" />
@@ -325,23 +327,20 @@
     <Reference Include="Sirenix.Serialization.Config">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
     </Reference>
+    <Reference Include="RainbowCore">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Assets/Plugins/RainbowAssets/!Core/Assemblies/RainbowCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.OdinSerializer">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Assets/Ludiq/Ludiq.PeekCore/Runtime/Dependencies/OdinSerializer/EditorOnly/Ludiq.OdinSerializer.dll</HintPath>
+    </Reference>
     <Reference Include="Sirenix.Utilities.Editor">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="MonKey Core">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Assets/Plugins/MonKey Commander/MonKey Core.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.OdinInspector.Editor">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Utilities">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="RainbowCore">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Assets/Plugins/RainbowAssets/!Core/Assemblies/RainbowCore.dll</HintPath>
-    </Reference>
-    <Reference Include="Ludiq.OdinSerializer">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Assets/Ludiq/Ludiq.PeekCore/Runtime/Dependencies/OdinSerializer/EditorOnly/Ludiq.OdinSerializer.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -706,6 +705,12 @@
     <Reference Include="Unity.2D.PixelPerfect">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="PsdPlugin">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
     </Reference>
@@ -721,6 +726,9 @@
     <Reference Include="Unity.TextMeshPro">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.IK.Editor">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
@@ -730,8 +738,14 @@
     <Reference Include="Unity.2D.Path.Editor">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
@@ -742,6 +756,12 @@
     <Reference Include="Unity.2D.IK.Runtime">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
@@ -751,8 +771,14 @@
     <Reference Include="Unity.2D.PixelPerfect.Editor">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
@@ -766,44 +792,25 @@
     <Reference Include="Unity.2D.Common.Editor">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
         <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    <Reference Include="Unity.2D.SpriteShape.Runtime">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
       <Project>{387891aa-a1df-7c9b-80e0-52fdbb38a789}</Project>
       <Name>Unity.2D.Tilemap.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="GrabbitAssembly.csproj">
+      <Project>{ae80a0d3-93a4-d8a2-6646-53a1d221063e}</Project>
+      <Name>GrabbitAssembly</Name>
+    </ProjectReference>
+    <ProjectReference Include="vhacd.csproj">
+      <Project>{e180aefd-20a0-8116-0320-e635fecf13dd}</Project>
+      <Name>vhacd</Name>
     </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
       <Project>{274c5f97-2a2a-df6f-44d4-79630a2b7291}</Project>
@@ -829,13 +836,25 @@
       <Project>{afeba1cc-ec45-f5e8-a4fd-089111f04c7c}</Project>
       <Name>Sirenix.OdinInspector.Modules.UnityMathematics</Name>
     </ProjectReference>
+    <ProjectReference Include="Ludiq.PeekCore.Runtime.csproj">
+      <Project>{37ade32c-8e87-a913-e834-ccad4ac5e713}</Project>
+      <Name>Ludiq.PeekCore.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="FMODUnity.csproj">
       <Project>{0722e857-1be8-f1ee-7da3-dd1ec7508446}</Project>
       <Name>FMODUnity</Name>
     </ProjectReference>
+    <ProjectReference Include="Ludiq.Peek.Editor.csproj">
+      <Project>{6b66f55a-8294-7fd4-67d5-7061cef158ff}</Project>
+      <Name>Ludiq.Peek.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="FMODUnityEditor.csproj">
       <Project>{610e1931-799c-9a71-638f-c82b9f663a8a}</Project>
       <Name>FMODUnityEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Ludiq.PeekCore.Editor.csproj">
+      <Project>{3551aad6-7e3e-ff71-367e-042030c691a5}</Project>
+      <Name>Ludiq.PeekCore.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="FMODUnityResonance.csproj">
       <Project>{3d6683a7-3b0b-c0d1-e80d-54afd2c29be8}</Project>
@@ -844,26 +863,6 @@
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj">
       <Project>{88819c13-6650-ba0e-6331-1da1fbaa2bbe}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="Ludiq.Peek.Editor.csproj">
-      <Project>{6b66f55a-8294-7fd4-67d5-7061cef158ff}</Project>
-      <Name>Ludiq.Peek.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Ludiq.PeekCore.Editor.csproj">
-      <Project>{3551aad6-7e3e-ff71-367e-042030c691a5}</Project>
-      <Name>Ludiq.PeekCore.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Ludiq.PeekCore.Runtime.csproj">
-      <Project>{37ade32c-8e87-a913-e834-ccad4ac5e713}</Project>
-      <Name>Ludiq.PeekCore.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="GrabbitAssembly.csproj">
-      <Project>{ae80a0d3-93a4-d8a2-6646-53a1d221063e}</Project>
-      <Name>GrabbitAssembly</Name>
-    </ProjectReference>
-    <ProjectReference Include="vhacd.csproj">
-      <Project>{e180aefd-20a0-8116-0320-e635fecf13dd}</Project>
-      <Name>vhacd</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
