@@ -1,0 +1,1172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{3551aad6-7e3e-ff71-367e-042030c691a5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Ludiq.PeekCore.Editor</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_2020_3_4;UNITY_2020_3;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_OSX;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_SPATIALTRACKING;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;ODIN_INSPECTOR;ODIN_INSPECTOR_3;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER;NET_STANDARD_2_0</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Descriptors\DescriptorProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Decorators\MultiDecoratorProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\MemberAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeIndexExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\TaskLinq.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\AboutWindow\AboutPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\EditorApplicationUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\EditorTypeUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Assignment\IAssigner.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\RegisterEditorAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyGroup.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\AssetDatabaseUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeUsingStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\BoolInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeDoWhileStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyOptionDocumentation.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Other\SemanticVersionInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\SetupWizard\SetupWizard.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\AotStubWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\SystemObjectInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginManifest.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Migrations\Migration_1_0_5_to_1_0_6.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReflectionMagic\PrivateReflectionUsingDynamicExtensions.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Licenses\License.MIT.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\NameUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\AotPreBuilder.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\LudiqEditorWindow.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Reflection\LooseAssemblyNameInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeDefaultValueExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeIfStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\UnknownInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\TinyJson\JsonWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Code.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeCompoundAssignmentOperatorType.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\InspectorUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Element Adder Menu\GenericElementAdderMenuBuilder.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\SyntaxHighlightingTokenInfo.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\EditorPrefAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\SearchUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\ConsoleUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\NativeUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\EditorUnityObjectUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeMemberModifiers.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\Clipboard.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\EnumOptionTree.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Product\LudiqProduct.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeGotoStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_FullSerializer.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Icons\IconSize.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeConstructorInitializer.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\NullOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\RectInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Factories\FactoryOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeContinueStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodePropertyMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\UpdateWizard\UpdateCompletePage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\UnityObjectFieldVisualType.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeBaseReferenceExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\PersistentRootEditorWrapper.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\LudiqStyles.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\Runners\BackgroundTaskRunner.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReflectionMagic\PrivateReflectionDynamicObjectStatic.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeElement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\XmlFuzzyOptionDocumentation.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\GenericListAdaptor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\Ray2DInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\AssetBundleUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeGotoCaseStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeBasicPropertyMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeThrowStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\ProjectSettingAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\RegisterAotStubWriterAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\TaskWindow.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_TinyJson.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\GradientInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginResources.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\AnnotationUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\EditorTextureUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\MapToProductAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\DictionaryValueAtIndexAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\RootAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\IndividualPropertyDrawer.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeCommentExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\ResourceProviders\EditorAssetResourceProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\PropertyAccessors\CodeUserPropertyAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Assignment\Assigner.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Colors\SkinnedColor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\DiscreteNumberInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\Plugin.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\ColorInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Products\RegisterProductAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Documentation\XmlDocumentationTags.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Licenses\License.CCA3.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CodeEnumMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodePredeclaredType.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\Task.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\SyntaxHighlightingResult.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\NamingSchemePage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeThisReferenceExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_ReorderableList.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\ResourceProviders\AssetBundleResourceProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginAcknowledgement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\WindowLayoutUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeFieldMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzySeparator.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\PropertyAccessors\CodeBasicPropertyAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Editor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\LudiqCoreManifest.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\ListPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\AotStubWriterProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\GuidInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Factories\AssetFactoryOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeStatementEmitOptions.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_3_0.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeConstructorMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Directives\CodeDirective.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\UnityEditorDynamic.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\SyntaxHighlightingScheme.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReflectionMagic\IDynamicAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fonts\FontWeight.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\MD4.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeUnaryOperatorType.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\DefineUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\RegisterInspectorAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeYieldReturnStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\IFuzzyOptionDocumentation.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\TypeDeclarations\CodeBasicTypeDeclaration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\ReflectedEditor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\EditorLayout.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Root\LudiqAssetEditor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Factories\IFactoryConfiguration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Products\ProductContainer.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\UshortInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\PersistentRootEditor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\RegisterPluginAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Colors\ColorUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\BoundsInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\SyntaxHighlightingRule.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\DragAndDrop\IDragAndDropHandler.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodePrimitiveExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Icons\LanguageIconSet.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeLabelDeclarationStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\LooseAssemblyNameOptionTree.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Factories\RegisterFactoryAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\AboutWindow\AcknowledgementsPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_0_2.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginConfiguration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\EnumOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\MemberInfoStubWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\TypeOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Licenses\License.Apache.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeCompositeTypeMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\MapToPluginAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_0_6.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\UnityEngineDynamic.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\LambdaFuzzyOptionDocumentation.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\IFuzzyOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\SemanticLabel.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeCompileUnit.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Licenses\License.Iconmonstr.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\AboutWindow\AcknowledgementPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Factories\FactoryConfiguration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\LudiqCoreConfiguration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeExpressionStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\ITypeRegistrationAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeBreakStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\RegisterFuzzyOptionAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\WebWindow.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\RegisterPluginModuleTypeAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Assignment\AssignsAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\MemberOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\IPluginAddon.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\EditorLinqUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeCommentStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\IndexAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\AboutWindow\ChangelogPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\PropertyInfoStubWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\ResourceProviders\IResourceProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\GeneratePropertyProvidersWindow\GeneratePropertyProvidersWindow.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeMethodInvokeExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Descriptors\Descriptor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\QuaternionInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\TypeTree.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\CodeWriterSystem.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Reflection\NamespaceInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\Vector4Inspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeBlockStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\IReorderableListAdaptor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\codemethodreferenceexpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\CastAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Factories\IFactory.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_2_4.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\TypeDeclarations\CodeStructTypeDeclaration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Directives\CodeRegionEndDirective.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeUsingImport.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\ProxyAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_2_3.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\TokenType.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_EditorIconViewer.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Documentation\XmlDocumentation.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeVariableReferenceExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\LudiqCoreMigration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\TypeOptionTree.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\ReorderableListGUI.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\SerializedProperties\SerializedPropertyUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\EnumInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Directives\CodePragmaWarningDirective.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\ScriptReference.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\FieldInfoStubWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\Wizard.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\UpdateWizard\UpdateConsolidatePage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReflectionMagic\DynamicField.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeParameterDeclaration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\ReorderableListEvents.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeArgumentDirectionExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\DictionaryIndexAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Dropdowns\IDropdownOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_4_0.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_0_1.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\LooseAssemblyNameOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\CodeGenerator.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\StringInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeBracedInitializerExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fonts\FontVariant.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeMethodMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\Vector3IntInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\LambdaAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeSwitchStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\CodeGeneratorUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginConfigurationItemAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\AsyncProgressBarWrapper.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_2_1.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeForStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\SemanticVersion.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\TokenUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\AboutWindow\ChangelogsPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeConditionalExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\ScriptReferenceReplacement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\Paths.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\TypeDeclarations\CodeEnumTypeDeclaration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\ScriptReferenceResolver.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\ExtensibleFuzzyOptionTree.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_ReflectionMagic.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\GUIContentPool.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\ConstructorInfoStubWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\EventInfoStubWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeUnaryOperatorExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\TabbedPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Descriptors\IDescriptorWithTitleInformation.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_MD4.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\ReorderableListControl.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\DraggedListItem.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\Warning.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeBinaryOperatorExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeTypeReference.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\ListOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeNamespace.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_2_0_0.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\StringCodeWriterSystem.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\AboutWindow\AboutWindow.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReflectionMagic\PrivateReflectionDynamicObjectInstance.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Assignment\Assignment.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\EditorProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Descriptors\RegisterDescriptorAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeNamedArgumentExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\HierarchyPropertyCache.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeTypeOfExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeComment.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_0_0.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\FileCodeWriterSystem.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\PropertyAccessors\CodeDefaultedPropertyAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\AnimationCurveInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\UnityObjectOptionTree.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\RegisterPluginDependencyAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Token.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Dropdowns\DropdownSeparator.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\UpdateWizard\UpdateMigrationPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Dropdowns\DropdownOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeYieldBreakStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeAttributeArgument.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\IndexerAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\ICodeWriterSystem.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\TaskThreadTracker.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\UnityObjectInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Documentation\XmlDocumentationTagsFastSerializer.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Element Adder Menu\ElementAdderMenuCommandAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_AqnParser.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\Vector2Inspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyFuncOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Factories\AssetFactoryUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\DocumentedFuzzyOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginContainer.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Element Adder Menu\IElementAdderMenuCommand.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\SbyteInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\InspectorProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fonts\FontCollection.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeObjectInitializerExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Directives\CodeRegionBeginDirective.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeAssignmentExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeTypeParameter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeVariableDeclarationStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Reflection\TypeInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Directives\CodePragmaChecksumDirective.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Other\DictionaryAssetEditor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\SerializedProperties\SerializedPropertyProviderProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Exceptions\EditorDebugUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Textures\EditorTexture.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\AboutWindow\IAboutable.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\RayInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\AccessorCollectionAdaptor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Element Adder Menu\ElementAdderMenuBuilder.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyOptionTreeExtensionProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\InitializeAfterPluginsAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeLambdaExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\UndoUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\EditorPrefAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\EditorSerializationUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\Vector2IntInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\SerializedPropertyAdaptor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\TextureResolution.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\ResourceProviders\CreateTextureOptions.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\NamespaceOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Decorators\SingleDecoratorProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyGroupOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\AccessorDictionaryAdaptor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\LudiqGUI.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\PluginConfigurationItemAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\AssetFolderOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\FloatInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Descriptors\IDescription.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeParameterDirection.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\NullableInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\PathUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\ReorderableListFlags.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\ListInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\DoubleInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeDefaultStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeAttributeDeclaration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\AutomaticReflectedInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Directives\CodePragmaWarningSetting.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\AccessorListAdaptor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Element Adder Menu\GenericElementAdderMenu.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\WarningLevel.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\ICodeWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\GeneratePropertyProvidersWindow\GeneratePropertyProvidersPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Element Adder Menu\ElementAdderMeta.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginMigration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Icons\LanguageIconsSkin.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\SetupWizard\SetupCompletePage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\UnityAPI.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeBasicMethodMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\LayerMaskInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Annotations\AnnotationDisabler.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Threading\ThreadableAssetWrapper.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Textures\LazyEditorTexture.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\UpdateWizard\UpdateWizard.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\AssetUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\KeyValuePairInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Exceptions\UnityEditorInternalException.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\Runners\ForegroundTaskRunner.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_3_1.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeStaticConstructorMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\TokenCodeWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Internal\GUIHelper.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\LudiqCore.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Threading\RegisterBackgroundWorkerAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Factories\FactoryProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\ParameterStringMode.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\LudiqCoreResources.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\ScriptUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Descriptors\IDescriptor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeTupleExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeReturnStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\SharedEditorTextureDictionary.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\WebView.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\ShortInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\UpdateWizard\UpdateUserActionsPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\TokenCodeWriterSystem.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Element Adder Menu\IElementAdderMenu.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Inspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Root\LudiqComponentEditor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\DictionaryKeyAtIndexAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Colors\ColorPalette.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\CollectionInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\AccessorInfoStubWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeCastExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\EventWrapper.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\TinyJson\JsonParser.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\LudiqCorePaths.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\NamespaceOptionTree.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\SetupWizard\WelcomePage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeWhileStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\EditorFilteringUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\IReorderableListDropTarget.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\UnityObjectOption.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\TypeDeclarations\CodeInterfaceTypeDeclaration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\ConfigurationPanel\ConfigurationPanel.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\Runners\WindowTaskRunner.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\CharInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\AboutWindow\AboutablePage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\TypeDeclarations\CodeClassTypeDeclaration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginConfigurationEditor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\DictionaryInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\ProgressUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyOptionMode.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\MethodBaseStubWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\SinglePageWindow.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeCaseStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_0_3.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\UlongInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\EditorStylesBrowser\EditorStylesBrowser.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\TokenCodeResult.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_0_4.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginRuntimeAssemblyAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyOptionProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\BackgroundProgress.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\IPluginModule.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\ReorderableListStyles.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_Iconmonstr.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeIndexerMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyWindow.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_DeepCopy.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Element Adder Menu\IElementAdderMenuBuilder.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\CustomPropertyDrawerInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\DecimalInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeFieldReferenceExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Platforms\MethodInfoStubWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_2_0.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\TypeDeclarations\CodeCompositeTypeDeclaration.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\ResourceProviders\AssemblyResourceProvider.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyOptionNode.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\LudiqGUIUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\ContinuousNumberDrawer.cs.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\TokenPosition.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeCompoundAssignmentExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeBinaryOperatorType.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\MemberOptionTree.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\CodeGeneratorOptions.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\VersionControlUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\InspectorBlock.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_OdinSerializer.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Element Adder Menu\IElementAdder.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Reflection\MemberInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeForeachStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\RegisterFuzzyOptionTreeExtensionAttribute.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Migrations\Migration_1_2_4_to_1_3_0.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Icons\UnityObjectIconHandler.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_FatcowIcons.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\OptimizedPropertyDrawer.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReflectionMagic\PrivateReflectionDynamicObjectBase.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Documentation\XmlDocumentationTagsFormatter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\TextCodeWriter.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Special\UnknownEditor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\MathfEx.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\EditorTimeUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Statements\CodeTryStatement.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\IFuzzyOptionTree.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Descriptors\Description.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_0_5.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\ProjectSettingAccessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReflectionMagic\DynamicProperty.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeObjectCreateExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\VectorInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeCatchClause.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\ConsoleProfiler.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeTypeReferenceExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Migrations\Migration_1_2_2_to_1_2_3.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\ByteInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Root\LudiqRootObjectEditor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\CodebaseSubset.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\UpdateWizard\UpdateStartPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\Vector3Inspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Expressions\CodeArrayCreateExpression.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Products\Product.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\Page.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\CodeReflectionExtensions.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Threading\BackgroundWorker.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\IntInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\AboutWindow\AboutPluginsPage.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Icons\Icons.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\DragAndDrop\DragAndDropUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Factories\Factory.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tasks\ITaskRunner.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Changelogs\Changelog_1_2_2.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Utilities\SearchResult.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\LongInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\CodeEventMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Licenses\License.MiscUtil.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\Members\CompositeTypeMembers\TypeDeclarations\CodeDelegateMember.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginChangelog.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Internal\ReorderableListResources.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReorderableList\Internal\SerializedPropertyUtility.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Migrations\Migration_1_4_0_f5_to_1_4_0_f6.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\PluginPaths.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Fuzzy\FuzzyOptionTree.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Reflection\Codebase.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Meta\Accessor.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Primitives\UintInspector.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Licenses\License.MSPL.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Tips.cs" />
+     <None Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\ColoredTexture.shader" />
+     <None Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Ludiq.PeekCore.Editor.asmdef" />
+     <None Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Resources\CCA3B.txt" />
+    <Reference Include="UnityEngine">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TextCoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsNativeModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIElementsNativeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.CoreModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.GraphViewModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.GraphViewModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.PackageManagerUIModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.PackageManagerUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SceneTemplateModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsSamplesModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIServiceModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UIServiceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UnityConnectModule">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.OSXStandalone.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.OdinSerializer">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Assets/Ludiq/Ludiq.PeekCore/Runtime/Dependencies/OdinSerializer/EditorOnly/Ludiq.OdinSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.NonGeneric.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Specialized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.EventBasedAsync.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.TypeConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Common">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Drawing.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Dynamic.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.DriveInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Watcher.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.IsolatedStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.MemoryMappedFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Pipes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.UnmanagedMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Queryable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Rtc">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Http.Rtc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NameResolution.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NetworkInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Ping.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Requests.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Security">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebHeaderCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.ILGeneration">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.ILGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.Lightweight">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Emit">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Reader">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Reader.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Writer">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Writer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.CompilerServices.VisualC.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Handles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Formatters.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Claims.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Csp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Principal.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.SecureString.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Duplex">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Duplex.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Http">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.NetTcp">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.NetTcp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Overlapped.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.ThreadPool.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Timer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+        <HintPath>/Applications/Unity/Hub/Editor/2020.3.4f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+        <HintPath>/Users/tormodliseth/Gamedev/Unity/Udemy/Awesome Builder Defender Game/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Ludiq.PeekCore.Runtime.csproj">
+      <Project>{37ade32c-8e87-a913-e834-ccad4ac5e713}</Project>
+      <Name>Ludiq.PeekCore.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{ace77c18-d301-2f85-3b0b-6ed0d33420c0}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{9f79320b-fe84-0c87-c729-2467b6547df8}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
