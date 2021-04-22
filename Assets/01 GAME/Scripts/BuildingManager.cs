@@ -9,12 +9,16 @@ public class BuildingManager : MonoBehaviour
     #endregion
 
     #region Unity Methods
+    private void Awake()
+    {
+        buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
+        buildingType = buildingTypeList.list[0];
+    }
+
     void Start()
     {
         mainCamera = Camera.main;
 
-        buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
-        buildingType = buildingTypeList.list[0];
     }
 
     void Update()
@@ -25,17 +29,17 @@ public class BuildingManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
-        buildingType = buildingTypeList.list[0];
+            buildingType = buildingTypeList.list[0];
         }
         if (Input.GetKeyDown(KeyCode.Y))
         {
-        buildingType = buildingTypeList.list[1];
+            buildingType = buildingTypeList.list[1];
         }
     }
 
     Vector3 GetMouseWorldPosition()
     {
-        Vector3 mouseWorldPosition = mainCamera .ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPosition.z = 0f;
         return mouseWorldPosition;
     }

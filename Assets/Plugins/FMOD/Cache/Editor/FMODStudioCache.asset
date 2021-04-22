@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/Awesome Builder Defender Game/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637542423360000000
+  lastModified: 637546444910845754
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -34,7 +34,7 @@ MonoBehaviour:
   Path: FMOD/Awesome Builder Defender Game/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637542423360000000
+  lastModified: 637546444910845754
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -61,5 +61,5 @@ MonoBehaviour:
   - {fileID: -7672939267399907286}
   StringsBanks:
   - {fileID: -2506834525166092732}
-  stringsBankWriteTime: 637542423360000000
+  stringsBankWriteTime: 637546444910845754
   cacheVersion: 6
