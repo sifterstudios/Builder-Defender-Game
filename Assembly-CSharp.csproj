@@ -65,6 +65,10 @@
      <Compile Include="Assets\01 GAME\Scripts\ResourcesUI.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceGenerator.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceGeneratorData.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\BuildingGhost.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\UtilsClass.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\SpritePositionSortingOrder.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\ResourceNode.cs" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -1,18 +1,20 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BuildingManager : MonoBehaviour
 {
-    #region Variables
+    public class OnActiveBuildingTypeChangedEventArgs : EventArgs
+    {
+        public BuildingTypeSO _activeBuildingType;
+    }
 
     public static BuildingManager Instance { get; private set; }
+    public event EventHandler<OnActiveBuildingTypeChangedEventArgs> OnActiveBuildingTypeChanged;
     BuildingTypeListSO _buildingTypeList;
     BuildingTypeSO _activeBuildingType;
     Camera _mainCamera;
 
-    #endregion
-
-    #region Unity Methods
 
     private void Awake()
     {
@@ -31,27 +33,21 @@ public class BuildingManager : MonoBehaviour
         {
             if (_activeBuildingType != null)
             {
-                Instantiate(_activeBuildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
+                Instantiate(_activeBuildingType.prefab, UtilsClass.GetMouseWorldPosition(), Quaternion.identity);
             }
         }
     }
 
-    Vector3 GetMouseWorldPosition()
-    {
-        Vector3 mouseWorldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0f;
-        return mouseWorldPosition;
-    }
 
     public void SetActiveBuildingType(BuildingTypeSO buildingType)
     {
         _activeBuildingType = buildingType;
+        OnActiveBuildingTypeChanged?.Invoke(this,
+            new OnActiveBuildingTypeChangedEventArgs {_activeBuildingType = _activeBuildingType});
     }
 
     public BuildingTypeSO GetActiveBuildingType()
     {
         return _activeBuildingType;
     }
-
-    #endregion
 }
