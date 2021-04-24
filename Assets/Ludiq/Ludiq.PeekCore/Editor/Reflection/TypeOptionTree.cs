@@ -171,7 +171,7 @@ namespace Ludiq.PeekCore
 				}
 			}
 		}
-		
+
 		public override IEnumerable<IFuzzyOption> Children(IFuzzyOption parent, bool ordered)
 		{
 			if (parent is NamespaceOption namespaceOption)
@@ -248,7 +248,7 @@ namespace Ludiq.PeekCore
 			foreach (var @namespace in namespaces)
 			{
 				yield return new NamespaceOption(@namespace, FuzzyOptionMode.Leaf);
-			} 
+			}
 			*/
 		}
 

@@ -12,7 +12,7 @@ namespace Ludiq.PeekCore
 
 		public override IEnumerable<CodeStatement> GetStubStatements()
 		{
-			/* 
+			/*
 			 * Required output:
 			 * 1. Create a target variable
 			 * 2. Call its getter to prevent stripping

@@ -136,9 +136,9 @@ namespace Ludiq.PeekCore
 		private static readonly List<Type> _ludiqTypes;
 		private static readonly List<Type> _ludiqRuntimeTypes;
 		private static readonly List<Type> _ludiqEditorTypes;
-		
+
 		#region Serialization
-		
+
 		public static string SerializeType(Type type)
 		{
 			return RuntimeCodebase.SerializeType(type);
@@ -163,9 +163,9 @@ namespace Ludiq.PeekCore
 		{
 			return RuntimeCodebase.DeserializeTypeData(data);
 		}
-		
+
 		#endregion
-		
+
 		// NETUP: IReadOnlyCollection
 
 		public static ReadOnlyCollection<Assembly> assemblies { get; private set; }
@@ -206,7 +206,7 @@ namespace Ludiq.PeekCore
 
 			return referencedAssemblies;
 		}
-		
+
 		private static bool IsEditorAssembly(AssemblyName assemblyName)
 		{
 			var name = assemblyName.Name;
@@ -220,7 +220,7 @@ namespace Ludiq.PeekCore
 		private static bool IsUserAssembly(AssemblyName assemblyName)
 		{
 			var name = assemblyName.Name;
-			
+
 			return
 				name == "Assembly-CSharp" ||
 				name == "Assembly-CSharp-firstpass";
@@ -266,7 +266,7 @@ namespace Ludiq.PeekCore
 
 			return false;
 		}
-		
+
 		private static bool IsLudiqRuntimeDependentAssembly(Assembly assembly)
 		{
 			if (assembly.GetName().Name == "Ludiq.PeekCore.Runtime")
@@ -341,12 +341,12 @@ namespace Ludiq.PeekCore
 		}
 
 		#region Assembly Attributes
-		
+
 		public static IEnumerable<Attribute> GetAssemblyAttributes(Type attributeType)
 		{
 			// Faster version than RuntimeCodebase:
 			// Usually no need to check in other assemblies as our custom attributes are defined in Ludiq
-			return RuntimeCodebase.GetAssemblyAttributes(attributeType, ludiqAssemblies); 
+			return RuntimeCodebase.GetAssemblyAttributes(attributeType, ludiqAssemblies);
 		}
 
 		public static IEnumerable<TAttribute> GetAssemblyAttributes<TAttribute>() where TAttribute : Attribute

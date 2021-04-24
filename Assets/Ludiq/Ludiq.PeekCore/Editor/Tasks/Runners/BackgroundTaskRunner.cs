@@ -44,7 +44,7 @@ namespace Ludiq.PeekCore
 		{
 			// Calling Progress.Report as often as we actually report steps seems to freeze
 			// the editor, which is counter-productive. We're moving the report to once per
-			// editor update instead. 
+			// editor update instead.
 
 			if (!Progress.Exists(task.progressItemId))
 			{

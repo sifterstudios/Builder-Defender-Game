@@ -17,11 +17,11 @@ namespace Ludiq.PeekCore
 			{
 				return;
 			}
-			
+
 			if (node.option.mode == FuzzyOptionMode.Branch)
 			{
 				var i = 0;
-					
+
 				var _children = children.ToArray();
 
 				lock (guiLock)
@@ -33,7 +33,7 @@ namespace Ludiq.PeekCore
 				}
 
 				var childNodes = new List<FuzzyOptionNode>();
-				
+
 				foreach (var child in _children)
 				{
 					if (child == null)
@@ -52,7 +52,7 @@ namespace Ludiq.PeekCore
 					}
 
 					string label;
-					
+
 					if (node.option is SearchOption)
 					{
 						label = tree.SearchResultLabel(child, query);
@@ -180,7 +180,7 @@ namespace Ludiq.PeekCore
 				rightArrow = new GUIStyle("AC RightArrow");
 
 				leftArrow = new GUIStyle("AC LeftArrow");
-				
+
 				searchNotFound = new GUIStyle(EditorStyles.centeredGreyMiniLabel);
 				searchNotFound.wordWrap = true;
 				searchNotFound.padding = new RectOffset(10, 10, 10, 10);
@@ -361,7 +361,7 @@ namespace Ludiq.PeekCore
 
 			// Activator position is assumed to be in screen space, not GUI space
 			// This lets us properly position fuzzy windows from context menus where no GUI context is available
-			
+
 			this.activatorPosition = activatorPosition;
 
 			// Create the hierarchy
@@ -372,7 +372,7 @@ namespace Ludiq.PeekCore
 			stack.Add(root);
 
 			Styles.Initialize();
-			
+
 			ExecuteTask(() =>
 			{
 				if (!optionTree.prewarmed)
@@ -428,7 +428,7 @@ namespace Ludiq.PeekCore
 			this.callback = callback;
 
 			// Show and focus the window
-			
+
 			wantsMouseMove = true;
 			var initialSize = new Vector2(activatorPosition.width, height);
 			this.ShowAsDropDown(activatorPosition, initialSize);
@@ -592,7 +592,7 @@ namespace Ludiq.PeekCore
 				ExecuteTask(() =>
 				{
 					DisplayProgressBar($"Searching for \"{query}\"...", 0);
-						
+
 					if (searchCancellationToken.IsCancellationRequested)
 					{
 						return;
@@ -606,12 +606,12 @@ namespace Ludiq.PeekCore
 
 					Populate(searchNode, tree.OrderedSearchResults(query, parent?.option, searchCancellationToken).Take(LudiqCore.Configuration.maxSearchResults));
 					activeSelectedIndex = activeNodes.Count >= 1 ? 0 : -1;
-				});				
+				});
 
 				stack.Add(searchNode);
 			}
 			else
-			{				
+			{
 				animTarget = 1;
 				animAncestor = null;
 				lastRepaintTime = DateTime.UtcNow;
@@ -697,7 +697,7 @@ namespace Ludiq.PeekCore
 				var totalHeight = Mathf.Min(height, maxHeight);
 
 				var position = this.GetDropdownPosition(activatorPosition, new Vector2(totalWidth, totalHeight));
-				
+
 				position.y = initialY;
 
 				if (!isAnimating && !activeParent.isLoading && activeNode?.option != null && activeNode.option.hasFooter)
@@ -867,7 +867,7 @@ namespace Ludiq.PeekCore
 			{
 				if (tree.multithreaded && ex.Message.StartsWith("Getting control "))
 				{
-					// A bunch of happens that might affect the GUI could happen on a 
+					// A bunch of happens that might affect the GUI could happen on a
 					// secondary thread, leading to Unity complaining about the amount
 					// of controls changing between the draw call and the layout call.
 					// Because these are hamless and last just one frame, we can safely
@@ -895,7 +895,7 @@ namespace Ludiq.PeekCore
 			var cancelButtonPosition = position;
 			cancelButtonPosition.x += position.width - 15;
 			cancelButtonPosition.width = 15;
-			
+
 			GUI.SetNextControlName(searchFieldName);
 			query = EditorGUI.TextField(fieldPosition, query, LudiqStyles.searchField);
 
@@ -910,7 +910,7 @@ namespace Ludiq.PeekCore
 		}
 
 		private void OnHeaderGUI()
-		{	
+		{
 			if (e.type == EventType.Layout || e.type == EventType.Repaint)
 			{
 				headerWidth = 0;
@@ -994,7 +994,7 @@ namespace Ludiq.PeekCore
 			var hasHeader = !string.IsNullOrEmpty(parent.option.headerLabel);
 			var headerHeight = hasHeader ? Styles.headerHeight : 0;
 			var searchFieldHeight = tree.searchable ? LudiqStyles.searchFieldOuterHeight : 0;
-			
+
 			var levelPosition = new Rect
 			(
 				position.width * (1 - anim) + 1,
@@ -1200,7 +1200,7 @@ namespace Ludiq.PeekCore
 
 							tree.OnFavoritesChange();
 
-							ExecuteTask(() => UpdateFavorites());							
+							ExecuteTask(() => UpdateFavorites());
 						}
 					}
 
@@ -1307,7 +1307,7 @@ namespace Ludiq.PeekCore
 
 		#region Threading
 
-		private readonly object guiLock = new object(); 
+		private readonly object guiLock = new object();
 
 		private void ExecuteTask(Action task)
 		{

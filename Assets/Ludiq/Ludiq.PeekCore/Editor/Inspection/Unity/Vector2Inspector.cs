@@ -15,7 +15,7 @@ namespace Ludiq.PeekCore
 			EditorGUI.BeginChangeCheck();
 
 			Vector2 newValue;
-			
+
 			if (adaptiveWidth)
 			{
 				newValue = LudiqGUI.AdaptiveVector2Field(position, GUIContent.none, (Vector2)accessor.value);

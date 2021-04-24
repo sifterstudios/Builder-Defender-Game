@@ -12,8 +12,8 @@ namespace Ludiq.PeekCore
 	public static class AotPreBuilder
 	{
 		// Automatically generates the link.xml file to prevent stripping.
-		// Currently only used for plugin assemblies, because blanket preserving 
-		// all setting assemblies sometimes causes the IL2CPP process to fail. 
+		// Currently only used for plugin assemblies, because blanket preserving
+		// all setting assemblies sometimes causes the IL2CPP process to fail.
 		// For settings assemblies, the AOT stubs are good enough to fool
 		// the static code analysis without needing this full coverage.
 		// https://docs.unity3d.com/Manual/iphone-playerSizeOptimization.html
@@ -46,7 +46,7 @@ namespace Ludiq.PeekCore
 			linker.Add(linkerNode);
 
 			PathUtility.CreateDirectoryIfNeeded(LudiqCore.Paths.transientGenerated);
-			
+
 			VersionControlUtility.Unlock(path);
 
 			if (File.Exists(path))
@@ -62,14 +62,14 @@ namespace Ludiq.PeekCore
 		public static IEnumerable<object> FindAllProjectStubs()
 		{
 			// Plugins
-			
+
 			foreach (var pluginStub in FindAllPluginStubs())
 			{
 				yield return pluginStub;
 			}
 
 			// Assets
-			
+
 			foreach (var assetStub in FindAllAssetStubs())
 			{
 				yield return assetStub;
@@ -147,7 +147,7 @@ namespace Ludiq.PeekCore
 			}
 
 			PathUtility.CreateDirectoryIfNeeded(LudiqCore.Paths.transientGenerated);
-			
+
 			VersionControlUtility.Unlock(scriptPath);
 
 			if (File.Exists(scriptPath))

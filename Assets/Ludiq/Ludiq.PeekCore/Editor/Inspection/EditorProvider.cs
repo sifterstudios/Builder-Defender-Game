@@ -5,7 +5,7 @@ namespace Ludiq.PeekCore
 	public class EditorProvider : SingleDecoratorProvider<Accessor, Editor, RegisterEditorAttribute>
 	{
 		protected override bool cache => false;
-		
+
 		protected override Type GetDecoratedType(Accessor accessor)
 		{
 			return accessor.definedType;
@@ -47,7 +47,7 @@ namespace Ludiq.PeekCore
 		{
 			return EditorProvider.instance.GetDecorator(accessor);
 		}
-		
+
 		public static TEditor CreateUninitializedEditor<TEditor>(this Accessor accessor) where TEditor : Editor
 		{
 			return EditorProvider.instance.GetDecorator<TEditor>(accessor);
@@ -59,7 +59,7 @@ namespace Ludiq.PeekCore
 			editor.Initialize();
 			return editor;
 		}
-		
+
 		public static TEditor CreateInitializedEditor<TEditor>(this Accessor accessor) where TEditor : Editor
 		{
 			var editor = CreateUninitializedEditor<TEditor>(accessor);

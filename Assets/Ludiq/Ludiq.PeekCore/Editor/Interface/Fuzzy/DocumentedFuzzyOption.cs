@@ -17,7 +17,7 @@ namespace Ludiq.PeekCore
 		public bool showType { get; protected set; }
 
 		public override bool hasFooter => documentation != null;
-		
+
 		public override float GetFooterHeight(FuzzyOptionNode node, float width)
 		{
 			if (ZoomIcon(node))
@@ -48,7 +48,7 @@ namespace Ludiq.PeekCore
 			{
 				height += GetRemarksHeight(width);
 			}
-			
+
 			if (ZoomIcon(node))
 			{
 				return Mathf.Max(Styles.zoomSize + 2 * Styles.zoomSpacing, height);
@@ -206,7 +206,7 @@ namespace Ludiq.PeekCore
 			var label = new GUIContent();
 
 			label.text = $"<b>{documentation.GetParameterName(parameter)}: </b>{documentation.GetParameterSummary(parameter)}";
-			
+
 			var type = documentation.GetParameterType(parameter);
 
 			if (showType && type != null)
@@ -224,7 +224,7 @@ namespace Ludiq.PeekCore
 			var label = new GUIContent();
 
 			label.text = $"<b>Returns: </b>{documentation.returns}";
-			
+
 			if (showType && documentation.returnType != null)
 			{
 				label.text += $" ({documentation.returnType})";

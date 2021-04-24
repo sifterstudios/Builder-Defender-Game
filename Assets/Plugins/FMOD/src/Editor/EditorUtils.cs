@@ -724,8 +724,8 @@ namespace FMODUnity
                         if (header.StartsWith("log():"))
                         {
                             UnityEngine.Debug.Log("FMOD Studio: Script Client returned " + header.Substring(6));
-                        }    
-                    }        
+                        }
+                    }
                     catch (Exception e)
                     {
                         UnityEngine.Debug.Log("FMOD Studio: Script Client failed to connect - Check FMOD Studio is running");

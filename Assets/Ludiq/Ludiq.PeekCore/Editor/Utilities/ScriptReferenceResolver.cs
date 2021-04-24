@@ -22,7 +22,7 @@ namespace Ludiq.PeekCore
 		private static IEnumerable<string> GetAllReplacementPaths()
 		{
 			var validExtensions = new HashSet<string>() { ".unity", ".asset", ".prefab" };
-			
+
 			return AssetDatabase.GetAllAssetPaths().Select(path => Path.Combine(Paths.project, path)).Where(File.Exists).Where(f => validExtensions.Contains(Path.GetExtension(f)));
 		}
 
@@ -32,7 +32,7 @@ namespace Ludiq.PeekCore
 		}
 
 		private static readonly HashSet<ScriptReferenceReplacement> replacements = new HashSet<ScriptReferenceReplacement>();
-		
+
 		private static bool registeredDefaultReplacements = false;
 
 		private static void RegisterDefaultReplacements()
@@ -70,7 +70,7 @@ namespace Ludiq.PeekCore
 		{
 			ScriptReferenceResolver.replacements.UnionWith(replacements);
 		}
-		
+
 		public static void Run(string path, Mode mode)
 		{
 			EnsureDefaultReplacementsRegistered();
@@ -88,7 +88,7 @@ namespace Ludiq.PeekCore
 			EnsureDefaultReplacementsRegistered();
 			Run(GetAllReplacementPaths(), replacements, Mode.Dialog);
 		}
-		
+
 		// [MenuItem("Assets/Fix Missing Scripts")]
 		private static void RunContextual()
 		{
@@ -96,7 +96,7 @@ namespace Ludiq.PeekCore
 			{
 				throw new InvalidOperationException();
 			}
-			
+
 			EnsureDefaultReplacementsRegistered();
 			Run(GetSelectedReplacementPaths(), replacements, Mode.Dialog);
 		}
@@ -133,7 +133,7 @@ namespace Ludiq.PeekCore
 
 				return;
 			}
-			
+
 			// Doing a naive approach here: replacing the exact string by regex instead of parsing the YAML,
 			// since Unity sometimes breaks YAML specifications. This is whitespace dependant, but it should work.
 
@@ -157,10 +157,10 @@ namespace Ludiq.PeekCore
 					// Duplicate path
 					continue;
 				}
-				
+
 				var replaced = false;
 				var fileContents = new List<string>();
-				
+
 				if (mode == Mode.Dialog)
 				{
 					ProgressUtility.DisplayProgressBar("Script Reference Resolver", $"Analyzing '{path}'...", pathIndex++ / (float)_paths.Length);
@@ -219,11 +219,11 @@ namespace Ludiq.PeekCore
 						{
 							ProgressUtility.DisplayProgressBar("Script Reference Resolver", $"Fixing '{newContent.Key}'...", pathIndex++ / (float)_paths.Length);
 						}
-						
+
 						VersionControlUtility.Unlock(newContent.Key);
 						File.WriteAllLines(newContent.Key, newContent.Value);
 					}
-					
+
 					if (mode == Mode.Dialog)
 					{
 						EditorUtility.DisplayDialog("Script Reference Resolver", "Script references have been successfully replaced.\nRestarting Unity is recommended.", "OK");

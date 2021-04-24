@@ -12,7 +12,7 @@ namespace Ludiq.PeekCore
 		}
 
 		public Type newType { get; private set; }
-		
+
 		protected override string Subpath()
 		{
 			return "(" + newType.CSharpName(false) + ")";

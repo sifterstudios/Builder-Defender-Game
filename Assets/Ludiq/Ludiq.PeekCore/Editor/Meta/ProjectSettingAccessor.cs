@@ -8,7 +8,7 @@ namespace Ludiq.PeekCore
 		public ProjectSettingAccessor(PluginConfiguration configuration, MemberInfo member, Accessor parent) : base(configuration, member, parent) { }
 
 		public override bool exists => storage.ContainsKey(key);
-		
+
 		private DictionaryAsset storage => configuration.projectSettingsAsset;
 
 		public override void Load()

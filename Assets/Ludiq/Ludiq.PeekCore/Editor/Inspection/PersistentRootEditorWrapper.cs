@@ -9,7 +9,7 @@ namespace Ludiq.PeekCore
 		private static readonly Dictionary<SerializedObject, PersistentRootEditor> editors = new Dictionary<SerializedObject, PersistentRootEditor>();
 
 		protected abstract PersistentRootEditor CreateEditor(SerializedObject serializedObject, PersistentRootEditorWrapper wrapper);
-		
+
 		public sealed override void OnInspectorGUI()
 		{
 			if (serializedObject.isEditingMultipleObjects)
@@ -17,7 +17,7 @@ namespace Ludiq.PeekCore
 				EditorGUILayout.HelpBox("Multi-object editing is not supported.", MessageType.Info);
 				return;
 			}
-			
+
 			if (!editors.TryGetValue(serializedObject, out var editor))
 			{
 				editor = CreateEditor(serializedObject, this);

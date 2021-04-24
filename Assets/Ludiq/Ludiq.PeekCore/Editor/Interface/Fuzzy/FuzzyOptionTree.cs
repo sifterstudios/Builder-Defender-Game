@@ -25,7 +25,7 @@ namespace Ludiq.PeekCore
 
 		public virtual void Rewarm() { }
 
-		
+
 
 		private readonly List<bool> separatorCheckStack = new List<bool>();
 
@@ -85,7 +85,7 @@ namespace Ludiq.PeekCore
 		public abstract IEnumerable<IFuzzyOption> Root();
 
 		public virtual IEnumerable<IFuzzyOption> Children(IFuzzyOption parent, bool ordered) => Enumerable.Empty<IFuzzyOption>();
-		
+
 		public IEnumerable<IFuzzyOption> Children(IFuzzyOption parent)
 		{
 			return Children(parent, true);
@@ -147,7 +147,7 @@ namespace Ludiq.PeekCore
 
 		public virtual bool UseExplicitLabel(IFuzzyOption parent, IFuzzyOption item)
 		{
-			return false;	
+			return false;
 		}
 
 		public virtual string ExplicitLabel(IFuzzyOption item)

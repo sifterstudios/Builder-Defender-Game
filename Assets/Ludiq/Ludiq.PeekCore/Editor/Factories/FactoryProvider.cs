@@ -30,7 +30,7 @@ namespace Ludiq.PeekCore
 				found = true;
 			}
 		}
-		
+
 		protected IEnumerable<Type> ChildrenResolve(Type type)
 		{
 			foreach (var definedDecoratorType in definedDecoratorTypes)

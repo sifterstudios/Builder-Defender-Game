@@ -35,12 +35,12 @@ namespace Ludiq.PeekCore
 		}
 
 		protected virtual IEqualityComparer<TDecorated> decoratedComparer => null;
-		
+
 		protected virtual TDecorator CreateDecorator(Type decoratorType, TDecorated decorated)
 		{
 			return decoratorType.Instantiate(false, decorated).CastTo<TDecorator>();
 		}
-		
+
 		private TDecorator CreateDecorator(TDecorated decorated)
 		{
 			if (!IsValid(decorated, out var reason))
@@ -54,13 +54,13 @@ namespace Ludiq.PeekCore
 
 
 		#region Type Resolution
-		
+
 		protected virtual IEnumerable<Assembly> registrationAssemblies => Codebase.ludiqEditorAssemblies;
-		
+
 		protected readonly Dictionary<Type, Type> definedDecoratorTypes;
 
 		protected readonly Dictionary<Type, Type> resolvedDecoratorTypes;
-		
+
 		private void MapAttributeTypes()
 		{
 			foreach (var registration in RuntimeCodebase.GetAssemblyAttributes<TAttribute>(registrationAssemblies))
@@ -95,7 +95,7 @@ namespace Ludiq.PeekCore
 				return decoratorType != null;
 			}
 		}
-		
+
 		protected virtual Type GetDecoratedType(TDecorated decorated)
 		{
 			var type = decorated as Type;
@@ -113,7 +113,7 @@ namespace Ludiq.PeekCore
 			lock (typesLock)
 			{
 				Ensure.That(nameof(decoratedType)).IsNotNull(decoratedType);
-				
+
 				if (!TryGetDecoratorType(decoratedType, out var decoratorType))
 				{
 					throw new NotSupportedException(NoDecoratorMessage(decoratedType));
@@ -142,11 +142,11 @@ namespace Ludiq.PeekCore
 		{
 			// We traverse the tree recursively and manually instead of
 			// using Linq to find any "assignable from" type in the defined
-			// decorators list in order to preserve priority. 
+			// decorators list in order to preserve priority.
 
 			// For example, in an A : B : C chain where we have decorators
 			// for B and C, this method will always map A to B, not A to C.
-			
+
 			var resolved = DirectResolve(resolvingDecoratedType, initialDecoratedType) ?? GenericResolve(resolvingDecoratedType);
 
 			if (resolved != null)
@@ -194,14 +194,14 @@ namespace Ludiq.PeekCore
 			if (definedDecoratorTypes.ContainsKey(resolvingDecoratedType))
 			{
 				var definedDecoratorType = definedDecoratorTypes[resolvingDecoratedType];
-				
+
 				// Try to close-constructor the decorator
 				// For example: [Decorator(Decorated)] Decorator<TDecorated> gets properly closed-constructed with type
 				// Important to make sure we're close constructing with the initial decorated type, not the type we're currently resolving in the hierarchy
 				if (definedDecoratorType.IsGenericTypeDefinition)
 				{
 					var arguments = definedDecoratorType.GetGenericArguments();
-					
+
 					var argumentType = initialDecoratedType ?? resolvingDecoratedType;
 
 					if (arguments.Length == 1 && arguments[0].CanMakeGenericTypeVia(argumentType))
@@ -251,7 +251,7 @@ namespace Ludiq.PeekCore
 
 
 		#region Cache
-		
+
 		protected readonly Dictionary<TDecorated, TDecorator> decorators;
 
 		protected readonly Dictionary<TDecorator, TDecorated> decorateds;
@@ -281,7 +281,7 @@ namespace Ludiq.PeekCore
 
 			return true;
 		}
-		
+
 		public TDecorator GetDecorator(TDecorated decorated)
 		{
 			Ensure.That(nameof(decorated)).IsNotNull(decorated);
@@ -310,7 +310,7 @@ namespace Ludiq.PeekCore
 
 					decorators.Add(decorated, decorator);
 					decorateds.Add(decorator, decorated);
-					
+
 					(decorator as IInitializable)?.Initialize();
 				}
 
@@ -330,7 +330,7 @@ namespace Ludiq.PeekCore
 
 
 		#region Collection
-		
+
 		private DateTime lastFreeTime;
 
 		protected virtual TimeSpan freeInterval => TimeSpan.FromSeconds(5);
@@ -411,7 +411,7 @@ namespace Ludiq.PeekCore
 
 				decorators.Clear();
 				decorateds.Clear();
-				
+
 				Freed();
 			}
 		}

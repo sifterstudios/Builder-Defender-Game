@@ -40,11 +40,11 @@ namespace Ludiq.PeekCore
 				}
 
 				var matched = false;
-				
+
 				for (; haystackIndex < haystack.Length; haystackIndex++)
 				{
 					var haystackCharacter = haystack[haystackIndex];
-					
+
 					if (char.IsWhiteSpace(haystackCharacter))
 					{
 						isStreaking = false;
@@ -161,17 +161,17 @@ namespace Ludiq.PeekCore
 			var totalWeight = (score.Value * scoreWeight) + (shortness * shortnessWeight);
 			return totalWeight / maxWeight;
 		}
-		
+
 		public static bool Matches(string query, string haystack)
 		{
 			return Matches(Relevance(query, haystack));
 		}
-		
+
 		public static bool Matches(float relevance)
 		{
 			return relevance > 0;
 		}
-		
+
 		public static bool Matches(ISearchResult result)
 		{
 			return Matches(result.relevance);

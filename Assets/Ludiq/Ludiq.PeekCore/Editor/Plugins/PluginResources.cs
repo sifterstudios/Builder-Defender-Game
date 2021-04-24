@@ -99,7 +99,7 @@ namespace Ludiq.PeekCore
 				return _changelogs;
 			}
 		}
-		
+
 		public IEnumerable<PluginMigration> pendingMigrations => migrations.Where(m => m.from >= plugin.manifest.savedVersion && m.to <= plugin.manifest.currentVersion);
 
 		protected IEnumerable<Type> GetMappedTypes<T>() where T : IPluginAddon

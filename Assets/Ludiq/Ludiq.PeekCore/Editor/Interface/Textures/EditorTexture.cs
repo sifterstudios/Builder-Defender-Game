@@ -50,7 +50,7 @@ namespace Ludiq.PeekCore
 		}
 
 		private static readonly Dictionary<Texture, EditorTexture> singleCache = new Dictionary<Texture, EditorTexture>();
-		
+
 
 
 		#region Fetching
@@ -146,14 +146,14 @@ namespace Ludiq.PeekCore
 
 		#region Loading
 
-		public static readonly TextureResolution[] StandardIconResolutions = 
+		public static readonly TextureResolution[] StandardIconResolutions =
 		{
 			IconSize.Small,
 			IconSize.Medium,
 			IconSize.Large
 		};
 
-		public static readonly TextureResolution[] UnitResolutions = 
+		public static readonly TextureResolution[] UnitResolutions =
 		{
 			1,
 			2,
@@ -227,7 +227,7 @@ namespace Ludiq.PeekCore
 				var name = Path.GetFileNameWithoutExtension(path).PartBefore('@');
 				var extension = Path.GetExtension(path);
 				var directory = Path.GetDirectoryName(path);
-				
+
 				var personalPath = Path.Combine(directory, $"{name}{extension}");
 				var professionalPath = Path.Combine(directory, $"{name}@Pro{extension}");
 
@@ -257,7 +257,7 @@ namespace Ludiq.PeekCore
 					{
 						Debug.LogWarning($"Missing editor texture: {name}\n{resources.DebugPath(path)}");
 					}
-					
+
 					// Never return an empty set; the codebase assumes this guarantee
 
 					return null;
@@ -306,7 +306,7 @@ namespace Ludiq.PeekCore
 					{
 						Debug.LogWarning($"Missing editor texture: {name}\n{resources.DebugPath(path)}");
 					}
-					
+
 					// Never return an empty set; the codebase assumes this guarantee
 
 					return null;

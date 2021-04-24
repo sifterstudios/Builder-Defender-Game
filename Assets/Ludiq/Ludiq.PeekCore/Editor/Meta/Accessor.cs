@@ -1395,7 +1395,7 @@ namespace Ludiq.PeekCore
 		private static readonly DigCast digCast = new DigCast();
 
 		private static readonly DigStaticObject digStaticObject = new DigStaticObject();
-		
+
 		public static RootAccessor Root()
 		{
 			var root = new RootAccessor();

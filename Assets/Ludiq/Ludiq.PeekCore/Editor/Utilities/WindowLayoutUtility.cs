@@ -17,7 +17,7 @@ namespace Ludiq.PeekCore
 			{
 				var ToolbarType = Type.GetType("UnityEditor.Toolbar,UnityEditor", true);
 				var WindowLayoutType = Type.GetType("UnityEditor.WindowLayout,UnityEditor", true);
-				
+
 				WindowLayout_LoadWindowLayout = WindowLayoutType.GetMethod("LoadWindowLayout", BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static, null, new[] { typeof(string), typeof(bool) }, null);
 				WindowLayout_SaveWindowLayout = WindowLayoutType.GetMethod("SaveWindowLayout", BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static, null, new[] { typeof(string) }, null);
 				Toolbar_lastLoadedLayoutName = ToolbarType.GetProperty("lastLoadedLayoutName", BindingFlags.Static | BindingFlags.NonPublic);
@@ -42,7 +42,7 @@ namespace Ludiq.PeekCore
 				throw new UnityEditorInternalException(ex);
 			}
 		}
-		
+
 		public static void LoadLayout(string path)
 		{
 			try
@@ -54,7 +54,7 @@ namespace Ludiq.PeekCore
 				throw new UnityEditorInternalException(ex);
 			}
 		}
-		
+
 		public static void SaveLayout(string path)
 		{
 			try

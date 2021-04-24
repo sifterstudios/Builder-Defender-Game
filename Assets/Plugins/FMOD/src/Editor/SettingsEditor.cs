@@ -791,7 +791,7 @@ namespace FMODUnity
                     label.Append(")");
                 }
             }
-            
+
             EditorGUILayout.BeginHorizontal();
 
             bool expand = true;
@@ -945,7 +945,7 @@ namespace FMODUnity
                 }
 
                 EditorGUI.EndDisabledGroup();
-                
+
                 if (inherit)
                 {
                     lengthProperty.Clear(platform);
@@ -1165,7 +1165,7 @@ namespace FMODUnity
                 "<size=11>Select the way you wish to connect Unity to the FMOD Studio content:\n" +
                 "<b>• Project</b>\t\tIf you have the complete FMOD Studio project avaliable\n" +
                 "<b>• Single Platform</b>\tIf you have only the contents of the <i>Build</i> folder for a single platform\n" +
-                "<b>• Multiple Platforms</b>\tIf you have only the contents of the <i>Build</i> folder for multiple platforms, each platform in its own sub directory\n" + 
+                "<b>• Multiple Platforms</b>\tIf you have only the contents of the <i>Build</i> folder for multiple platforms, each platform in its own sub directory\n" +
                 "</size>"
                 , MessageType.Info, true);
             EditorGUILayout.EndVertical();
@@ -1391,7 +1391,7 @@ namespace FMODUnity
                                 continue;
                             }
                             EditorGUILayout.EndHorizontal();
-                            EditorGUI.indentLevel--; 
+                            EditorGUI.indentLevel--;
                         }
 
                         GUILayout.BeginHorizontal();

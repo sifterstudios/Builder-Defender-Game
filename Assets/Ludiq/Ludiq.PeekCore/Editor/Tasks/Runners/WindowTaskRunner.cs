@@ -7,7 +7,7 @@ namespace Ludiq.PeekCore
 	public sealed class WindowTaskRunner : ITaskRunner
 	{
 		public static WindowTaskRunner instance { get; } = new WindowTaskRunner();
-		
+
 		private static readonly TaskThreadTracker threadTracker = new TaskThreadTracker();
 
 		public bool runsCurrentThread => threadTracker.runsCurrent;
@@ -31,7 +31,7 @@ namespace Ludiq.PeekCore
 				}
 
 				new Thread(() => RunSynchronous(task)).Start();
-				
+
 				window.ShowModal();
 			}
 			else
@@ -40,7 +40,7 @@ namespace Ludiq.PeekCore
 				{
 					throw new NotSupportedException("Must be on the main thread to run a root window task.");
 				}
-				
+
 				RunSynchronous(task);
 			}
 		}

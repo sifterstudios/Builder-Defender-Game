@@ -9,7 +9,7 @@ namespace FMODUnity
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             Texture browseIcon = EditorGUIUtility.Load("FMOD/SearchIconBlack.png") as Texture;
-            
+
             SerializedProperty pathProperty = property;
 
             EditorGUI.BeginProperty(position, label, property);
@@ -62,5 +62,5 @@ namespace FMODUnity
 
             EditorGUI.EndProperty();
         }
-    }    
+    }
 }

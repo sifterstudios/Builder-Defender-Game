@@ -19,7 +19,7 @@ namespace Ludiq.PeekCore.CodeDom
 		protected override void GenerateInner(CodeGenerator generator, CodeCompositeTypeDeclaration enclosingType)
 		{
             generator.Write(TokenType.Keyword, "static");
-			generator.Write(TokenType.Space, ' '); 
+			generator.Write(TokenType.Space, ' ');
             generator.Write(TokenType.Identifier, enclosingType.Name);
             generator.Write(TokenType.Punctuation, "()");
 

@@ -39,7 +39,7 @@ namespace Ludiq.PeekCore
 		private static ConcurrentQueue<Action> lowPriority;
 
 		private static readonly Stopwatch stopwatch = new Stopwatch();
-		
+
 		public static void Process()
 		{
 			stopwatch.Reset();
@@ -122,7 +122,7 @@ namespace Ludiq.PeekCore
 					are.Set();
 				}
 			});
-			
+
 			if (timeout.HasValue)
 			{
 				if (!are.WaitOne(timeout.Value))
@@ -176,7 +176,7 @@ namespace Ludiq.PeekCore
 					are.Set();
 				}
 			});
-			
+
 			if (timeout.HasValue)
 			{
 				if (!are.WaitOne(timeout.Value))
@@ -190,7 +190,7 @@ namespace Ludiq.PeekCore
 			}
 
 			exceptionInfo?.Throw();
-			
+
 			return (T)result;
 		}
 	}

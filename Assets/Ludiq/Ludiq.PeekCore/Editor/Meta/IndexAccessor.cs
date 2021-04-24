@@ -19,7 +19,7 @@ namespace Ludiq.PeekCore
 
 			Reflect(true);
 		}
-		
+
 		protected override string OdinPath(string parentPath)
 		{
 			if (string.IsNullOrEmpty(parentPath))

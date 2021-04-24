@@ -27,7 +27,7 @@ namespace Ludiq.PeekCore
 		}
 
 		public string label { get; set; }
-		
+
 		public object value { get; set; }
 
 		public bool? on { get; set; }

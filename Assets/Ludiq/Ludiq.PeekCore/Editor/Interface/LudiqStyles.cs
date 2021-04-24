@@ -1,14 +1,14 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Ludiq.PeekCore 
+namespace Ludiq.PeekCore
 {
 	public static class LudiqStyles
 	{
 		static LudiqStyles()
 		{
 			// General
-			
+
 			centeredLabel = new GUIStyle(EditorStyles.label);
 			centeredLabel.alignment = TextAnchor.MiddleCenter;
 			centeredLabel.margin = new RectOffset(0, 0, 5, 5);
@@ -55,9 +55,9 @@ namespace Ludiq.PeekCore
 			largePopup.fixedHeight = 20;
 
 			mixedToggle = new GUIStyle("ToggleMixed");
-			
+
 			componentTitle = new GUIStyle(EditorStyles.boldLabel);
-			
+
 			componentTitleField = new GUIStyle(EditorStyles.textField);
 
 			componentTitleFieldHidable = new GUIStyle(componentTitleField);
@@ -70,7 +70,7 @@ namespace Ludiq.PeekCore
 			componentTitlePlaceholder.fontSize = componentTitleField.fontSize;
 
 			// Search
-			
+
 			searchField = new GUIStyle("SearchTextField");
 			searchFieldCancelButton = new GUIStyle("SearchCancelButton");
 			searchFieldCancelButtonEmpty = new GUIStyle("SearchCancelButtonEmpty");
@@ -84,7 +84,7 @@ namespace Ludiq.PeekCore
 
 			// Show smaller icons on high DPI displays,
 			// and crisp 32x icons on standard DPI displays
-			
+
 			if (EditorGUIUtility.pixelsPerPoint >= 2)
 			{
 				headerBackground.padding = new RectOffset(8, 8, 8, 9);
@@ -139,7 +139,7 @@ namespace Ludiq.PeekCore
 			headerSummaryPlaceholder = new GUIStyle(EditorStyles.label);
 			headerSummaryPlaceholder.normal.textColor = EditorStyles.centeredGreyMiniLabel.normal.textColor;
 			headerSummaryPlaceholder.padding = EditorStyles.textField.padding;
-			
+
 			// Lists
 
 			listBackground = ColorPalette.unityBackgroundLight.CreateBackground();
@@ -265,7 +265,7 @@ namespace Ludiq.PeekCore
 			commandButtonLeftSoft.active.background = commandButtonLeftSoft.onActive.background;
 			commandButtonMidSoft.active.background = commandButtonMidSoft.onActive.background;
 			commandButtonRightSoft.active.background = commandButtonRightSoft.onActive.background;
-			
+
 			commandButtonCompact = new GUIStyle(commandButton);
 			commandButtonLeftCompact = new GUIStyle(commandButtonLeft);
 			commandButtonMidCompact = new GUIStyle(commandButtonMid);
@@ -297,7 +297,7 @@ namespace Ludiq.PeekCore
 			objectFieldTarget = new GUIStyle("IN ObjectField");
 			objectFieldTarget.fixedHeight = EditorGUIUtility.singleLineHeight;
 			objectFieldTarget.fixedWidth = 14;
-			
+
 			objectFieldThumbnailBackground = new GUIStyle(EditorStyles.textField);
 			objectFieldThumbnailBackground.fixedHeight = 0;
 
@@ -461,7 +461,7 @@ namespace Ludiq.PeekCore
 		public static readonly float spaceAfterBigButtonIcon = 8;
 
 		// Object Field
-		
+
 		public static readonly GUIStyle objectFieldTarget;
 		public static readonly GUIStyle objectFieldThumbnailBackground;
 		public static readonly GUIStyle objectFieldThumbnailForeground;

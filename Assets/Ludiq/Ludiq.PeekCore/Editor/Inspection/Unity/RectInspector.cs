@@ -18,7 +18,7 @@ namespace Ludiq.PeekCore
 		protected override void OnControlGUI(Rect position)
 		{
 			EditorGUI.BeginChangeCheck();
-			
+
 			var newValue = EditorGUI.RectField(position, GUIContent.none, (Rect)accessor.value);
 
 			if (EditorGUI.EndChangeCheck())

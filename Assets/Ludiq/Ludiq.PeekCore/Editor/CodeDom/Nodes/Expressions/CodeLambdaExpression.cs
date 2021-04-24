@@ -93,7 +93,7 @@ namespace Ludiq.PeekCore.CodeDom
 
 			if (ExpressionBody != null)
 			{
-				ExpressionBody.Generate(generator);				
+				ExpressionBody.Generate(generator);
 			}
 			else
 			{

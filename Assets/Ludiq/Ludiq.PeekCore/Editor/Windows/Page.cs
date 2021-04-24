@@ -92,7 +92,7 @@ namespace Ludiq.PeekCore
 		{
 			shouldComplete = true;
 		}
-		
+
 		protected static GUIEvent e => GUIEvent.current;
 	}
 }

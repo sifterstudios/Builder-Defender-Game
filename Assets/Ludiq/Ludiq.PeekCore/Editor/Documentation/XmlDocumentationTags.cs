@@ -91,7 +91,7 @@ namespace Ludiq.PeekCore
 
 		[Serialize]
 		public string remarks;
-		
+
 		[Serialize]
 		public bool inherit;
 
@@ -103,7 +103,7 @@ namespace Ludiq.PeekCore
 
 		[DoNotSerialize]
 		public Dictionary<string, Type> parameterTypes;
-		
+
 		[DoNotSerialize]
 		public Type returnType;
 

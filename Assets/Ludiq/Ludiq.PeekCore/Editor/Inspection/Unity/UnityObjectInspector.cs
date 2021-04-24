@@ -37,7 +37,7 @@ namespace Ludiq.PeekCore
 				typeLabel
 			);
 		}
-		
+
 		protected virtual UnityObjectFieldVisualType visualType
 		{
 			get
@@ -93,7 +93,7 @@ namespace Ludiq.PeekCore
 			EditorGUI.BeginChangeCheck();
 
 			var oldValue = (UnityObject)accessor.value;
-			
+
 			var fieldPosition = new Rect
 			(
 				position.x,

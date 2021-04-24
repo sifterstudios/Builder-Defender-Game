@@ -46,7 +46,7 @@ namespace Ludiq.PeekCore
 		public virtual string websiteUrl => null;
 		public string authorUrl => publisherUrl;
 		public string url => websiteUrl;
-		
+
 		protected virtual string rootFileName => id + ".root";
 
 		private string _rootPath;

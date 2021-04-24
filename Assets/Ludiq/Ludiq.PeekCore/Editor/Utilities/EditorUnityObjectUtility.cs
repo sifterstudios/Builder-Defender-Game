@@ -112,7 +112,7 @@ namespace Ludiq.PeekCore
 		public static bool IsSceneBound(this UnityObject uo)
 		{
 			Ensure.That(nameof(uo)).IsNotNull(uo);
-			
+
 			return !EditorUtility.IsPersistent(uo);
 
 			// return
@@ -124,7 +124,7 @@ namespace Ludiq.PeekCore
 
 
 		#region Dirty
-		
+
 #if !UNITY_2019_1_OR_NEWER
 		private static readonly MethodInfo EditorUtility_IsDirty;
 #endif

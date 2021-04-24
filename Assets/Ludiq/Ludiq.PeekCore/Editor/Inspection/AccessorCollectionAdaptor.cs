@@ -55,7 +55,7 @@ namespace Ludiq.PeekCore
 		private ReorderableListControl listControl;
 
 		protected Inspector parentInspector { get; private set; }
-		
+
 		private enum WidthMode
 		{
 			Thin,
@@ -136,7 +136,7 @@ namespace Ludiq.PeekCore
 		public void DrawControl(Rect position)
 		{
 			var y = position.y;
-			
+
 			itemWidth = position.width - HandlesWidth;
 
 			var height = listControl.CalculateListHeight(this);
@@ -199,7 +199,7 @@ namespace Ludiq.PeekCore
 			itemWidth = position.width - HandlesWidth;
 
 			var height = position.height;
-			
+
 			var label = Inspector.GetLabel(accessor);
 
 			if (widthMode != WidthMode.Thin && label != GUIContent.none)

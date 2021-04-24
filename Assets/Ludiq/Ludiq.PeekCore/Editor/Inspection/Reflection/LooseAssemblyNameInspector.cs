@@ -9,7 +9,7 @@ namespace Ludiq.PeekCore
 	public sealed class LooseAssemblyNameInspector : Inspector
 	{
 		public LooseAssemblyNameInspector(Accessor accessor) : base(accessor) { }
-		
+
 		private IFuzzyOptionTree GetOptions()
 		{
 			return new LooseAssemblyNameOptionTree();
@@ -18,7 +18,7 @@ namespace Ludiq.PeekCore
 		protected override void OnControlGUI(Rect position)
 		{
 			EditorGUI.BeginChangeCheck();
-			
+
 			var newAssemblyName = LudiqGUI.AssemblyField(position, GUIContent.none, (LooseAssemblyName)accessor.value, GetOptions);
 
 			if (EditorGUI.EndChangeCheck())

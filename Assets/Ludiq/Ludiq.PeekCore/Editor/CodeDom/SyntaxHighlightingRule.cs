@@ -17,13 +17,13 @@ namespace Ludiq.PeekCore.CodeDom
 		{
 		}
 
-		public SyntaxHighlightingRule(IEnumerable<TokenType> tokenTypes, SkinnedColor color, bool bold = false) 
+		public SyntaxHighlightingRule(IEnumerable<TokenType> tokenTypes, SkinnedColor color, bool bold = false)
 			: this(tokenTypes, $"{(bold ? "<b>" : "")}<color=#{color.ToHexString()}>", $"</color>{(bold ? "</b>" : "")}")
 		{
 
 		}
 
-		public SyntaxHighlightingRule(TokenType tokenType, SkinnedColor color, bool bold = false) 
+		public SyntaxHighlightingRule(TokenType tokenType, SkinnedColor color, bool bold = false)
 			: this(tokenType.Yield(), color, bold)
 		{
 

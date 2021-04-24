@@ -33,7 +33,7 @@ namespace Ludiq.PeekCore
 			}
 
 			private readonly LudiqCoreResources resources;
-			
+
 			private readonly LazyDictionary<string, EditorTexture> storage = new LazyDictionary<string, EditorTexture>();
 
 			public EditorTexture empty => storage[nameof(empty)];
@@ -64,7 +64,7 @@ namespace Ludiq.PeekCore
 			public EditorTexture generic => storage[nameof(generic)];
 			public EditorTexture @new => storage[nameof(@new)];
 			public EditorTexture folder => storage[nameof(folder)];
-			
+
 			public void Load()
 			{
 				storage.Bind(nameof(empty), () => EditorTexture.Single(ColorPalette.transparent.GetPixel()));

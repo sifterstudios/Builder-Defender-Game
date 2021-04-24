@@ -39,7 +39,7 @@ namespace Ludiq.PeekCore
 		protected static SettingsProvider CreateEarlySettingsProvider(string id, SettingsScope scope)
 		{
 			// If the preference / setting panel is open before the plugin container gets initialized,
-			// we can't afford to return null in [SettingsProvider], because the panel will then never 
+			// we can't afford to return null in [SettingsProvider], because the panel will then never
 			// get created later. This is a workaround that creates a wrapper around the configuration now
 			// which doesn't render anything until the plugin container is initialized.
 

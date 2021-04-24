@@ -9,7 +9,7 @@ namespace Ludiq.PeekCore
 	public class NamespaceInspector : Inspector
 	{
 		public NamespaceInspector(Accessor accessor) : base(accessor) { }
-		
+
 		protected override void OnControlGUI(Rect position)
 		{
 			EditorGUI.BeginChangeCheck();

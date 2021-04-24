@@ -88,7 +88,7 @@ namespace Ludiq.PeekCore
 			{
 				Directory.Delete(path, true);
 			}
-			
+
 			var metaFilePath = Path.Combine(Path.GetDirectoryName(path), Path.GetFileName(path) + ".meta");
 
 			if (File.Exists(metaFilePath))
@@ -208,7 +208,7 @@ namespace Ludiq.PeekCore
 			{
 				return true;
 			}
-			
+
 			return false;
 		}
 

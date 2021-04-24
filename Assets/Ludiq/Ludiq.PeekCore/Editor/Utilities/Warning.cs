@@ -125,12 +125,12 @@ namespace Ludiq.PeekCore
 
 			return mostSevereWarningLevel;
 		}
-		
+
 		public float GetWidth()
 		{
 			return LudiqGUIUtility.GetHelpBoxWidth(message, messageType);
 		}
-		
+
 		public float GetHeight(float width)
 		{
 			return LudiqGUIUtility.GetHelpBoxHeight(message, messageType, width);

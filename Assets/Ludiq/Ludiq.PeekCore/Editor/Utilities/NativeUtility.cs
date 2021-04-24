@@ -17,7 +17,7 @@ namespace Ludiq.PeekCore
 		private static readonly Dictionary<string, int> usageCount = new Dictionary<string, int>();
 
 		private static readonly object @lock = new object();
-		
+
 		// See: https://stackoverflow.com/questions/41450065/c-sharp-pinvoke-and-reloading-a-dll
 		// https://stackoverflow.com/questions/28728891/have-to-do-freelibrary-2-times-although-i-have-done-loadlibrary-only-1-time-als
 		private static bool supported => false; // Should work on Windows, but too buggy at the moment.

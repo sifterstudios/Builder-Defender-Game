@@ -14,7 +14,7 @@ namespace Ludiq.PeekCore.CodeDom
 			builders.Add(className, builder);
 			return new TextCodeWriter(new StringWriter(builder));
 		}
-		
+
 		public string GetString(string className)
 		{
 			return builders[className].ToString();

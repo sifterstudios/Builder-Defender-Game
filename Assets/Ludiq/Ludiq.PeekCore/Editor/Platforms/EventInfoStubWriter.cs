@@ -13,10 +13,10 @@ namespace Ludiq.PeekCore
 		public EventInfoStubWriter(EventInfo eventInfo) : base(eventInfo) { }
 
 		protected override bool supportsOptimization => false;
-		
+
 		public override IEnumerable<CodeStatement> GetStubStatements()
 		{
-			/* 
+			/*
 			 * Required output:
 			 * 1. Create a target variable
 			 * 2. Add a hook to a dummy event to prevent stripping
@@ -42,7 +42,7 @@ namespace Ludiq.PeekCore
 
 			// target.onKill
 			var eventReference = target.Field(manipulator.name);
-			
+
 			if (manipulator.isPubliclyHookable)
 			{
 				// 2. target.onKill += default(Action);

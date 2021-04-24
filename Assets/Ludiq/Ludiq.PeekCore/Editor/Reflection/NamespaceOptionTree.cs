@@ -64,13 +64,13 @@ namespace Ludiq.PeekCore
 		#region Search
 
 		public override bool searchable { get; } = true;
-		
+
 		public override IEnumerable<ISearchResult<IFuzzyOption>> SearchResults(string query, IFuzzyOption parent, CancellationToken cancellation)
 		{
 			var children = parent != null
 				? SearchableChildren(parent)
 				: namespaces.Select(x => (IFuzzyOption)new NamespaceOption(x, FuzzyOptionMode.Branch));
-			
+
 			return children.OrderableSearchFilter(query, x => x.haystack, cancellation);
 		}
 

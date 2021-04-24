@@ -19,9 +19,9 @@ namespace Ludiq.PeekCore.ReorderableList.Element_Adder_Menu
 	///      public ShoppingListElementAdder(ShoppingList shoppingList) {
 	///          Object = shoppingList;
 	///      }
-	/// 
+	///
 	///      public ShoppingList Object { get; private set; }
-	/// 
+	///
 	///      public bool CanAddElement(Type type) {
 	///          return true;
 	///      }
@@ -31,7 +31,7 @@ namespace Ludiq.PeekCore.ReorderableList.Element_Adder_Menu
 	///          return instance;
 	///      }
 	///  }
-	///  
+	///
 	///  private void DrawAddMenuButton(ShoppingList shoppingList) {
 	///      var content = new GUIContent("Add Menu");
 	///      Rect position = GUILayoutUtility.GetRect(content, GUI.skin.button);
@@ -46,13 +46,13 @@ namespace Ludiq.PeekCore.ReorderableList.Element_Adder_Menu
 	///     <code language="unityscript"><![CDATA[
 	///  public class ShoppingListElementAdder extends IElementAdder.<ShoppingList> {
 	///      var _object:ShoppingList;
-	/// 
+	///
 	///      function ShoppingListElementAdder(shoppingList:ShoppingList) {
 	///          Object = shoppingList;
 	///      }
-	/// 
+	///
 	///      function get Object():ShoppingList { return _object; }
-	/// 
+	///
 	///      function CanAddElement(type:Type):boolean {
 	///          return true;
 	///      }
@@ -62,7 +62,7 @@ namespace Ludiq.PeekCore.ReorderableList.Element_Adder_Menu
 	///          return instance;
 	///      }
 	///  }
-	///  
+	///
 	///  function DrawAddMenuButton(shoppingList:ShoppingList) {
 	///      var content = new GUIContent('Add Menu');
 	///      var position = GUILayoutUtility.GetRect(content, GUI.skin.button);

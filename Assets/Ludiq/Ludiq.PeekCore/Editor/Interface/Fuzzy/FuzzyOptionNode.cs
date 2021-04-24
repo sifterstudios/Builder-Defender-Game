@@ -53,7 +53,7 @@ namespace Ludiq.PeekCore
 		#endregion
 
 		#region Drawing
-		
+
 		public bool isDrawable { get; private set; }
 		public bool isPositionable { get; private set; }
 		public GUIContent label { get; private set; }
@@ -93,10 +93,10 @@ namespace Ludiq.PeekCore
 			label = new GUIContent(labelText);
 			dim = option.dim;
 
-			width = 
-				(icons.Length * IconSize.Small) + 
-				(icons.Length - 1 * FuzzyWindow.Styles.spaceBetweenIcons) + 
-				FuzzyWindow.Styles.spaceAfterIcons + 
+			width =
+				(icons.Length * IconSize.Small) +
+				(icons.Length - 1 * FuzzyWindow.Styles.spaceBetweenIcons) +
+				FuzzyWindow.Styles.spaceAfterIcons +
 				FuzzyWindow.Styles.optionForeground.CalcSize(label).x;
 
 			isDrawable = true;

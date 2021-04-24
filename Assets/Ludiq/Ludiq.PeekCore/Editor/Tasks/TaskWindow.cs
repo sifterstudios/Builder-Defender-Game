@@ -11,9 +11,9 @@ namespace Ludiq.PeekCore
 	public sealed class TaskWindow : EditorWindow
 	{
 		public static TaskWindow instance { get; internal set; }
-		
+
 		internal readonly List<Task> tasks = new List<Task>();
-		
+
 		private DateTime lastRepaintTime;
 
 		private float progressAnimationSpeed = 2f; // bar per second
@@ -26,7 +26,7 @@ namespace Ludiq.PeekCore
 		private bool shown;
 
 		private bool close;
-		
+
 		private void OnEnable()
 		{
 			instance = this;
@@ -77,7 +77,7 @@ namespace Ludiq.PeekCore
 		{
 			close = true;
 		}
-		
+
 		private void OnDisable()
 		{
 			instance = null;
@@ -94,11 +94,11 @@ namespace Ludiq.PeekCore
 
 
 		#region Tips
-		
+
 		private string tip;
 
 		private DateTime tipSwitchTime;
-		
+
 		private void UpdateTip()
 		{
 			if (DateTime.UtcNow > tipSwitchTime)
@@ -144,7 +144,7 @@ namespace Ludiq.PeekCore
 			}
 
 			LudiqGUI.BeginVertical(Styles.background);
-			
+
 			LudiqGUI.BeginHorizontal(Styles.tipArea, GUILayout.Height(Styles.tipHeight));
 
 			LudiqGUI.BeginVertical();
@@ -176,18 +176,18 @@ namespace Ludiq.PeekCore
 					{
 						GUILayout.Space(Styles.spaceBetweenTasks);
 					}
-					
+
 					if (Event.current.type == EventType.Layout)
 					{
 						task.animatedRatio = Mathf.MoveTowards(task.animatedRatio, task.ratio, progressAnimationSpeed * repaintDeltaTime);
 					}
-					
+
 					LudiqGUI.BeginVertical(Styles.task);
 
 					GUILayout.Label(task.title + $" <color=#{ColorPalette.unityForegroundDim.ToHexString()}>({task.elapsed.TotalSeconds:###0.0} seconds)</color>", Styles.taskTitle);
 
 					var progressBarPosition = EditorGUILayout.GetControlRect();
-						
+
 					EditorGUI.ProgressBar(progressBarPosition, task.animatedRatio, null);
 
 					if (task.stepsHaveStarted)
@@ -236,10 +236,10 @@ namespace Ludiq.PeekCore
 		}
 
 		#endregion
-		
 
 
-		
+
+
 		public static class Styles
 		{
 			static Styles()
@@ -275,7 +275,7 @@ namespace Ludiq.PeekCore
 			public static readonly GUIStyle tip;
 			public static readonly float spaceBetweenTasks = -1;
 			public static readonly float spaceBetweenSpinnerAndTip = 20;
-			
+
 			public static readonly float width = 370;
 			public static readonly float groupHeight = 57;
 			public static readonly float tipHeight = 80;

@@ -17,7 +17,7 @@ namespace Ludiq.PeekCore
 		public EditorTexture icon { get; private set; }
 
 		public int totalSteps { get; }
-		
+
 		public int completedSteps { get; private set; }
 
 		public float ratio => (float)completedSteps / totalSteps;
@@ -25,13 +25,13 @@ namespace Ludiq.PeekCore
 		public float animatedRatio;
 
 		public string currentStepLabel { get; set; }
-		
+
 		public bool stepsHaveStarted { get; private set; }
 
 		public bool stepsHaveCompleted => completedSteps == totalSteps;
 
 		private readonly object @lock = new object();
-		
+
 		private ManualResetEvent stepsWaitHandle;
 
 		private Stopwatch stopwatch;
@@ -106,7 +106,7 @@ namespace Ludiq.PeekCore
 				{
 					throw new ArgumentOutOfRangeException($"Over-starting progress task: '{title}'.");
 				}
-				
+
 				currentStepLabel = label;
 				stepsHaveStarted = true;
 				runner.Report(this);
@@ -121,11 +121,11 @@ namespace Ludiq.PeekCore
 				{
 					throw new ArgumentOutOfRangeException($"Over-completing progress task: '{title}'.");
 				}
-			
+
 				completedSteps++;
 				currentStepLabel = null;
 				runner.Report(this);
-				
+
 				AllowCancellation();
 
 				if (stepsHaveCompleted)
@@ -194,7 +194,7 @@ namespace Ludiq.PeekCore
 			var runner = ChooseRunner();
 
 			var task = new Task(runner, title, steps, work);
-			
+
 			runner.Run(task);
 		}
 	}

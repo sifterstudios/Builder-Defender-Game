@@ -16,7 +16,7 @@ namespace Ludiq.PeekCore
 		private readonly Accessor underlyingAccessor;
 
 		private Inspector underlyingInspector => ChildInspector(underlyingAccessor);
-		
+
 		protected override float GetControlHeight(float width)
 		{
 			return underlyingInspector.FieldHeight(width);

@@ -15,7 +15,7 @@ namespace Ludiq.PeekCore
 			base.OnEnable();
 			minSize = maxSize = new Vector2(400, 330);
 		}
-		
+
 		public static GeneratePropertyProvidersWindow instance { get; private set; }
 
 		// [MenuItem("Tools/Peek/Ludiq/Generate Custom Inspectors...", priority = LudiqProduct.ToolsMenuPriority + 302)]

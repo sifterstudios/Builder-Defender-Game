@@ -41,24 +41,24 @@ namespace Ludiq.PeekCore
 				switch (label.RemoveNonAlphanumeric().ToLower())
 				{
 					case "a":
-					case "alpha": 
+					case "alpha":
 						return SemanticLabel.Alpha;
 
 					case "b":
-					case "beta": 
+					case "beta":
 						return SemanticLabel.Beta;
 
 					case "rc":
-					case "releasecandidate": 
+					case "releasecandidate":
 						return SemanticLabel.ReleaseCandidate;
 
 					case "f":
 					case "final":
 					case "hotfix":
-					case "fix": 
+					case "fix":
 						return SemanticLabel.Hotfix;
 
-					default: 
+					default:
 						return SemanticLabel.Unknown;
 				}
 			}
@@ -103,14 +103,14 @@ namespace Ludiq.PeekCore
 			{
 				throw new ArgumentNullException(nameof(s));
 			}
-			
+
 			var match = regex.Match(s);
 
 			if (!match.Success)
 			{
 				return false;
 			}
-			
+
 			int major, minor, patch, increment = 0;
 			string label = null;
 

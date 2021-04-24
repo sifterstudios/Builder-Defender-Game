@@ -13,7 +13,7 @@ namespace Ludiq.PeekCore
 			this.dependencyId = dependencyId;
 			this.dependerId = dependerId;
 		}
-		
+
 		public string dependencyId { get; }
 		public string dependerId { get; }
 	}

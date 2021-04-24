@@ -18,7 +18,7 @@ namespace Ludiq.PeekCore
 
 			this.accessor = accessor;
 			accessor.valueChanged += previousValue => SetHeightDirty();
-			
+
 			wideAttribute = accessor.GetAttribute<InspectorWideAttribute>();
 			spaceAttribute = accessor.GetAttribute<InspectorSpaceAttribute>();
 			expandTooltipAttribute = accessor.GetAttribute<InspectorExpandTooltipAttribute>();
@@ -191,7 +191,7 @@ namespace Ludiq.PeekCore
 
 
 		#region Attributes
-		
+
 		private readonly InspectorWideAttribute wideAttribute;
 
 		private readonly InspectorSpaceAttribute spaceAttribute;
@@ -210,7 +210,7 @@ namespace Ludiq.PeekCore
 		{
 			return 50;
 		}
-		
+
 		protected virtual float GetControlHeight(float width)
 		{
 			return EditorGUIUtility.singleLineHeight;
@@ -742,8 +742,8 @@ namespace Ludiq.PeekCore
 			EditorGUI.BeginChangeCheck();
 
 			var disabled =
-				!accessor.isEditable || 
-				accessor.HasAttribute<InspectorReadOnlyAttribute>() || 
+				!accessor.isEditable ||
+				accessor.HasAttribute<InspectorReadOnlyAttribute>() ||
 				(accessor.isPrefabInstance && !accessor.supportsPrefabModifications);
 
 			EditorGUI.BeginDisabledGroup(disabled);
@@ -810,7 +810,7 @@ namespace Ludiq.PeekCore
 					LudiqGUI.DrawEmptyRect(block.position, Color.yellow.WithAlpha(0.5f));
 				}
 			}
-		
+
 			if (block.bolded)
 			{
 				LudiqGUIUtility.editorHasBoldFont = false;

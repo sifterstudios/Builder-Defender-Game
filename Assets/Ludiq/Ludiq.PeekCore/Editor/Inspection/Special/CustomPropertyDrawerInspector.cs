@@ -14,7 +14,7 @@ namespace Ludiq.PeekCore
 
 			property = SerializedPropertyUtility.CreateTemporaryProperty(accessor.definedType);
 			propertyType = property.GetUnderlyingType();
-			
+
 			var adaptiveWidthAttribute = propertyType.GetAttribute<InspectorFieldWidthAttribute>();
 			_adaptiveWidth = adaptiveWidthAttribute?.width ?? 200;
 		}

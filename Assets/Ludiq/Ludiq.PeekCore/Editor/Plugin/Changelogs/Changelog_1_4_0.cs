@@ -40,11 +40,11 @@ namespace Ludiq.PeekCore
 			}
 		}
 	}
-	
+
 	internal class Changelog_1_4_0f2 : PluginChangelog
 	{
 		public Changelog_1_4_0f2(Plugin plugin) : base(plugin) { }
-	
+
 		public override SemanticVersion version => "1.4.0f2";
 		public override DateTime date => new DateTime(2018, 07, 13);
 
@@ -56,11 +56,11 @@ namespace Ludiq.PeekCore
 			}
 		}
 	}
-	
+
 	internal class Changelog_1_4_0f3 : PluginChangelog
 	{
 		public Changelog_1_4_0f3(Plugin plugin) : base(plugin) { }
-	
+
 		public override SemanticVersion version => "1.4.0f3";
 		public override DateTime date => new DateTime(2018, 07, 31);
 
@@ -72,11 +72,11 @@ namespace Ludiq.PeekCore
 			}
 		}
 	}
-	
+
 	internal class Changelog_1_4_0f5 : PluginChangelog
 	{
 		public Changelog_1_4_0f5(Plugin plugin) : base(plugin) { }
-	
+
 		public override SemanticVersion version => "1.4.0f5";
 		public override DateTime date => new DateTime(2018, 08, 14);
 
@@ -91,11 +91,11 @@ namespace Ludiq.PeekCore
 			}
 		}
 	}
-	
+
 	internal class Changelog_1_4_0f6 : PluginChangelog
 	{
 		public Changelog_1_4_0f6(Plugin plugin) : base(plugin) { }
-	
+
 		public override SemanticVersion version => "1.4.0f6";
 		public override DateTime date => new DateTime(2018, 09, 06);
 
@@ -114,11 +114,11 @@ namespace Ludiq.PeekCore
 			}
 		}
 	}
-	
+
 	internal class Changelog_1_4_0f7 : PluginChangelog
 	{
 		public Changelog_1_4_0f7(Plugin plugin) : base(plugin) { }
-	
+
 		public override SemanticVersion version => "1.4.0f7";
 		public override DateTime date => new DateTime(2018, 09, 25);
 
@@ -135,7 +135,7 @@ namespace Ludiq.PeekCore
 	internal class Changelog_1_4_0f9 : PluginChangelog
 	{
 		public Changelog_1_4_0f9(Plugin plugin) : base(plugin) { }
-	
+
 		public override SemanticVersion version => "1.4.0f9";
 		public override DateTime date => new DateTime(2018, 10, 11);
 

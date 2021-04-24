@@ -20,7 +20,7 @@ namespace Ludiq.PeekCore
 
 		private static readonly FieldInfo CustomPropertyDrawer_m_Type; // internal Type CustomPropertyDrawer.m_Type
 		private static readonly FieldInfo CustomPropertyDrawer_m_UseForChildren; // internal bool CustomPropertyDrawer.m_UseForChildren
-		
+
 		private static HashSet<CustomPropertyDrawer> _drawerTypeAttributes;
 
 		private static HashSet<CustomPropertyDrawer> drawerTypeAttributes

@@ -13,13 +13,13 @@ namespace Ludiq.PeekCore
 		public void Run(Task task)
 		{
 			UnityThread.EnsureRunningOnMainThread();
-		
+
 			EditorUtility.DisplayProgressBar(task.title, null, 0);
-			
+
 			task.Begin();
 			runsCurrentThread = true;
 
-			try 
+			try
 			{
 				task.Run();
 			}

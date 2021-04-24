@@ -7,7 +7,7 @@ namespace Ludiq.PeekCore.CodeDom
 {
 	public class SyntaxHighlightingScheme
 	{
-		public static readonly SyntaxHighlightingScheme DefaultScheme = new SyntaxHighlightingScheme(new[] 
+		public static readonly SyntaxHighlightingScheme DefaultScheme = new SyntaxHighlightingScheme(new[]
 		{
 			new SyntaxHighlightingRule(TokenType.Comment, ColorPalette.green),
 			new SyntaxHighlightingRule(new[] { TokenType.Keyword, TokenType.NullLiteral, TokenType.BoolLiteral }, ColorPalette.blue),
@@ -18,7 +18,7 @@ namespace Ludiq.PeekCore.CodeDom
 			new SyntaxHighlightingRule(TokenType.GenericTypeParameter, ColorPalette.yellow),
 			new SyntaxHighlightingRule(TokenType.Error, ColorPalette.red),
 		});
-		
+
 		private Dictionary<TokenType, SyntaxHighlightingRule> rulesByTokenTypes = new Dictionary<TokenType, SyntaxHighlightingRule>();
 
 		public SyntaxHighlightingScheme(IEnumerable<SyntaxHighlightingRule> rules)
@@ -90,7 +90,7 @@ namespace Ludiq.PeekCore.CodeDom
 					if (position.ColumnIndex + rawTokenText.Length >= maxWidth)
 					{
 						if (tokenIndex > 0 && tokensList[tokenIndex - 1].Type == TokenType.Indentation)
-						{					
+						{
 							// TODO: if the token still doesn't fit in one line after line breaking and indent, word-wrap or character-wrap the token text.
 						}
 						else

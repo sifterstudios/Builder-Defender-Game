@@ -27,7 +27,7 @@ namespace Ludiq.PeekCore
 
 			data = value.OdinSerialize();
 			dataType = value.GetType();
-			
+
 			if (systemBufferIdentifier != null)
 			{
 				var systemCopy = systemBufferIdentifier + Convert.ToBase64String(data.Value.SerializedBytes);

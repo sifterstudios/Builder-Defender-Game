@@ -10,7 +10,7 @@ namespace Ludiq.PeekCore
 		public DictionaryAssetEditor(Accessor accessor) : base(accessor) { }
 
 		private Accessor dictionaryAccessor => accessor[nameof(DictionaryAsset.dictionary)];
-		
+
 		protected override float GetInnerHeight(float width)
 		{
 			return ChildInspector(dictionaryAccessor).FieldHeight(width);

@@ -10,7 +10,7 @@ namespace Ludiq.PeekCore
 	public static class EditorTextureUtility
 	{
 		private static readonly Dictionary<Vector2Int, Dictionary<Texture2D, Texture2D>> resizeCache = new Dictionary<Vector2Int, Dictionary<Texture2D, Texture2D>>();
-		
+
 		public static Texture2D Resized(this Texture2D source, int size)
 		{
 			return source.Resized(size, size);
@@ -46,7 +46,7 @@ namespace Ludiq.PeekCore
 		private static Texture2D ReadableCopy(this Texture2D source, int width, int height)
 		{
 			// Works around non-readable textures and mipmap limitations
-			
+
 			if (source.isReadable && source.width == width && source.height == height)
 			{
 				return source;
@@ -84,13 +84,13 @@ namespace Ludiq.PeekCore
 		{
 			var assetBundle = typeof(EditorGUIUtility).GetMethod("GetEditorAssetBundle", BindingFlags.Static | BindingFlags.NonPublic)
 			                                          .Invoke(null,null) as AssetBundle;
-			
+
 			var outputFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "EditorTextures");
 
 			PathUtility.CreateDirectoryIfNeeded(outputFolder);
 
 			var textures = assetBundle.LoadAllAssets<Texture2D>();
-			
+
 			try
 			{
 				for (int i = 0; i < textures.Length; i++)

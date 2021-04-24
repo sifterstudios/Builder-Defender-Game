@@ -34,7 +34,7 @@ namespace Ludiq.PeekCore
 			this.plugins = plugins;
 			this.product = product;
 		}
-		
+
 		protected override void OnEnable()
 		{
 			base.OnEnable();

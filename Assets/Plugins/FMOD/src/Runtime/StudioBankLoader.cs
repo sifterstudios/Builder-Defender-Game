@@ -13,7 +13,7 @@ namespace FMODUnity
         public string CollisionTag;
         public bool PreloadSamples;
         private bool isQuitting;
-        
+
         void HandleGameEvent(LoaderGameEvent gameEvent)
         {
             if (LoadEvent == gameEvent)

@@ -16,7 +16,7 @@ namespace Ludiq.PeekCore.CodeDom
         }
 
         public CodeTypeReference Type { get; }
-        public string Name { get; } 
+        public string Name { get; }
         public CodeExpression InitExpression { get; }
 
 		public override bool IsTerminator => false;

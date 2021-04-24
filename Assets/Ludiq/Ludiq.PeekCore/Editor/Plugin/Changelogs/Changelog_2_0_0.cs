@@ -28,7 +28,7 @@ namespace Ludiq.PeekCore
 			}
 		}
 	}
-	
+
 	internal class Changelog_2_0_0a3 : PluginChangelog
 	{
 		public Changelog_2_0_0a3(Plugin plugin) : base(plugin) { }
@@ -52,7 +52,7 @@ namespace Ludiq.PeekCore
 			}
 		}
 	}
-	
+
 	internal class Changelog_2_0_0a4 : PluginChangelog
 	{
 		public Changelog_2_0_0a4(Plugin plugin) : base(plugin) { }
@@ -75,7 +75,7 @@ namespace Ludiq.PeekCore
 			}
 		}
 	}
-	
+
 	internal class Changelog_2_0_0a5 : PluginChangelog
 	{
 		public Changelog_2_0_0a5(Plugin plugin) : base(plugin) { }

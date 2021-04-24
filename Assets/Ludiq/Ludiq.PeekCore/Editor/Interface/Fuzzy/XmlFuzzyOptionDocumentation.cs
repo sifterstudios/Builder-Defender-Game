@@ -11,7 +11,7 @@ namespace Ludiq.PeekCore
 		{
 			this.tags = tags;
 		}
-		
+
 		public string summary => tags?.summary;
 
 		public string returns => tags?.returns;

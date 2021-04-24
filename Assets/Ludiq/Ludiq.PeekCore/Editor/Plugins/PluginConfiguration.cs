@@ -33,12 +33,12 @@ namespace Ludiq.PeekCore
 		public Accessor accessor { get; }
 
 		public Editor editor { get; private set; }
-		
+
 		public virtual string label => plugin.manifest.name;
 
 		public virtual string header => plugin.manifest.name;
 
-		
+
 		#region Lifecycle
 
 		private void Load()
@@ -73,7 +73,7 @@ namespace Ludiq.PeekCore
 
 
 		#region Drawing
-		
+
 		public SettingsProvider CreateSettingsProvider(SettingsScope scope)
 		{
 			return new SettingsProvider(ScopeRoot(scope) + "/Ludiq/" + label, scope)
@@ -84,7 +84,7 @@ namespace Ludiq.PeekCore
 				keywords = this[scope].Where(i => i.visible).Select(Haystack),
 			};
 		}
-		
+
 		public static string ScopeRoot(SettingsScope scope)
 		{
 			switch (scope)
@@ -134,7 +134,7 @@ namespace Ludiq.PeekCore
 			}
 
 			LudiqGUI.BeginVertical(Styles.background);
-			
+
 			EditorGUI.BeginChangeCheck();
 
 			using (Inspector.expandTooltip.Override(true))
@@ -190,10 +190,10 @@ namespace Ludiq.PeekCore
 			if (!PluginContainer.initialized)
 			{
 				return;
-			} 
+			}
 
 			LudiqGUI.BeginVertical(Styles.background);
-			
+
 			LudiqGUI.Space(8);
 
 			if (GUILayout.Button("Reset to Defaults"))
@@ -206,17 +206,17 @@ namespace Ludiq.PeekCore
 						OnItemChange(item);
 						item.Save();
 					}
-					
+
 					InternalEditorUtility.RepaintAllViews();
 				}
 			}
-			
+
 			LudiqGUI.Space(8);
 
 			LudiqGUI.EndVertical();
 		}
 
-		#endregion 
+		#endregion
 
 
 
@@ -232,7 +232,7 @@ namespace Ludiq.PeekCore
 		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return GetEnumerator();
-		} 
+		}
 
 		public PluginConfigurationItemAccessor GetAccessor(string memberName)
 		{
@@ -263,7 +263,7 @@ namespace Ludiq.PeekCore
 		private void LoadEditorPrefs()
 		{
 			editorPrefs = new List<EditorPrefAccessor>();
-			
+
 			foreach (var memberInfo in GetType().GetMembers().Where(f => f.HasAttribute<EditorPrefAttribute>()).OrderBy(m => m.MetadataToken))
 			{
 				editorPrefs.Add(accessor.EditorPref(this, memberInfo));
@@ -279,7 +279,7 @@ namespace Ludiq.PeekCore
 		internal List<ProjectSettingAccessor> projectSettings;
 
 		private string projectSettingsStoragePath => plugin.paths.projectSettings;
-		
+
 		internal DictionaryAsset projectSettingsAsset { get; private set; }
 
 		private void LoadProjectSettings()
@@ -362,7 +362,7 @@ namespace Ludiq.PeekCore
 				}
 			}
 		}
-		
+
 #if LUDIQ_DEVELOPER
 		[MenuItem("Tools/Peek/Ludiq/Developer/Delete All Player Prefs", priority = LudiqProduct.InternalToolsMenuPriority + 403)]
 #endif

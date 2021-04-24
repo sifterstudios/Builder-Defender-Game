@@ -12,7 +12,7 @@ namespace Ludiq.PeekCore
 		protected override Type GetDecoratedType(Accessor accessor)
 		{
 			var inspectedType = accessor.definedType;
-			
+
 			foreach (var attribute in accessor.GetAttributes<Attribute>())
 			{
 				var attributeType = attribute.GetType();
@@ -145,7 +145,7 @@ namespace Ludiq.PeekCore
 		{
 			return InspectorProvider.instance.GetDecorator(accessor);
 		}
-		
+
 		public static TInspector CreateUninitializedInspector<TInspector>(this Accessor accessor) where TInspector : Inspector
 		{
 			return InspectorProvider.instance.GetDecorator<TInspector>(accessor);
@@ -157,7 +157,7 @@ namespace Ludiq.PeekCore
 			inspector.Initialize();
 			return inspector;
 		}
-		
+
 		public static TInspector CreateInitializedInspector<TInspector>(this Accessor accessor) where TInspector : Inspector
 		{
 			var inspector = CreateUninitializedInspector<TInspector>(accessor);

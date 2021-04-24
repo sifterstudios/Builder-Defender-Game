@@ -38,7 +38,7 @@ namespace Ludiq.PeekCore
 				binding.value = value;
 			}
 		}
-		
+
 		public override Attribute[] GetCustomAttributes(bool inherit = true)
 		{
 			return binding.GetCustomAttributes(inherit);

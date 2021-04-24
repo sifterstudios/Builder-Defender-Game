@@ -101,7 +101,7 @@ namespace Ludiq.PeekCore
 		public bool DirectoryExists(string path)
 		{
 			Ensure.That(nameof(path)).IsNotNull(path);
-			
+
 			path = PreNormalizePath(path);
 
 			var normalizedDirectoryPath = NormalizeDirectoryPath(path);
@@ -138,7 +138,7 @@ namespace Ludiq.PeekCore
 				return prefix;
 			}
 
-			return prefix 
+			return prefix
 				   + "."
 			       + directoryPath.Replace(Path.DirectorySeparatorChar, DirectorySeparatorChar)
 			                      .Replace(Path.AltDirectorySeparatorChar, DirectorySeparatorChar)
@@ -200,7 +200,7 @@ namespace Ludiq.PeekCore
 			{
 				reader = new BinaryReader(stream);
 				var bytes = reader.ReadBytes((int)stream.Length);
-				
+
 				var texture = new Texture2D(0, 0, options.textureFormat, options.mipmaps, options.linear ?? LudiqGUIUtility.createLinearTextures);
 				texture.alphaIsTransparency = options.alphaIsTransparency;
 				texture.filterMode = options.filterMode;

@@ -45,7 +45,7 @@ namespace Ludiq.PeekCore
 		#region Drawing
 
 		private static GUIStyle emptyRect;
-		
+
 		private static Material coloredTextureMaterial;
 
 		public static void DrawEmptyRect(Rect position, Color color)
@@ -218,7 +218,7 @@ namespace Ludiq.PeekCore
 			headerPosition.width -= 3 * (16 + 3);
 			return headerPosition;
 		}
-		
+
 		public static void EraseAssetHeader(Rect editorPosition)
 		{
 			EditorGUI.DrawRect(GetAssetHeaderPosition(editorPosition), ColorPalette.unityBackgroundMid);
@@ -312,7 +312,7 @@ namespace Ludiq.PeekCore
 		{
 			return Mathf.Max(min, EditorStyles.textField.CalcSize(new GUIContent(content?.ToString())).x + 1);
 		}
-		
+
 		public static int Spinner(Rect position, bool upEnabled = true, bool downEnabled = true)
 		{
 			var upPosition = new Rect
@@ -1015,13 +1015,13 @@ namespace Ludiq.PeekCore
 				return new GUIContent(value.ToString().Prettify());
 			}
 		}
-		
+
 		#endregion
 
 
 
 		#region Object Field
-		
+
 		private static readonly int fieldHash = nameof(UnityObjectInspector).GetHashCode();
 
 		public static float GetFuzzyObjectFieldHeight(UnityObjectFieldVisualType visualType, float width)
@@ -1083,19 +1083,19 @@ namespace Ludiq.PeekCore
 
 		public static void ObjectField
 		(
-			Rect position, 
+			Rect position,
 			Accessor accessor,
 			UnityObjectFieldVisualType visualType = UnityObjectFieldVisualType.NameAndTarget,
-			bool hidableFrame = false, 
+			bool hidableFrame = false,
 			Texture2D thumbnailPlaceholder = null)
 		{
 			EditorGUI.BeginChangeCheck();
 
 			var newValue = ObjectField
 			(
-				position, 
+				position,
 				(UnityObject)accessor.value,
-				accessor.definedType, 
+				accessor.definedType,
 				accessor.serializedObject?.AsGameObject()?.scene,
 				visualType,
 				hidableFrame,
@@ -1122,14 +1122,14 @@ namespace Ludiq.PeekCore
 		{
 			return ObjectField
 			(
-				position, 
+				position,
 				obj,
-				objType, 
+				objType,
 				scene,
-				true, 
-				objType.DisplayName(), 
-				objType.Icon(), 
-				null, 
+				true,
+				objType.DisplayName(),
+				objType.Icon(),
+				null,
 				null,
 				visualType,
 				hidableFrame,
@@ -1139,14 +1139,14 @@ namespace Ludiq.PeekCore
 
 		public static UnityObject ObjectField
 		(
-			Rect position, 
+			Rect position,
 			UnityObject obj,
 			Type objType,
-			Scene? scene, 
-			bool allowAssetObjects, 
+			Scene? scene,
+			bool allowAssetObjects,
 			string typeLabel,
 			EditorTexture typeIcon,
-			Func<UnityObject, bool> filter = null, 
+			Func<UnityObject, bool> filter = null,
 			Func<IFuzzyOptionTree> getOptions = null,
 			UnityObjectFieldVisualType visualType = UnityObjectFieldVisualType.NameAndTarget,
 			bool hidableFrame = false,
@@ -1262,7 +1262,7 @@ namespace Ludiq.PeekCore
 						}
 
 						EditorGUIUtility.editingTextField = false;
-						
+
 						// Clicking the target selector
 						if (targetSelectorPosition.Contains(e.mousePosition))
 						{
@@ -1343,7 +1343,7 @@ namespace Ludiq.PeekCore
 				{
 					objectFieldContent.text = $"{(obj == null ? "None" : obj.name)} ({typeLabel})";
 					objectFieldContent.image = (obj == null ? typeIcon : obj.Icon())?[IconSize.Small];
-					
+
 					switch (visualType)
 					{
 						case UnityObjectFieldVisualType.NameAndTarget:
@@ -1351,7 +1351,7 @@ namespace Ludiq.PeekCore
 							EditorStyles.objectField.Draw(position, objectFieldContent, controlID, DragAndDrop.activeControlID == controlID);
 							break;
 						}
-						
+
 						case UnityObjectFieldVisualType.Thumbnail:
 						{
 							ObjectFieldThumbnail(position, controlID, newValue, objectFieldContent, hidableFrame, thumbnailPlaceholder);
@@ -1367,7 +1367,7 @@ namespace Ludiq.PeekCore
 							LudiqStyles.objectFieldTarget.Draw(position, GUIContent.none, controlID,  DragAndDrop.activeControlID == controlID);
 							break;
 						}
-						
+
 						default: throw visualType.Unexpected();
 					}
 
@@ -1388,14 +1388,14 @@ namespace Ludiq.PeekCore
 			var isHover = position.Contains(e.mousePosition);
 			var isDragging = DragAndDrop.activeControlID == controlID;
 			var hasKeyboardFocus = GUIUtility.keyboardControl == controlID;
-			
+
 			var drawFrame = !hidableFrame || isHover || (obj == null && thumbnailPlaceholder == null);
 
 			if (drawFrame)
 			{
 				LudiqStyles.objectFieldThumbnailBackground.Draw(outerRect, false, false, false, hasKeyboardFocus || isDragging);
 			}
-			
+
 			var thumbnail = obj != null ? (content.image as Texture2D ?? thumbnailPlaceholder) : thumbnailPlaceholder;
 
 			if (drawFrame)
@@ -1417,7 +1417,7 @@ namespace Ludiq.PeekCore
 				{
 					position.y++;
 				}
-			
+
 				LudiqStyles.objectFieldThumbnailForeground.Draw(position, false, false, false, hasKeyboardFocus || isDragging || isHover);
 			}
 			else
@@ -2192,7 +2192,7 @@ namespace Ludiq.PeekCore
 			{
 				width = Mathf.Max(width, LudiqStyles.listRow.CalcSize(ListOptionContent(option.label)).x);
 			}
-			
+
 			return width + LudiqGUIUtility.scrollBarWidth;
 		}
 
@@ -3034,7 +3034,7 @@ namespace Ludiq.PeekCore
 			var id = GUIUtility.GetControlID(dropdownToggleHash, FocusType.Keyboard, position);
 			return DropdownToggle(id, value, position, content, style);
 		}
-		
+
 		internal static bool DropdownToggle(int id, bool value, Rect position, GUIContent content, GUIStyle style)
 		{
 			switch (e.type)

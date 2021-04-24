@@ -34,7 +34,7 @@ namespace Ludiq.PeekCore
 			{
 				yield return LudiqCore.Icons.@new;
 			}
-			
+
 			var factoryIcon = Icon();
 
 			if (factoryIcon != null)

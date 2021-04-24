@@ -18,7 +18,7 @@ namespace Ludiq.PeekCore
 		private void Initialize(Product product)
 		{
 			this.product = product;
-			
+
 			foreach (var introductionPage in product.SetupWizardIntroductionPages(this).NotNull())
 			{
 				pages.Add(introductionPage);
@@ -31,7 +31,7 @@ namespace Ludiq.PeekCore
 					pages.Add(pluginPage);
 				}
 			}
-			
+
 			foreach (var conclusionPage in product.SetupWizardConclusionPages(this).NotNull())
 			{
 				pages.Add(conclusionPage);

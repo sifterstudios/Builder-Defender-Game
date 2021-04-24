@@ -27,7 +27,7 @@ namespace Ludiq.PeekCore.CodeDom
 			generator.EnterElement(this);
 
 			switch (Style)
-			{            
+			{
 				case CommentStyle.Line: generator.Write(TokenType.Comment, "// "); break;
 				case CommentStyle.Block: generator.Write(TokenType.Comment, "/* "); break;
 				case CommentStyle.Documentation: generator.Write(TokenType.Comment, "/// "); break;
@@ -66,7 +66,7 @@ namespace Ludiq.PeekCore.CodeDom
 					generator.WriteLine();
 
 					switch (Style)
-					{            
+					{
 						case CommentStyle.Line: generator.Write(TokenType.Comment, "// "); break;
 						case CommentStyle.Block: generator.Write(TokenType.Comment, " * "); break;
 						case CommentStyle.Documentation: generator.Write(TokenType.Comment, "/// "); break;
@@ -76,11 +76,11 @@ namespace Ludiq.PeekCore.CodeDom
             }
 
 			switch (Style)
-			{            
+			{
 				case CommentStyle.Line: break;
 				case CommentStyle.Block:
 				{
-					generator.Write(TokenType.Comment, " */");					
+					generator.Write(TokenType.Comment, " */");
 					break;
 				}
 				case CommentStyle.Documentation: break;

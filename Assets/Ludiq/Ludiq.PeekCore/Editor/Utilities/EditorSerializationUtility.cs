@@ -70,7 +70,7 @@ namespace Ludiq.PeekCore
 		public static void TestSerializationPolicies()
 		{
 			var typesToTest = Codebase.types.Where(t => t.Namespace == "Ludiq" || t.Namespace == "Bolt" || t.Namespace().Root.Name == "UnityEngine").ToHashSet();
-			
+
 			float i = 0;
 
 			var matching = 0;
@@ -84,7 +84,7 @@ namespace Ludiq.PeekCore
 					matching++;
 				}
 			}
-			
+
 			Debug.Log($"Serialization policy test complete. \nSuccessfully matched: {matching} / {typesToTest.Count}");
 
 			ProgressUtility.ClearProgressBar();

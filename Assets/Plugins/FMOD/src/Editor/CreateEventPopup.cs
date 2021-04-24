@@ -7,7 +7,7 @@ using UnityEditor;
 namespace FMODUnity
 {
     class CreateEventPopup : EditorWindow
-    {        
+    {
         class FolderEntry
         {
             public FolderEntry parent;
@@ -71,7 +71,7 @@ namespace FMODUnity
             string itemCountString = EditorUtils.GetScriptOutput("cur.items.length;");
             int itemCount;
             Int32.TryParse(itemCountString, out itemCount);
-            
+
             // iterate children looking for folder
             for (int item = 0; item < itemCount; item++)
             {
@@ -162,7 +162,7 @@ namespace FMODUnity
                 if (Event.current.keyCode == KeyCode.DownArrow)
                 {
                     if (Event.current.type == EventType.KeyDown)
-                    { 
+                    {
                         lastHover = Math.Min(lastHover + 1, filteredEntries.Count - 1);
                         if (filteredEntries[lastHover].rect.y + filteredEntries[lastHover].rect.height > scrollPos.y + scrollRect.height)
                         {
@@ -199,7 +199,7 @@ namespace FMODUnity
 
             {
                 GUI.SetNextControlName("name");
-                
+
                 EditorGUILayout.LabelField("Name");
                 eventName = EditorGUILayout.TextField(eventName);
             }
@@ -235,7 +235,7 @@ namespace FMODUnity
             // Draw the current folder as a title bar, click to go back one level
             {
                 Rect currentRect = EditorGUILayout.GetControlRect();
-                
+
                 var bg = new GUIStyle(GUI.skin.box);
                 bg.normal.background = titleIcon;
                 Rect bgRect = new Rect(currentRect);
@@ -269,7 +269,7 @@ namespace FMODUnity
             hover.normal.background = hoverIcon;
 
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, false);
-            
+
             for (int i = 0; i < filteredEntries.Count; i++)
             {
                 var entry = filteredEntries[i];

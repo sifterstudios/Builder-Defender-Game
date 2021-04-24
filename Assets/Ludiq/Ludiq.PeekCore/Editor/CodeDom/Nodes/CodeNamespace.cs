@@ -33,7 +33,7 @@ namespace Ludiq.PeekCore.CodeDom
 			generator.EnterElement(this);
 
             Comments.Generate(generator);
-            
+
             generator.Write(TokenType.Keyword, "namespace");
             generator.Write(TokenType.Space, ' ');
             var names = Name.Split('.');

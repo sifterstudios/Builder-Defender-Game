@@ -33,7 +33,7 @@ namespace Ludiq.PeekCore.CodeDom
 		protected override void GenerateInner(CodeGenerator generator)
 		{
             switch (Operator)
-			{                    
+			{
 				case CodeUnaryOperatorType.Positive: generator.Write(TokenType.Operator, '+'); break;
 				case CodeUnaryOperatorType.Negative: generator.Write(TokenType.Operator, '-'); break;
 				case CodeUnaryOperatorType.LogicalNot: generator.Write(TokenType.Operator, '!'); break;
@@ -43,7 +43,7 @@ namespace Ludiq.PeekCore.CodeDom
 				case CodeUnaryOperatorType.AddressOf: generator.Write(TokenType.Operator, '&'); break;
 				case CodeUnaryOperatorType.Dereference: generator.Write(TokenType.Operator, '*'); break;
 			}
-			
+
 			bool parenthesized = Operand.Precedence >= PrecedenceGroup.Unary;
 			if (parenthesized) generator.Write(TokenType.Punctuation, '(');
             Operand.Generate(generator);

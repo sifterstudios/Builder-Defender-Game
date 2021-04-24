@@ -18,9 +18,9 @@ namespace Ludiq.PeekCore.CodeDom
 		public Dictionary<CodeElement, List<Token>> tokensByElements { get; } = new Dictionary<CodeElement, List<Token>>();
 
 		public int Indent { get; set; }
-		
+
 		public void Dispose()
-		{ 
+		{
 		}
 
 		public void Flush()
@@ -61,7 +61,7 @@ namespace Ludiq.PeekCore.CodeDom
 			var endPosition = new TokenPosition(currentPosition.LineIndex, currentPosition.ColumnIndex + text.Length);
 
 			var owner = elementStack.Count > 0 ? elementStack[elementStack.Count - 1] : null;
-			
+
 			/*if (justEnteredElement && type == TokenType.Newline && elementStack.Count > 1)
 			{
 				owner = elementStack[elementStack.Count - 2];

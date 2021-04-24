@@ -258,7 +258,7 @@ namespace Grabbit.VHACD
                 tempMeshes.Add(hullMesh);
             }
         }
-        
+
         [Serializable]
         public unsafe struct Parameters
         {

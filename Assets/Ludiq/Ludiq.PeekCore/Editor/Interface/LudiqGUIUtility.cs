@@ -185,7 +185,7 @@ namespace Ludiq.PeekCore
 		{
 			UnityEditorDynamic.EditorGUI.BeginLabelHighlight(searchContext, searchHighlightSelectionColor, searchHighlightColor);
 		}
-		
+
 		public static void BeginLabelHighlight(string searchContext)
 		{
 			BeginLabelHighlight(searchContext, ColorPalette.unitySelectionHighlight, ColorPalette.unityForegroundSelected);
@@ -200,7 +200,7 @@ namespace Ludiq.PeekCore
 		{
 			return new LabelHighlightScope(searchContext, searchHighlightSelectionColor, searchHighlightColor);
 		}
-		
+
 		public static LabelHighlightScope LabelHighlight(string searchContext)
 		{
 			return new LabelHighlightScope(searchContext, ColorPalette.unitySelectionHighlight, ColorPalette.unityForegroundSelected);
@@ -738,7 +738,7 @@ namespace Ludiq.PeekCore
 		}
 
 		// In certain cases, mainly editor application callbacks like
-		// undo/redo/selection change, we're not actually on GUI but 
+		// undo/redo/selection change, we're not actually on GUI but
 		// Unity keeps the GUI depth. This makes throwing ExitGUI
 		// exceptions dangerous.
 		public static void BeginNotActuallyOnGUI()
@@ -763,7 +763,7 @@ namespace Ludiq.PeekCore
 		public static string EscapeRichText(string s)
 		{
 			// Unity rich text supports <material=...> and <color=...> tags, which
-			// mess up rendering with generic types such as List<Material>. 
+			// mess up rendering with generic types such as List<Material>.
 			// Escape these edge cases with a zero-width non-breaking space character.
 			return s.Replace("<Material>", "<\uFEFFMaterial>")
 				.Replace("<Color>", "<\uFEFFColor>");
@@ -797,7 +797,7 @@ namespace Ludiq.PeekCore
 				Debug.LogWarning($"Missing built-in editor texture: \n{name}.");
 			}
 
-			return icon; 
+			return icon;
 		}
 
 		public static EditorTexture LoadBuiltinTexture(string name, bool required = true)
@@ -1468,10 +1468,10 @@ namespace Ludiq.PeekCore
 
 
 		// Unity 2018.1 changelog: https://unity3d.com/unity/beta/unity2018.1.0b12
-		// Editor: Plug-in code that creates textures used in rendering with IMGUI 
-		// should now avoid specifying them in linear space (i.e. should set the linear 
-		// parameter to false in the Texture2D constructor). Otherwise, GUI elements drawn 
-		// with such textures may look washed out when the project is working in Linear space 
+		// Editor: Plug-in code that creates textures used in rendering with IMGUI
+		// should now avoid specifying them in linear space (i.e. should set the linear
+		// parameter to false in the Texture2D constructor). Otherwise, GUI elements drawn
+		// with such textures may look washed out when the project is working in Linear space
 		// (Player Settings > Color space: Linear). (908904)
 		public static bool createLinearTextures => EditorApplicationUtility.unityVersion.major < 2018 && PlayerSettings.colorSpace == ColorSpace.Linear;
 	}

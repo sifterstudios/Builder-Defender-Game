@@ -100,7 +100,7 @@ namespace Ludiq.PeekCore
 			{
 				height -= EditorGUIUtility.standardVerticalSpacing;
 			}
-			
+
 			return height;
 		}
 

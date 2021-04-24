@@ -39,11 +39,11 @@ namespace Ludiq.PeekCore
 					{
 						Debug.LogWarning("Failed to get GUID for script: " + script);;
 					}
-					
+
 					guids.Add(guid);
 
 					var type = script.GetClass();
-					
+
 					if (!guidsToTypes.ContainsKey(guid))
 					{
 						guidsToTypes.Add(guid, new HashSet<Type>());
@@ -144,7 +144,7 @@ namespace Ludiq.PeekCore
 				return Enumerable.Empty<Type>();
 			}
 		}
-		
+
 		public static IEnumerable<string> GetAllScriptGuids()
 		{
 			EnsureAnalyzed();
@@ -164,7 +164,7 @@ namespace Ludiq.PeekCore
 				}
 			}
 		}
-		
+
 		// The fileID for a loose script imported directly from a .cs file,
 		// which is the class ID for MonoScript multiplied by 100,000.
 		public const int CsFileID = 11500000;

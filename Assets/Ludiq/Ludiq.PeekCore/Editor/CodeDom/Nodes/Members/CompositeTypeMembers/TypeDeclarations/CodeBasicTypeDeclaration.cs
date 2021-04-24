@@ -22,6 +22,6 @@
 			GenerateInner(generator);
 		}
 
-		protected abstract void GenerateInner(CodeGenerator generator);		
+		protected abstract void GenerateInner(CodeGenerator generator);
 	}
 }

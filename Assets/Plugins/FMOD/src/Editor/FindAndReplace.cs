@@ -194,6 +194,6 @@ namespace FMODUnity
             ReplaceText(emitters[lastMatch]);
             FindNext();
         }
-        
+
     }
 }

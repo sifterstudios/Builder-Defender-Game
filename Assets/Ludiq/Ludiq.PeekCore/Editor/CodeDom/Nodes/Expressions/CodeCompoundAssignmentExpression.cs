@@ -37,7 +37,7 @@ namespace Ludiq.PeekCore.CodeDom
 		protected override void GenerateInner(CodeGenerator generator)
 		{
 			Left.Generate(generator);
-			
+
 			generator.Write(TokenType.Space, ' ');
 
             switch (Operator)

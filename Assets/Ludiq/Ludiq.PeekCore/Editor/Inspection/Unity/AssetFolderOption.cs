@@ -24,7 +24,7 @@ namespace Ludiq.PeekCore
 		public override string SearchResultLabel(string query)
 		{
 			var label = base.SearchResultLabel(query);
-			
+
 			label += LudiqGUIUtility.DimString($" (in {PathUtility.NaiveNormalize(folder)})");
 
 			return label;

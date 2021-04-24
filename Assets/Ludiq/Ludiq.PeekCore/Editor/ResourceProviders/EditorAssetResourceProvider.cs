@@ -85,7 +85,7 @@ namespace Ludiq.PeekCore
 			Ensure.That(nameof(path)).IsNotNull(path);
 
 			path = PathUtility.FromProject(NormalizePath(path));
-			
+
 			return (T)AssetDatabase.LoadAssetAtPath<T>(path);
 		}
 

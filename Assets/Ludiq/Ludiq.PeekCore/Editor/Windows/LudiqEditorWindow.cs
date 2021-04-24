@@ -8,11 +8,11 @@ namespace Ludiq.PeekCore
 	public abstract class LudiqEditorWindow : EditorWindow, ISerializationCallbackReceiver, ILudiqRootObject, IHasCustomMenu
 	{
 		#region Serialization
-		
+
 		[FormerlySerializedAs("_data")]
 		[SerializeField, DoNotSerialize] // Serialize with Unity, but not with Full Serializer.
 		protected FullSerializationData _fullData;
-		
+
 		[SerializeField, DoNotSerialize] // Serialize with Unity, but not with Odin Serializer.
 		protected OdinSerializationData _odinData;
 
@@ -50,14 +50,14 @@ namespace Ludiq.PeekCore
 		protected virtual void OnBeforeDeserialize() { }
 
 		protected virtual void OnAfterDeserialize() { }
-		
+
 		public virtual void ShowData()
 		{
 			Serialization.ShowData(this.ToSafeString(), _fullData, _odinData);
 		}
 
 		#endregion
-		
+
 		protected virtual Event e => Event.current;
 
 		protected Vector2 scroll;

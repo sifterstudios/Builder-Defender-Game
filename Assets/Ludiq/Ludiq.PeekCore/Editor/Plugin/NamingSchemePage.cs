@@ -12,7 +12,7 @@ namespace Ludiq.PeekCore
 			shortTitle = "Naming";
 			icon = LudiqCore.Resources.LoadIcon("Icons/Windows/SetupWizard/NamingSchemePage.png");
 		}
-		
+
 		protected override void OnContentGUI()
 		{
 			var previousIconSize = EditorGUIUtility.GetIconSize();

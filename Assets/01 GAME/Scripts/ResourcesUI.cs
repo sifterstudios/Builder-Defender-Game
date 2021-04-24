@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,20 +6,20 @@ using System;
 
 public class ResourcesUI : MonoBehaviour
 {
-    ResourceTypeListSO resourceTypeList;
-    Dictionary<ResourceTypeSO, Transform> resourceTypeTransformDictionary;
+    ResourceTypeListSO _resourceTypeList;
+    Dictionary<ResourceTypeSO, Transform> _resourceTypeTransformDictionary;
 
-    private void Awake()
+    void Awake()
     {
-        resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
+        _resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
 
-        resourceTypeTransformDictionary = new Dictionary<ResourceTypeSO, Transform>();
+        _resourceTypeTransformDictionary = new Dictionary<ResourceTypeSO, Transform>();
 
         Transform resourceTemplate = transform.Find("resourceTemplate");
         resourceTemplate.gameObject.SetActive(false);
 
         int index = 0;
-        foreach (ResourceTypeSO resourceType in resourceTypeList.list)
+        foreach (ResourceTypeSO resourceType in _resourceTypeList.list)
         {
             // Create new gameobjects
             Transform resourceTransform = Instantiate(resourceTemplate, transform);
@@ -34,27 +33,28 @@ public class ResourcesUI : MonoBehaviour
             resourceTransform.Find("image").GetComponent<Image>().sprite = resourceType.sprite;
 
             // Cache the information to bring into other method. Needs to be called after Start()
-            resourceTypeTransformDictionary[resourceType] = resourceTransform;
+            _resourceTypeTransformDictionary[resourceType] = resourceTransform;
             index++;
         }
     }
-    private void Start()
+
+    void Start()
     {
         ResourceManager.Instance.OnResourceAmountChanged += ResourceManager_OnResourceAmountChanged;
         UpdateResourceAmount();
     }
 
-    private void ResourceManager_OnResourceAmountChanged(object sender, EventArgs e)
+    void ResourceManager_OnResourceAmountChanged(object sender, EventArgs e)
     {
         UpdateResourceAmount();
     }
 
-    private void UpdateResourceAmount()
+    void UpdateResourceAmount()
     {
-        foreach (ResourceTypeSO resourceType in resourceTypeList.list)
+        foreach (ResourceTypeSO resourceType in _resourceTypeList.list)
         {
             // Get info from the dictionary/cache
-            Transform resourceTransform = resourceTypeTransformDictionary[resourceType];
+            Transform resourceTransform = _resourceTypeTransformDictionary[resourceType];
             // Get resource amount from ResourceManager Script
             int resourceAmount = ResourceManager.Instance.GetResourceAmount(resourceType);
 

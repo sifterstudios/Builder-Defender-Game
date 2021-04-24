@@ -99,7 +99,7 @@ namespace Ludiq.PeekCore
 				return documentation;
 			}
 		}
-		
+
 		private static XmlDocumentationTags Documentation(this FieldInfo fieldInfo)
 		{
 			lock (@lock)
@@ -146,7 +146,7 @@ namespace Ludiq.PeekCore
 				{
 					return null;
 				}
-				
+
 				if (!documentationsCache.TryGetValue(methodInfo, out var documentation))
 				{
 					documentation = GetDocumentationFromNameInherited(methodInfo.DeclaringType, 'M', methodInfo.Name, methodInfo.GetParameters());
@@ -166,7 +166,7 @@ namespace Ludiq.PeekCore
 				{
 					return null;
 				}
-				
+
 				if (!documentationsCache.TryGetValue(constructorInfo, out var documentation))
 				{
 					documentation = GetDocumentationFromNameInherited(constructorInfo.DeclaringType, 'M', "#ctor", constructorInfo.GetParameters());
@@ -177,7 +177,7 @@ namespace Ludiq.PeekCore
 				return documentation;
 			}
 		}
-		
+
 		public static XmlDocumentationTags Documentation(this Enum @enum)
 		{
 			lock (@lock)
@@ -186,7 +186,7 @@ namespace Ludiq.PeekCore
 				{
 					return null;
 				}
-				
+
 				if (!documentationsCache.TryGetValue(@enum, out var documentation))
 				{
 					documentation = GetDocumentationFromNameInherited(@enum.GetType(), 'F', @enum.ToString(), null);
@@ -196,7 +196,7 @@ namespace Ludiq.PeekCore
 				return documentation;
 			}
 		}
-		
+
 		public static string ParameterSummary(this MethodBase methodBase, ParameterInfo parameterInfo)
 		{
 			return methodBase.Documentation()?.ParameterSummary(parameterInfo);

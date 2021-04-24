@@ -38,7 +38,7 @@ namespace Ludiq.PeekCore
 				//yield return ScriptReferenceReplacement.From<DictionaryAsset>(ScriptReference.Dll(LegacyRuntimeDllGuid, "Ludiq", "DictionaryAsset"));
 			}
 		}
-		
+
 		[SettingsProvider]
 		private static SettingsProvider ProjectSettingsProvider()
 		{

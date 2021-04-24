@@ -33,7 +33,7 @@ namespace Ludiq.PeekCore.ReorderableList.Internal
 			}
 
 			FocusTextInControl = (Action<string>)Delegate.CreateDelegate(typeof(Action<string>), miFocusTextInControl);
-			
+
 			s_SeparatorColor = EditorGUIUtility.isProSkin
 								   ? new Color(0.11f, 0.11f, 0.11f)
 								   : new Color(0.5f, 0.5f, 0.5f);

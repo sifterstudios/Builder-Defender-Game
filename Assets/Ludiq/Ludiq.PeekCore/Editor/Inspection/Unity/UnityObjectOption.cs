@@ -15,7 +15,7 @@ namespace Ludiq.PeekCore
 
 		private static UnityObject editorTarget;
 		private static UEditor editor;
-		
+
 		public UnityObjectOption(string label, string typeLabel, EditorTexture typeIcon, UnityObject uo, bool? isSceneBound, FuzzyOptionMode mode) : base(mode)
 		{
 			this.label = label;

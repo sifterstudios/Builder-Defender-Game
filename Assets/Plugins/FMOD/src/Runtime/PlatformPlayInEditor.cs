@@ -59,7 +59,7 @@ namespace FMODUnity
             if (globalSettings.HasPlatforms)
             {
                 bankFolder = System.IO.Path.Combine(bankFolder, BuildDirectory);
-            } 
+            }
 
             return bankFolder;
         }

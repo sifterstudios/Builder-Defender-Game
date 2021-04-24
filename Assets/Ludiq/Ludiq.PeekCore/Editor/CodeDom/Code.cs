@@ -65,7 +65,7 @@ namespace Ludiq.PeekCore.CodeDom
 		public static CodeCompoundAssignmentExpression BitwiseXorAssign(this CodeExpression left, CodeExpression right) => CompoundAssign(left, CodeCompoundAssignmentOperatorType.BitwiseXor, right);
 		public static CodeCompoundAssignmentExpression BitwiseShiftLeftAssign(this CodeExpression left, CodeExpression right) => CompoundAssign(left, CodeCompoundAssignmentOperatorType.BitwiseShiftLeft, right);
 		public static CodeCompoundAssignmentExpression BitwiseShiftRightAssign(this CodeExpression left, CodeExpression right) => CompoundAssign(left, CodeCompoundAssignmentOperatorType.BitwiseShiftRight, right);
-		
+
 		public static CodeUnaryOperatorExpression UnaryOp(this CodeExpression operand, CodeUnaryOperatorType op) => new CodeUnaryOperatorExpression(op, operand);
 		public static CodeUnaryOperatorExpression Positive(this CodeExpression operand) => UnaryOp(operand, CodeUnaryOperatorType.Positive);
 		public static CodeUnaryOperatorExpression Negative(this CodeExpression operand) => UnaryOp(operand, CodeUnaryOperatorType.Negative);
@@ -88,7 +88,7 @@ namespace Ludiq.PeekCore.CodeDom
 		public static CodeObjectCreateExpression ObjectCreate(this CodeTypeReference type, params CodeExpression[] arguments) => new CodeObjectCreateExpression(type, arguments);
 		public static CodeObjectCreateExpression ObjectCreate(this CodeTypeReference type, IEnumerable<CodeExpression> arguments) => new CodeObjectCreateExpression(type, arguments);
 		public static CodeObjectCreateExpression ObjectCreate(this CodeTypeReference type, IEnumerable<CodeExpression> arguments, IEnumerable<IEnumerable<CodeExpression>> collectionInitializerItems) => new CodeObjectCreateExpression(type, arguments, collectionInitializerItems);
-		public static CodeObjectInitializerExpression ObjectInitializer(this CodeTypeReference type, IEnumerable<KeyValuePair<string, CodeExpression>> members) => new CodeObjectInitializerExpression(type, members);	
+		public static CodeObjectInitializerExpression ObjectInitializer(this CodeTypeReference type, IEnumerable<KeyValuePair<string, CodeExpression>> members) => new CodeObjectInitializerExpression(type, members);
 		public static CodeDefaultValueExpression DefaultValue(this CodeTypeReference type) => new CodeDefaultValueExpression(type);
 		public static CodeDefaultValueExpression DefaultValue() => new CodeDefaultValueExpression();
 		public static CodeArrayCreateExpression ArrayInitializer(this CodeTypeReference type, params CodeExpression[] initializer) => ArraySizedInitializer(type, Enumerable.Empty<CodeExpression>(), initializer);
@@ -134,7 +134,7 @@ namespace Ludiq.PeekCore.CodeDom
 		public static CodeTypeReference TypeRef(Type type, bool global = false) => new CodeTypeReference(type, global);
 		public static CodeTypeReference TypeRef(string name, bool global = false) => new CodeTypeReference(name, global);
 		public static CodeTypeReference ArrayTypeRef(CodeTypeReference elementType, int rank = 1, bool global = false) => new CodeTypeReference(elementType, rank, global);
-		
+
 		public static CodeParameterDeclaration ParamDecl(CodeParameterDirection direction, CodeTypeReference type, string name) => new CodeParameterDeclaration(direction, type, name);
 		public static CodeParameterDeclaration ParamDecl(CodeTypeReference type, string name) => new CodeParameterDeclaration(type, name);
 		public static CodeVariableDeclarationStatement VarDecl(CodeTypeReference type, string name, CodeExpression initializer = null) => new CodeVariableDeclarationStatement(type, name, initializer);

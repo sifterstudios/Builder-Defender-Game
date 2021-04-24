@@ -50,7 +50,7 @@ namespace Ludiq.PeekCore.CodeDom
 					parenthesized = true;
 				}
 			}
-			
+
 			if (parenthesized) generator.Write(TokenType.Punctuation, '(');
             Expression.Generate(generator);
 			if (parenthesized) generator.Write(TokenType.Punctuation, ')');

@@ -45,7 +45,7 @@ namespace Ludiq.PeekCore.CodeDom
             {
 				Initializer.Generate(generator);
             }
-			
+
 			if (Statements.Count > 0)
 			{
 				generator.WriteOpeningBrace();

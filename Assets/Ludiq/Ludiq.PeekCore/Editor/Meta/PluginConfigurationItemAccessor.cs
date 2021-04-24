@@ -34,14 +34,14 @@ namespace Ludiq.PeekCore
 			this.member = member;
 
 			attribute = member.GetAttribute<PluginConfigurationItemAttribute>();
-				
+
 			if (attribute == null)
 			{
 				throw new ArgumentException($"Configuration item '{member.Name}' is missing the [{nameof(PluginConfigurationItemAttribute)}].", nameof(member));
 			}
 
 			key = attribute.key ?? member.Name;
-				
+
 			if (member is FieldInfo)
 			{
 				mode = Mode.Field;
@@ -56,14 +56,14 @@ namespace Ludiq.PeekCore
 				definedType = propertyInfo.PropertyType;
 				defaultValue = value.CloneViaSerializationPolicy();
 			}
-					
+
 			label = new GUIContent(member.HumanName(), member.Summary());
 
 			XmlDocumentation.onLoaded += () =>
 			{
 				label.tooltip = member.Summary();
 			};
-					
+
 			if (exists)
 			{
 				Load();
@@ -103,7 +103,7 @@ namespace Ludiq.PeekCore
 			// Small optimization:
 			// To reduce initialization time, we'll use standard
 			// reflection for the value if the plugin container isn't
-			// initialized yet, which makes sure we don't do an 
+			// initialized yet, which makes sure we don't do an
 			// expensive caching or code emission in the first frame.
 
 			get

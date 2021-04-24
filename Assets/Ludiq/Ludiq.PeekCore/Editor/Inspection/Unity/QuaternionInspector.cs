@@ -32,7 +32,7 @@ namespace Ludiq.PeekCore
 			{
 				newVector = EditorGUI.Vector4Field(position, GUIContent.none, vector);
 			}
-			
+
 			if (EditorGUI.EndChangeCheck())
 			{
 				var newValue = new Quaternion(newVector.x, newVector.y, newVector.z, newVector.w);

@@ -16,7 +16,7 @@ namespace Ludiq.PeekCore
 
 		public override IEnumerable<CodeStatement> GetStubStatements()
 		{
-			/* 
+			/*
 			 * Required output:
 			 * 1. Create a target expression
 			 * 2. Call its method with the correct number of args
@@ -48,7 +48,7 @@ namespace Ludiq.PeekCore
 				if (manipulator.isExtension)
 				{
 					// 1. ShortcutExtensions
-					targetReference = new CodeTypeReferenceExpression(declaringType); 
+					targetReference = new CodeTypeReferenceExpression(declaringType);
 				}
 				else
 				{

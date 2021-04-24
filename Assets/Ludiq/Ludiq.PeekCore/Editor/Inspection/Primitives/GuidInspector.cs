@@ -10,7 +10,7 @@ namespace Ludiq.PeekCore
 	public sealed class GuidInspector : Inspector
 	{
 		public GuidInspector(Accessor accessor) : base(accessor) { }
-		
+
 		protected override void OnControlGUI(Rect position)
 		{
 			EditorGUI.BeginChangeCheck();

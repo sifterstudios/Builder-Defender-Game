@@ -29,7 +29,7 @@ namespace Ludiq.PeekCore
 		}
 
 		protected abstract TPage CreatePage();
-		
+
 		protected override void Update()
 		{
 			if (!page.visible)

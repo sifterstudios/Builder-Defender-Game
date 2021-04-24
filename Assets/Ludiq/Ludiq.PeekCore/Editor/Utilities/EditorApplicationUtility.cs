@@ -29,7 +29,7 @@ namespace Ludiq.PeekCore
 			EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
 			EditorApplication.OpenProject(Environment.CurrentDirectory);
 		}
-		
+
 #region Version
 
 		private static SemanticVersion? _unityVersion;
@@ -43,7 +43,7 @@ namespace Ludiq.PeekCore
 				if (_unityVersion == null)
 				{
 					var unityVersionString = Application.unityVersion;
-					
+
 					if (SemanticVersion.TryParse(unityVersionString, out var parsedUnityVersion))
 					{
 						_unityVersion = parsedUnityVersion;
@@ -64,7 +64,7 @@ namespace Ludiq.PeekCore
 
 
 #region Assembly Lock
-		
+
 		public static OverrideStack<bool> isAssemblyReloadLocked { get; } = new OverrideStack<bool>(false);
 
 		public static void LockReloadAssemblies()
@@ -90,7 +90,7 @@ namespace Ludiq.PeekCore
 #endregion
 
 
-		
+
 #region Events
 
 		public static event Action onAssemblyReload;
@@ -217,10 +217,10 @@ namespace Ludiq.PeekCore
 			if (!EditorApplication.isPlayingOrWillChangePlaymode)
 			{
 				// Playmode state changed does not get called when
-				// the editor assemblies load, therefore we have to 
-				// manually invoke enter edit mode. 
+				// the editor assemblies load, therefore we have to
+				// manually invoke enter edit mode.
 
-				// This won't cause a double invoke because oddly, 
+				// This won't cause a double invoke because oddly,
 				// assemblies do not get reloaded when you exit
 				// play mode and get back into the edit mode. This may
 				// cause issues somewhere in the Ludiq / Bolt source,
@@ -228,7 +228,7 @@ namespace Ludiq.PeekCore
 				onEnterEditMode?.Invoke();
 			}
 		}
-		
+
 #endregion
 	}
 }

@@ -49,7 +49,7 @@ namespace Ludiq.PeekCore
 		private static Dictionary<string, Type> pluginTypesById;
 
 		internal static Dictionary<string, HashSet<string>> pluginDependencies;
-		
+
 		private static readonly Queue<Action> delayQueue = new Queue<Action>();
 
 		public static event Action delayCall
@@ -104,12 +104,12 @@ namespace Ludiq.PeekCore
 				{
 					Debug.LogWarning("Initializing plugin container while asset database is not initialized.\nLoading assets might fail!");
 				}
-				
+
 				initializing = true;
 
 				pluginTypesById = Codebase.GetTypeRegistrations<RegisterPluginAttribute>()
 										  .ToDictionary(r => r.id, r => r.type);
-				
+
 				pluginDependencies = new Dictionary<string, HashSet<string>>();
 
 				foreach (var pluginId in pluginTypesById.Keys)
@@ -127,7 +127,7 @@ namespace Ludiq.PeekCore
 
 					dependencies.Add(pluginDependencyRegistration.dependencyId);
 				}
-				 
+
 				var moduleTypeRegistrations = Codebase.GetTypeRegistrations<RegisterPluginModuleTypeAttribute>();
 
 				pluginsById = new Dictionary<string, Plugin>();
@@ -158,7 +158,7 @@ namespace Ludiq.PeekCore
 					{
 						var moduleType = moduleTypeRegistration.type;
 						var required = moduleTypeRegistration.required;
-						
+
 						try
 						{
 							var moduleProperty = pluginType.GetProperties().FirstOrDefault(p => p.PropertyType.IsAssignableFrom(moduleType));
@@ -169,7 +169,7 @@ namespace Ludiq.PeekCore
 							}
 
 							IPluginModule module = null;
-							
+
 							var moduleOverrideType = Codebase.GetTypeRegistrations<MapToPluginAttribute>()
 								.FirstOrDefault(r => r.pluginId == pluginId &&
 								                     moduleType.IsAssignableFrom(r.type) &&
@@ -268,7 +268,7 @@ namespace Ludiq.PeekCore
 						Debug.LogException(new Exception($"Failed to late initialize plugin module '{module.plugin.id}.{module.GetType()}'.", ex));
 					}
 				}
-				 
+
 				var afterPluginTypes = Codebase.GetRegisteredTypes<InitializeAfterPluginsAttribute>();
 
 				using (ProfilingUtility.SampleBlock($"BeforeInitializeAfterPlugins"))
@@ -372,7 +372,7 @@ namespace Ludiq.PeekCore
 				throw new InvalidOperationException("Trying to access Ludiq plugin container before it is initialized.");
 			}
 		}
-		
+
 		public static Plugin GetPlugin(string pluginId)
 		{
 			EnsureInitialized();
@@ -420,7 +420,7 @@ namespace Ludiq.PeekCore
 
 			return GetMappedTypes(type, plugin.id).Select(t => InstantiateMappedType(t, plugin)).ToArray();
 		}
-		
+
 		public static bool anyVersionMismatch { get; private set; }
 	}
 }

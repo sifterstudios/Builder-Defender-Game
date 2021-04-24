@@ -56,10 +56,10 @@ namespace Ludiq.PeekCore
 			PathUtility.CreateDirectoryIfNeeded(LudiqCore.Paths.propertyProvidersEditor);
 
 			foreach (var type in Codebase.ludiqTypes.Where(SerializedPropertyUtility.HasCustomDrawer))
-			{ 
+			{
 				var directory = Codebase.IsEditorType(type) ? LudiqCore.Paths.propertyProvidersEditor : LudiqCore.Paths.propertyProviders;
 				var path = Path.Combine(directory, GetProviderScriptName(type) + ".cs");
-				
+
 				VersionControlUtility.Unlock(path);
 				File.WriteAllText(path, GenerateProviderSource(type));
 			}
@@ -75,14 +75,14 @@ namespace Ludiq.PeekCore
 
 		private static string GenerateProviderSource(Type type)
 		{
-			/* Example: 
-			
+			/* Example:
+
 			namespace Ludiq.PeekCore.Generated.PropertyProviders
 			{
 				[Ludiq.SerializedPropertyProvider(typeof(MyNamespace.MyType))]
 				public class MyNamespace_MyType : SerializedPropertyProvider<MyNamespace.MyType> { }
 			}
-			
+
 			*/
 
 			Ensure.That(nameof(type)).IsNotNull(type);

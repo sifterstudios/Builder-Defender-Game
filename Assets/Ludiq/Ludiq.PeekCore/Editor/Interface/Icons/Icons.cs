@@ -24,7 +24,7 @@ namespace Ludiq.PeekCore
 
 			EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyItemGUI;
 			EditorApplication.projectWindowItemOnGUI += OnProjectItemGUI;
-			
+
 			RefreshHierarchies();
 		}
 
@@ -51,7 +51,7 @@ namespace Ludiq.PeekCore
 			}
 
 			var item = AssetDatabase.LoadMainAssetAtPath(path);
-			
+
 			OnItemGUI(item, position);
 		}
 
@@ -281,10 +281,10 @@ namespace Ludiq.PeekCore
 
 		private static int InterfaceImplementationPriority(Type type)
 		{
-			// Quick and dirty method to determine interface implementation priority. 
+			// Quick and dirty method to determine interface implementation priority.
 
 			/* Desired order is:
-			 * 
+			 *
 			 * IList<>
 			 * IList
 			 * ICollection<>
@@ -372,7 +372,7 @@ namespace Ludiq.PeekCore
 
 			return null;
 		}
-		
+
 		private static EditorTexture GetResourcesTypeIcon(string fileName)
 		{
 			if (!resourcesTypeIcons.TryGetValue(fileName, out var icon))

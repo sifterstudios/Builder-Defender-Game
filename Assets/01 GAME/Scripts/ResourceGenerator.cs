@@ -1,27 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourceGenerator : MonoBehaviour
 {
-    float timer;
-    BuildingTypeSO buildingType;
-    float timerMax;
+    float _timer;
+    BuildingTypeSO _buildingType;
+    float _timerMax;
 
-    private void Awake()
+    void Awake()
     {
-        buildingType = GetComponent<BuildingTypeHolder>().buildingType;
-        timerMax = buildingType.resourceGeneratorData.timerMax;
+        _buildingType = GetComponent<BuildingTypeHolder>().buildingType;
+        _timerMax = _buildingType.resourceGeneratorData.timerMax;
     }
 
-    private void Update()
+    void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0f)
+        _timer -= Time.deltaTime;
+        if (_timer <= 0f)
         {
-            timer += timerMax;
-            ResourceManager.Instance.AddResource(buildingType.resourceGeneratorData.resourceType, 1);
+            _timer += _timerMax;
+            ResourceManager.Instance.AddResource(_buildingType.resourceGeneratorData.resourceType, 1);
         }
-
     }
 }

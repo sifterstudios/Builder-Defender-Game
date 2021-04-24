@@ -26,7 +26,7 @@ namespace Ludiq.PeekCore
 		}
 
 		public event Action descriptionChanged;
-		
+
 		protected override void OnAssignmentChanged()
 		{
 			descriptionChanged?.Invoke();

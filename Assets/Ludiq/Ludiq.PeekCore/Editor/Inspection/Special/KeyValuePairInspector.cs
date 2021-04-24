@@ -10,10 +10,10 @@ namespace Ludiq.PeekCore
 	public sealed class KeyValuePairInspector : Inspector
 	{
 		public KeyValuePairInspector(Accessor accessor) : base(accessor) { }
-		
+
 		private Inspector keyInspector => ChildInspector(nameof(KeyValuePair<object,object>.Key));
 		private Inspector valueInspector => ChildInspector(nameof(KeyValuePair<object,object>.Value));
-		
+
 		protected override float GetControlHeight(float width)
 		{
 			return Mathf.Max(keyInspector.FieldHeight(width), valueInspector.FieldHeight(width)) + Styles.topPadding;

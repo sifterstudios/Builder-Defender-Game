@@ -26,17 +26,17 @@ namespace Ludiq.PeekCore.ReorderableList
 		/// using System.Collections.Generic;
 		/// using UnityEditor;
 		/// using UnityEngine;
-		/// 
+		///
 		/// public class ExampleWindow : EditorWindow {
 		///     private List<string> _list;
-		/// 
+		///
 		///     private void OnEnable() {
 		///         _list = new List<string>();
 		///     }
 		///     private void OnGUI() {
 		///         ReorderableListGUI.ListField(_list, ReorderableListGUI.TextFieldItemDrawer, DrawEmptyMessage);
 		///     }
-		/// 
+		///
 		///     private string DrawEmptyMessage() {
 		///         GUILayout.Label("List is empty!", EditorStyles.miniLabel);
 		///     }
@@ -45,17 +45,17 @@ namespace Ludiq.PeekCore.ReorderableList
 		///     <code language="unityscript"><![CDATA[
 		/// import Rotorz.ReorderableList;
 		/// import System.Collections.Generic;
-		/// 
+		///
 		/// class ExampleWindow extends EditorWindow {
 		///     private var _list:List.<String>;
-		/// 
+		///
 		///     function OnEnable() {
 		///         _list = new List.<String>();
 		///     }
 		///     function OnGUI() {
 		///         ReorderableListGUI.ListField(_list, ReorderableListGUI.TextFieldItemDrawer, DrawEmptyMessage);
 		///     }
-		/// 
+		///
 		///     function DrawEmptyMessage() {
 		///         GUILayout.Label('List is empty!', EditorStyles.miniLabel);
 		///     }
@@ -86,14 +86,14 @@ namespace Ludiq.PeekCore.ReorderableList
 		/// using System.Collections.Generic;
 		/// using UnityEditor;
 		/// using UnityEngine;
-		/// 
+		///
 		/// public class ExampleWindow : EditorWindow {
 		///     public List<string> wishlist = new List<string>();
-		/// 
+		///
 		///     private void OnGUI() {
 		///         ReorderableListGUI.ListField(wishlist, DrawListItem);
 		///     }
-		/// 
+		///
 		///     private string DrawListItem(Rect position, string value) {
 		///         // Text fields do not like `null` values!
 		///         if (value == null)
@@ -105,14 +105,14 @@ namespace Ludiq.PeekCore.ReorderableList
 		///     <code language="unityscript"><![CDATA[
 		/// import Rotorz.ReorderableList;
 		/// import System.Collections.Generic;
-		/// 
+		///
 		/// class ExampleWindow extends EditorWindow {
 		///     var wishlist:List.<String>;
-		/// 
+		///
 		///     function OnGUI() {
 		///         ReorderableListGUI.ListField(wishlist, DrawListItem);
 		///     }
-		/// 
+		///
 		///     function DrawListItem(position:Rect, value:String):String {
 		///         // Text fields do not like `null` values!
 		///         if (value == null)
@@ -1991,13 +1991,13 @@ namespace Ludiq.PeekCore.ReorderableList
 		/// protected override bool HandleCommand(string commandName, int itemIndex, IReorderableListAdaptor adaptor) {
 		///     if (base.HandleCommand(itemIndex, adaptor))
 		///         return true;
-		///     
+		///
 		///     // Place custom command handling code here...
 		///     switch (commandName) {
 		///         case "Your Command":
 		///             return true;
 		///     }
-		/// 
+		///
 		///     return false;
 		/// }
 		/// ]]></code>
@@ -2005,13 +2005,13 @@ namespace Ludiq.PeekCore.ReorderableList
 		/// function HandleCommand(commandName:String, itemIndex:int, adaptor:IReorderableListAdaptor):boolean {
 		///     if (base.HandleCommand(itemIndex, adaptor))
 		///         return true;
-		///     
+		///
 		///     // Place custom command handling code here...
 		///     switch (commandName) {
 		///         case 'Your Command':
 		///             return true;
 		///     }
-		/// 
+		///
 		///     return false;
 		/// }
 		/// ]]></code>

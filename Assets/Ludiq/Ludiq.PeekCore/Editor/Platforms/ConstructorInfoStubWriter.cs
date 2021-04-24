@@ -10,12 +10,12 @@ namespace Ludiq.PeekCore
 	public class ConstructorInfoStubWriter : MethodBaseStubWriter<ConstructorInfo>
 	{
 		public ConstructorInfoStubWriter(ConstructorInfo constructorInfo) : base(constructorInfo) { }
-		
+
 		protected override bool supportsOptimization => false;
 
 		public override IEnumerable<CodeStatement> GetStubStatements()
 		{
-			/* 
+			/*
 			 * Required output:
 			 * 1. Call the constructor with the correct number of args
 			 * (No optimization available for constructors)

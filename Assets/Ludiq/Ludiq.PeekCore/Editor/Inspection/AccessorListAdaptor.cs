@@ -239,7 +239,7 @@ namespace Ludiq.PeekCore
 		}
 
 		public bool alwaysDragAndDrop { get; set; } = false;
-		
+
 		public override void DrawItem(Rect position, int index)
 		{
 			GetItemInspector(index).DrawControl(position);

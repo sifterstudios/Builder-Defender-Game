@@ -10,7 +10,7 @@ namespace Ludiq.PeekCore
 		public Assignment(Member assigner, Type assigneeType)
 		{
 			Ensure.That(nameof(assigneeType)).IsNotNull(assigneeType);
-			
+
 			this.assigner = assigner;
 
 			var assignsAttribute = assigner.info.GetAttribute<AssignsAttribute>();
@@ -21,7 +21,7 @@ namespace Ludiq.PeekCore
 			assigner.Prewarm();
 			assignee.Prewarm();
 		}
-		
+
 		public Member assigner { get; }
 		public Member assignee { get; }
 		public bool requiresAPI { get; }
@@ -45,7 +45,7 @@ namespace Ludiq.PeekCore
 			var newValue = ConversionUtility.Convert(this.assigner.Invoke(assigner), this.assignee.type);
 
 			this.assignee.Set(assignee, newValue);
-			
+
 			if (!Equals(oldValue, newValue))
 			{
 				if (assigner is IAssigner _assigner)

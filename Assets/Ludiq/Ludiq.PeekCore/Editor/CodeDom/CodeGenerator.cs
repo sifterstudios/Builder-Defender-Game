@@ -11,7 +11,7 @@ using System.Linq;
 namespace Ludiq.PeekCore.CodeDom
 {
     public sealed class CodeGenerator
-    {	
+    {
         private ICodeWriter writer;
         private int indent;
         private bool tabsPending;
@@ -393,8 +393,8 @@ namespace Ludiq.PeekCore.CodeDom
             bool paramArray = false;
             foreach (CodeAttributeDeclaration current in attributes)
             {
-                // we need to convert paramArrayAttribute to params keyword to 
-                // make csharp compiler happy. In addition, params keyword needs to be after 
+                // we need to convert paramArrayAttribute to params keyword to
+                // make csharp compiler happy. In addition, params keyword needs to be after
                 // other attributes.
 
                 if (current.AttributeType.RawName.Equals("system.paramarrayattribute", StringComparison.OrdinalIgnoreCase))

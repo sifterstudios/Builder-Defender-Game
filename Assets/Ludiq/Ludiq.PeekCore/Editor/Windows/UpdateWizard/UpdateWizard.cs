@@ -58,10 +58,10 @@ namespace Ludiq.PeekCore
 
 			Initialize();
 		}
-		
+
 		private Product product;
 		private List<Plugin> plugins;
-		
+
 		public static void DrawPluginVersionTable(IEnumerable<Plugin> plugins)
 		{
 			var savedColumnHeader = new GUIContent("Saved");

@@ -32,7 +32,7 @@ namespace Ludiq.PeekCore
 
 			productTypesById = Codebase.GetTypeRegistrations<RegisterProductAttribute>().ToDictionary(r => r.id, r => r.type);
 
-			var productIdsByPluginType = Codebase.GetTypeRegistrations<MapToProductAttribute>().ToDictionary(r => r.type, r => r.productId); 
+			var productIdsByPluginType = Codebase.GetTypeRegistrations<MapToProductAttribute>().ToDictionary(r => r.type, r => r.productId);
 
 			productsById = new Dictionary<string, Product>();
 

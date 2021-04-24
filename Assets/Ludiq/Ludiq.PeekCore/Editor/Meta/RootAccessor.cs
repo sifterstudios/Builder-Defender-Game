@@ -16,7 +16,7 @@ namespace Ludiq.PeekCore
 			this.definedType = definedType;
 			_rawValue = value;
 			serializedObject = value as UnityObject;
-			
+
 			if (serializedObject != null && serializedObject.IsConnectedPrefabInstance())
 			{
 				prefabDefinition = Root(serializedObject.GetPrefabDefinition());

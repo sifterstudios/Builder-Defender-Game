@@ -14,7 +14,7 @@ namespace Ludiq.PeekCore
 		{
 			return EditorGUIUtility.singleLineHeight * 2 + EditorGUIUtility.standardVerticalSpacing;
 		}
-		
+
 		private Accessor originAccessor => accessor[nameof(Ray2D.origin)];
 		private Accessor directionAccessor => accessor[nameof(Ray2D.direction)];
 

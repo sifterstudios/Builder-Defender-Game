@@ -61,7 +61,7 @@ namespace Ludiq.PeekCore
 		public static bool TryLoad<T>(string path, out T asset) where T : ScriptableObject
 		{
 			var assetDatabasePath = PathUtility.FromProject(path);
-			
+
 			if (File.Exists(path))
 			{
 				// Try loading the existing asset file.
@@ -86,7 +86,7 @@ namespace Ludiq.PeekCore
 				AssetDatabase.CreateAsset(asset, assetDatabasePath);
 				AssetDatabase.SaveAssets();
 			}
-			
+
 			return true;
 		}
 	}
