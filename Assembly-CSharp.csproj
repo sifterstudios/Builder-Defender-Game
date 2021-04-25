@@ -52,6 +52,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\01 GAME\Scripts\ResourceNode.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\BuildingGhost.cs" />
      <Compile Include="Assets\01 GAME\Scripts\BuildingManager.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceManager.cs" />
      <Compile Include="Assets\01 GAME\Scripts\BuildingTypeHolder.cs" />
@@ -59,16 +61,14 @@
      <Compile Include="Assets\01 GAME\Scripts\CameraHandler.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceTypeSO.cs" />
      <Compile Include="Assets\01 GAME\Scripts\BuildingTypeSelectUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\SpritePositionSortingOrder.cs" />
      <Compile Include="Assets\01 GAME\Scripts\BuildingTypeSO.cs" />
      <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceTypeListSO.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourcesUI.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceGenerator.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceGeneratorData.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\BuildingGhost.cs" />
      <Compile Include="Assets\01 GAME\Scripts\UtilsClass.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\SpritePositionSortingOrder.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\ResourceNode.cs" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
