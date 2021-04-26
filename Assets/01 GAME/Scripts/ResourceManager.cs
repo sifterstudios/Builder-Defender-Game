@@ -31,17 +31,6 @@ public class ResourceManager : MonoBehaviour
             Debug.Log(resourceType.nameString + ": " + _resourceAmountDictionary[resourceType]);
         }
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
-            AddResource(resourceTypeList.list[0], 2);
-
-        }
-    }
-
-
 
     public void AddResource(ResourceTypeSO resourceType, int amount)
     {
@@ -68,6 +57,7 @@ public class ResourceManager : MonoBehaviour
                 return false;
             }
         }
+
         // Can afford all
         return true;
     }
@@ -79,5 +69,4 @@ public class ResourceManager : MonoBehaviour
             _resourceAmountDictionary[resourceAmount.resourceType] -= resourceAmount.amount;
         }
     }
-
 }
