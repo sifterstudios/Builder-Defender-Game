@@ -78,6 +78,8 @@
      <Compile Include="Assets\01 GAME\Scripts\HealthSystem.cs" />
      <Compile Include="Assets\01 GAME\Scripts\UtilsClass.cs" />
      <Compile Include="Assets\01 GAME\Scripts\Enemy.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Tower.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\ArrowProjectile.cs" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
