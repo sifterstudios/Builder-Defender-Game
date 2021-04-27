@@ -82,6 +82,9 @@
      <Compile Include="Assets\01 GAME\Scripts\UtilsClass.cs" />
      <Compile Include="Assets\01 GAME\Scripts\EnemyWaveManager.cs" />
      <Compile Include="Assets\01 GAME\Scripts\EnemyWaveUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\BuildingConstruction.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\ConstructionTimerUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\BuildingDemolishButton.cs" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
