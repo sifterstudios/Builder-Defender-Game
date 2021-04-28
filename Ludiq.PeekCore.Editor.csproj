@@ -365,10 +365,10 @@
      <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Descriptors\IDescriptorWithTitleInformation.cs" />
      <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugin\Acknowledgements\Acknowledgement_MD4.cs" />
      <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Dependencies\ReflectionMagic\PrivateReflectionDynamicObjectInstance.cs" />
-     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\AnimationCurveInspector.cs" />
      <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Plugins\RegisterPluginDependencyAttribute.cs" />
      <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\UnityObjectOptionTree.cs" />
      <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Token.cs" />
+     <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Inspection\Unity\AnimationCurveInspector.cs" />
      <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Interface\Dropdowns\DropdownSeparator.cs" />
      <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\Windows\UpdateWizard\UpdateMigrationPage.cs" />
      <Compile Include="Assets\Ludiq\Ludiq.PeekCore\Editor\CodeDom\Nodes\CodeAttributeArgument.cs" />

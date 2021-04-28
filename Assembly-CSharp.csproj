@@ -58,7 +58,9 @@
      <Compile Include="Assets\01 GAME\Scripts\BuildingGhost.cs" />
      <Compile Include="Assets\01 GAME\Scripts\BuildingManager.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceManager.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\EnemyWaveManager.cs" />
      <Compile Include="Assets\01 GAME\Scripts\BuildingTypeHolder.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\BuildingDemolishButton.cs" />
      <Compile Include="Assets\01 GAME\Scripts\BuildingTypeListSO.cs" />
      <Compile Include="Assets\01 GAME\Scripts\CameraHandler.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceTypeSO.cs" />
@@ -70,6 +72,8 @@
      <Compile Include="Assets\01 GAME\Scripts\ResourceTypeListSO.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceGeneratorOverlay.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceAmount.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\EnemyWaveUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\BuildingConstruction.cs" />
      <Compile Include="Assets\01 GAME\Scripts\Tower.cs" />
      <Compile Include="Assets\01 GAME\Scripts\MouseEnterExitEvents.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceNearbyOverlay.cs" />
@@ -78,13 +82,9 @@
      <Compile Include="Assets\01 GAME\Scripts\ResourceGenerator.cs" />
      <Compile Include="Assets\01 GAME\Scripts\Enemy.cs" />
      <Compile Include="Assets\01 GAME\Scripts\ResourceGeneratorData.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\ConstructionTimerUI.cs" />
      <Compile Include="Assets\01 GAME\Scripts\HealthSystem.cs" />
      <Compile Include="Assets\01 GAME\Scripts\UtilsClass.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\EnemyWaveManager.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\EnemyWaveUI.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\BuildingConstruction.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\ConstructionTimerUI.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\BuildingDemolishButton.cs" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
