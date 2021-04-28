@@ -5,12 +5,15 @@ public class Building : MonoBehaviour
 {
     HealthSystem _healthSystem;
     BuildingTypeSO _buildingType;
-    Transform _buldingDemolishBtn;
+    Transform _buildingDemolishBtn;
+    Transform _buildingRepairBtn;
 
     void Awake()
     {
-        _buldingDemolishBtn = transform.Find("pfBuildingDemolishBtn");
+        _buildingDemolishBtn = transform.Find("pfBuildingDemolishBtn");
+        _buildingRepairBtn = transform.Find("pfBuildingRepairBtn");
         HideBuildingDemolishBtn();
+        HideBuildingRepairBtn();
     }
 
     void Start()
@@ -18,13 +21,30 @@ public class Building : MonoBehaviour
         _buildingType = GetComponent<BuildingTypeHolder>().buildingType;
         _healthSystem = GetComponent<HealthSystem>();
         _healthSystem.SetHealthAmountMax(_buildingType.healthAmountMax, true);
-        _healthSystem.OnDied += HealthSystemOnOnDied;
+        _healthSystem.OnDamaged += HealthSystem_OnDamaged;
+        _healthSystem.OnHealed += HealthSystem_OnHealed;
+        _healthSystem.OnDied += HealthSystem_OnDied;
+    }
+
+    void HealthSystem_OnHealed(object sender, EventArgs e)
+    {
+        if (_healthSystem.IsFullHealth())
+        {
+            HideBuildingRepairBtn();
+        }
+    }
+
+    void HealthSystem_OnDamaged(object sender, EventArgs e)
+    {
+        ShowBuildingRepairBtn();
+        SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingDamaged);
     }
 
 
-    void HealthSystemOnOnDied(object sender, EventArgs e)
+    void HealthSystem_OnDied(object sender, EventArgs e)
     {
         Destroy(gameObject);
+        SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingDestroyed);
     }
 
     void OnMouseEnter() => ShowBuildingDemolishBtn();
@@ -35,17 +55,32 @@ public class Building : MonoBehaviour
 
     void ShowBuildingDemolishBtn()
     {
-        if (_buldingDemolishBtn != null)
+        if (_buildingDemolishBtn != null)
         {
-            _buldingDemolishBtn.gameObject.SetActive(true);
+            _buildingDemolishBtn.gameObject.SetActive(true);
         }
     }
 
     void HideBuildingDemolishBtn()
     {
-        if (_buldingDemolishBtn != null)
+        if (_buildingDemolishBtn != null)
         {
-            _buldingDemolishBtn.gameObject.SetActive(false);
+            _buildingDemolishBtn.gameObject.SetActive(false);
+        }
+    }
+
+    void HideBuildingRepairBtn()
+    {
+        if (_buildingRepairBtn != null)
+        {
+            _buildingRepairBtn.gameObject.SetActive(false);
+        }
+    }
+ void ShowBuildingRepairBtn()
+    {
+        if (_buildingRepairBtn != null)
+        {
+            _buildingRepairBtn.gameObject.SetActive(true);
         }
     }
 }

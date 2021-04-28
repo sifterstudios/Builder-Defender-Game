@@ -85,6 +85,10 @@
      <Compile Include="Assets\01 GAME\Scripts\ConstructionTimerUI.cs" />
      <Compile Include="Assets\01 GAME\Scripts\HealthSystem.cs" />
      <Compile Include="Assets\01 GAME\Scripts\UtilsClass.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\GameOverUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\GameSceneManager.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\BuildingRepairButton.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\SoundManager.cs" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

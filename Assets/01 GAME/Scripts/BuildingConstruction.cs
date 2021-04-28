@@ -39,8 +39,8 @@ public class BuildingConstruction : MonoBehaviour
         _constructionMaterial.SetFloat("_Progress", GetConstructionTimerNormalized());
         if (_constructionTimer <= 0f)
         {
-            print("Ding!");
             Instantiate(_buildingType.prefab, transform.position, quaternion.identity);
+            SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingPlaced);
             Destroy(gameObject);
         }
     }

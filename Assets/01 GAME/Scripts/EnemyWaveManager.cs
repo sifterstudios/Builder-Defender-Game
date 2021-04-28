@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyWaveManager : MonoBehaviour
 {
+    public static EnemyWaveManager Instance { get; private set; }
     public event EventHandler OnWaveNumberChanged;
 
     enum State
@@ -21,6 +22,12 @@ public class EnemyWaveManager : MonoBehaviour
     float _nextEnemySpawnTimer;
     int _remainingEnemySpawnAmount;
     Vector3 _spawnPosition;
+
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {

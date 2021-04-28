@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -21,10 +22,21 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _targetTransform = BuildingManager.Instance.GetHqBuilding().transform;
+        if (BuildingManager.Instance.GetHqBuilding() != null)
+        {
+            _targetTransform = BuildingManager.Instance.GetHqBuilding().transform;
+        }
+
         _healthSystem = GetComponent<HealthSystem>();
-        _healthSystem.OnDied += (sender, args) => Destroy(gameObject);
+        _healthSystem.OnDamaged += (sender, args) => SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
+        _healthSystem.OnDied += OnHealthSystem_OnDied;
         _lookForTargetTimer = Random.Range(0f, _lookForTargetTimerMax);
+    }
+
+    void OnHealthSystem_OnDied(object sender, EventArgs args)
+    {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
+        Destroy(gameObject);
     }
 
     void Update()
@@ -96,7 +108,10 @@ public class Enemy : MonoBehaviour
         if (_targetTransform == null)
         {
             // Found no targets within range;
-            _targetTransform = BuildingManager.Instance.GetHqBuilding().transform;
+            if (BuildingManager.Instance.GetHqBuilding() != null)
+            {
+                _targetTransform = BuildingManager.Instance.GetHqBuilding().transform;
+            }
         }
     }
 }

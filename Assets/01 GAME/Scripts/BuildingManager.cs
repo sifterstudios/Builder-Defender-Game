@@ -28,6 +28,14 @@ public class BuildingManager : MonoBehaviour
     void Start()
     {
         _mainCamera = Camera.main;
+
+        hqBuilding.GetComponent<HealthSystem>().OnDied += HQOnDied;
+    }
+
+    void HQOnDied(object sender, EventArgs e)
+    {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.GameOver);
+        GameOverUI.Instance.Show();
     }
 
     void Update()
@@ -42,10 +50,8 @@ public class BuildingManager : MonoBehaviour
                     if (ResourceManager.Instance.CanAfford(_activeBuildingType.constructionResourceCostArray))
                     {
                         ResourceManager.Instance.SpendResources(_activeBuildingType.constructionResourceCostArray);
-                        // Instantiate(_activeBuildingType.prefab, UtilsClass.GetMouseWorldPosition(),
-                        //     Quaternion.identity);
                         BuildingConstruction.Create(UtilsClass.GetMouseWorldPosition(), _activeBuildingType);
-
+                        SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingPlaced);
                     }
                     else
                     {
@@ -60,8 +66,6 @@ public class BuildingManager : MonoBehaviour
                 }
             }
         }
-
-
     }
 
 
