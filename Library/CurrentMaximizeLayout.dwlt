@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 2048
     height: 1059
-  m_MinSize: {x: 706, y: 492}
-  m_MaxSize: {x: 18001, y: 14042}
+  m_MinSize: {x: 708, y: 492}
+  m_MaxSize: {x: 18003, y: 14042}
   vertical: 0
-  controlID: 43189
+  controlID: 44007
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,10 +135,10 @@ MonoBehaviour:
     y: 0
     width: 1420
     height: 1059
-  m_MinSize: {x: 431, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 433, y: 492}
+  m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 43190
+  controlID: 43982
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -382,10 +382,10 @@ MonoBehaviour:
     y: 552
     width: 1420
     height: 507
-  m_MinSize: {x: 431, y: 271}
-  m_MaxSize: {x: 14001, y: 10021}
+  m_MinSize: {x: 433, y: 271}
+  m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 43191
+  controlID: 43929
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -453,21 +453,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/01 GAME/Scenes
+    - Assets/01 GAME/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/01 GAME/Scenes
+  - Assets/01 GAME/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\02 - Game Dev\Unity\Udemy\Awesome-Builder-Defender-UDEMY
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 387e0000
-    m_LastClickedID: 32312
+    m_SelectedIDs: a0690000
+    m_LastClickedID: 27040
     m_ExpandedIDs: 00000000786900007a6900007c69000080690000826900008469000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -521,8 +521,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5e0a0900
-    m_LastClickedInstanceID: 592478
+    m_SelectedInstanceIDs: 06280900
+    m_LastClickedInstanceID: 600070
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300003676000062750000ba650000e85e0000
     m_RenameOverlay:
@@ -548,7 +548,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 164.5}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 228.2
@@ -660,8 +660,8 @@ MonoBehaviour:
     y: 0
     width: 660.8
     height: 507
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -697,7 +697,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 70e7f7ff883efafff097faffdaf8faff2e01fbff2806fbffe207fbff5c08fbff60affcff44bdfcff36fbffff565f0000eeff08009c050900
+      m_ExpandedIDs: 6c94f7ff70e7f7ff883efafff097faffdaf8faff2e01fbff2806fbffe207fbff5c08fbff60affcff44bdfcff36fbffff565f0000eeff08009c050900c81b090076210900
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -779,8 +779,8 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 592478
-  m_LastVerticalScrollValue: 228.00006
+  m_LastInspectedObjectInstanceID: 600070
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
