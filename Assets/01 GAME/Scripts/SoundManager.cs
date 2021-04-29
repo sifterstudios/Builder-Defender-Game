@@ -20,6 +20,7 @@ public class SoundManager : MonoBehaviour
 
     AudioSource _audioSource;
     Dictionary<Sound, AudioClip> _soundAudioClipDictionary;
+    float volume = .5f;
 
     void Awake()
     {
@@ -34,6 +35,23 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(Sound sound)
     {
-        _audioSource.PlayOneShot(_soundAudioClipDictionary[sound]);
+        _audioSource.PlayOneShot(_soundAudioClipDictionary[sound], volume);
+    }
+
+    public void IncVol()
+    {
+        volume += .1f;
+        volume = Mathf.Clamp01(volume);
+    }
+
+    public void DecVol()
+    {
+        volume -= .1f;
+        volume = Mathf.Clamp01(volume);
+    }
+
+    public float GetVolume()
+    {
+        return volume;
     }
 }

@@ -89,6 +89,9 @@
      <Compile Include="Assets\01 GAME\Scripts\GameSceneManager.cs" />
      <Compile Include="Assets\01 GAME\Scripts\BuildingRepairButton.cs" />
      <Compile Include="Assets\01 GAME\Scripts\SoundManager.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\OptionsUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\MusicManager.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\MainMenuUI.cs" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
