@@ -1,3 +1,4 @@
+using BD.Camera;
 using BD.Sound;
 using BD.Utilities;
 using TMPro;
@@ -43,12 +44,17 @@ namespace BD.UI
                 GameSceneManager.Load(GameSceneManager.Scene.MainMenuScene);
                 Time.timeScale = 1f;
             });
+            transform.Find("edgeScrollingToggle").GetComponent<Toggle>().onValueChanged.AddListener(
+                (bool set) => { CameraHandler.Instance.SetEdgeScrolling(set); });
         }
 
         void Start()
         {
             UpdateText();
             gameObject.SetActive(false);
+
+            transform.Find("edgeScrollingToggle").GetComponent<Toggle>()
+                .SetIsOnWithoutNotify(CameraHandler.Instance.GetEdgeScrolling());
         }
 
         void UpdateText()

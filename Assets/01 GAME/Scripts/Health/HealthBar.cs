@@ -8,6 +8,7 @@ namespace BD.Health
         [SerializeField] HealthSystem healthSystem;
 
         Transform _barTransform;
+        Transform _separatorCointainer;
 
         void Awake()
         {
@@ -16,11 +17,42 @@ namespace BD.Health
 
         void Start()
         {
+            _separatorCointainer = transform.Find("separatorCointainer");
+
+            ConstructHealthBarSeparators();
+
             healthSystem.OnDamaged += HealthSystem_OnDamaged;
             healthSystem.OnHealed += HealthSystem_OnHealed;
+            healthSystem.OnHealthAmountMaxChanged += (sender, args) => ConstructHealthBarSeparators();
+
 
             UpdateBar();
             UpdateHealthBarVisible();
+        }
+
+        void ConstructHealthBarSeparators()
+        {
+            Transform separatorTemplate = _separatorCointainer.Find("separatorTemplate");
+            separatorTemplate.gameObject.SetActive(false);
+            foreach (Transform separatorTransform in _separatorCointainer)
+            {
+                if (separatorTransform == separatorTemplate) continue;
+                Destroy(separatorTransform.gameObject);
+            }
+
+            int healthAmountPerSeparator = 10;
+            float barSize = 3f;
+            float barOneHealthAmountSize = barSize / healthSystem.GetHealthAmountMax();
+            int healthSeparatorCount = Mathf.FloorToInt(healthSystem.GetHealthAmountMax() / healthAmountPerSeparator);
+
+            for (int i = 1; i < healthSeparatorCount; i++)
+            {
+                Transform separatorTransform = Instantiate(separatorTemplate, _separatorCointainer);
+                separatorTransform.gameObject.SetActive(true);
+                separatorTransform.localPosition = new Vector3(barOneHealthAmountSize * i * 10, 0, 0);
+            }
+
+            separatorTemplate.gameObject.SetActive(false);
         }
 
         void HealthSystem_OnHealed(object sender, EventArgs e)

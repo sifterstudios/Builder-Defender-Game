@@ -1,3 +1,4 @@
+using System;
 using Cinemachine;
 using UnityEngine;
 
@@ -5,10 +6,14 @@ namespace BD.Camera
 {
     public class CameraHandler : MonoBehaviour
     {
+        public static CameraHandler Instance { get; private set; }
         [SerializeField] CinemachineVirtualCamera cinemachineVirtualCamera;
 
         float _orthographicSize;
         float _targetorthographicSize;
+        bool _edgeScrolling;
+
+        void Awake() => Instance = this;
 
         private void Start()
         {
@@ -42,10 +47,27 @@ namespace BD.Camera
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 
+            if (_edgeScrolling)
+            {
+                float edgeScrollingSize = 35;
+                if (Input.mousePosition.x > Screen.width - edgeScrollingSize) x = 1f;
+
+                if (Input.mousePosition.x < edgeScrollingSize) x = -1f;
+
+                if (Input.mousePosition.y > Screen.height - edgeScrollingSize) y = 1f;
+
+                if (Input.mousePosition.y < edgeScrollingSize) y = -1f;
+                
+            }
             Vector3 moveDir = new Vector3(x, y).normalized;
             float moveSpeed = 30f;
 
             transform.position += moveDir * (moveSpeed * Time.deltaTime);
         }
+        public void SetEdgeScrolling (bool edgeScrolling) => _edgeScrolling = edgeScrolling;
+
+        public bool GetEdgeScrolling() => _edgeScrolling;
     }
+
+
 }

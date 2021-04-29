@@ -8,6 +8,7 @@ namespace BD.Health
         public event EventHandler OnDamaged;
         public event EventHandler OnHealed;
         public event EventHandler OnDied;
+        public event EventHandler OnHealthAmountMaxChanged;
         [SerializeField] int healthAmountMax = 100;
         int _healthAmount;
 
@@ -40,10 +41,8 @@ namespace BD.Health
         public void SetHealthAmountMax(int healthAmountMax, bool updateHealthAmount)
         {
             _healthAmount = healthAmountMax;
-            if (updateHealthAmount)
-            {
-                this.healthAmountMax = _healthAmount;
-            }
+            if (updateHealthAmount) this.healthAmountMax = _healthAmount;
+            OnHealthAmountMaxChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public void Heal(int healAmount)
