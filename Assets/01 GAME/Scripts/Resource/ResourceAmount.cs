@@ -1,6 +1,11 @@
-[System.Serializable]
-public class ResourceAmount
+using BD.Resource.SO;
+
+namespace BD.Resource
 {
-    public ResourceTypeSO resourceType;
-    public int amount;
+    [System.Serializable]
+    public class ResourceAmount
+    {
+        public ResourceTypeSO resourceType;
+        public int amount;
+    }
 }

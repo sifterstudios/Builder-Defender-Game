@@ -1,57 +1,59 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+namespace BD.Sound
 {
-    public static SoundManager Instance { get; private set; }
-
-    public enum Sound
+    public class SoundManager : MonoBehaviour
     {
-        BuildingPlaced,
-        BuildingDamaged,
-        BuildingDestroyed,
-        EnemyDie,
-        EnemyHit,
-        GameOver,
-    }
+        public static SoundManager Instance { get; private set; }
 
-
-    AudioSource _audioSource;
-    Dictionary<Sound, AudioClip> _soundAudioClipDictionary;
-    float volume = .5f;
-
-    void Awake()
-    {
-        Instance = this;
-        _audioSource = GetComponent<AudioSource>();
-        _soundAudioClipDictionary = new Dictionary<Sound, AudioClip>();
-        foreach (Sound sound in Enum.GetValues(typeof(Sound)))
+        public enum Sound
         {
-            _soundAudioClipDictionary[sound] = Resources.Load<AudioClip>(Sound.BuildingPlaced.ToString());
+            BuildingPlaced,
+            BuildingDamaged,
+            BuildingDestroyed,
+            EnemyDie,
+            EnemyHit,
+            GameOver,
         }
-    }
 
-    public void PlaySound(Sound sound)
-    {
-        _audioSource.PlayOneShot(_soundAudioClipDictionary[sound], volume);
-    }
 
-    public void IncVol()
-    {
-        volume += .1f;
-        volume = Mathf.Clamp01(volume);
-    }
+        AudioSource _audioSource;
+        Dictionary<Sound, AudioClip> _soundAudioClipDictionary;
+        float _volume = .5f;
 
-    public void DecVol()
-    {
-        volume -= .1f;
-        volume = Mathf.Clamp01(volume);
-    }
+        void Awake()
+        {
+            Instance = this;
+            _audioSource = GetComponent<AudioSource>();
+            _soundAudioClipDictionary = new Dictionary<Sound, AudioClip>();
+            foreach (Sound sound in Enum.GetValues(typeof(Sound)))
+            {
+                _soundAudioClipDictionary[sound] = Resources.Load<AudioClip>(Sound.BuildingPlaced.ToString());
+            }
+        }
 
-    public float GetVolume()
-    {
-        return volume;
+        public void PlaySound(Sound sound)
+        {
+            _audioSource.PlayOneShot(_soundAudioClipDictionary[sound], _volume);
+        }
+
+        public void IncVol()
+        {
+            _volume += .1f;
+            _volume = Mathf.Clamp01(_volume);
+        }
+
+        public void DecVol()
+        {
+            _volume -= .1f;
+            _volume = Mathf.Clamp01(_volume);
+        }
+
+        public float GetVolume()
+        {
+            return _volume;
+        }
     }
 }

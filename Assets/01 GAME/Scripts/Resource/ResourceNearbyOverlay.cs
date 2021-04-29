@@ -1,36 +1,36 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ResourceNearbyOverlay : MonoBehaviour
+namespace BD.Resource
 {
-    ResourceGeneratorData resourceGeneratorData;
-
-    void Awake()
+    public class ResourceNearbyOverlay : MonoBehaviour
     {
-        Hide();
-    }
+        ResourceGeneratorData _resourceGeneratorData;
 
-    void Update()
-    {
-        int nearbyResourceAmount = ResourceGenerator.GetNearbyResourceAmount(resourceGeneratorData, transform.position);
-        float percent = Mathf.RoundToInt((float) nearbyResourceAmount / resourceGeneratorData.maxResourceAmount * 100f);
-        transform.Find("text").GetComponent<TextMeshPro>().SetText(percent + "%");
-    }
+        void Awake()
+        {
+            Hide();
+        }
 
-    public void Show(ResourceGeneratorData resourceGeneratorData)
-    {
-        this.resourceGeneratorData = resourceGeneratorData;
-        gameObject.SetActive(true);
+        void Update()
+        {
+            int nearbyResourceAmount = ResourceGenerator.GetNearbyResourceAmount(_resourceGeneratorData, transform.position);
+            float percent = Mathf.RoundToInt((float) nearbyResourceAmount / _resourceGeneratorData.maxResourceAmount * 100f);
+            transform.Find("text").GetComponent<TextMeshPro>().SetText(percent + "%");
+        }
 
-        transform.Find("icon").GetComponent<SpriteRenderer>().sprite = resourceGeneratorData.resourceType.sprite;
+        public void Show(ResourceGeneratorData resourceGeneratorData)
+        {
+            this._resourceGeneratorData = resourceGeneratorData;
+            gameObject.SetActive(true);
 
-    }
+            transform.Find("icon").GetComponent<SpriteRenderer>().sprite = resourceGeneratorData.resourceType.sprite;
 
-    public void Hide()
-    {
-        gameObject.SetActive(false);
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

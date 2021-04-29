@@ -1,6 +1,10 @@
+using BD.Building.SO;
 using UnityEngine;
 
-public class BuildingTypeHolder : MonoBehaviour
+namespace BD.Building
 {
-    public BuildingTypeSO buildingType;
+    public class BuildingTypeHolder : MonoBehaviour
+    {
+        public BuildingTypeSO buildingType;
+    }
 }

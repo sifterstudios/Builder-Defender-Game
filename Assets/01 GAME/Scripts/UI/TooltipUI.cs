@@ -1,78 +1,81 @@
 using TMPro;
 using UnityEngine;
 
-public class TooltipUI : MonoBehaviour
+namespace BD.UI
 {
-    public static TooltipUI Instance { get; private set; }
-    [SerializeField] RectTransform canvasRectTransform;
-    RectTransform _thisRectTransform;
-    TextMeshProUGUI _textMeshPro;
-    RectTransform _backgroundRectTransform;
-    TooltipTimer _tooltipTimer;
-
-    void Awake()
+    public class TooltipUI : MonoBehaviour
     {
-        Instance = this;
-        _thisRectTransform = GetComponent<RectTransform>();
-        _textMeshPro = transform.Find("text").GetComponent<TextMeshProUGUI>();
-        _backgroundRectTransform = transform.Find("background").GetComponent<RectTransform>();
+        public static TooltipUI Instance { get; private set; }
+        [SerializeField] RectTransform canvasRectTransform;
+        RectTransform _thisRectTransform;
+        TextMeshProUGUI _textMeshPro;
+        RectTransform _backgroundRectTransform;
+        TooltipTimer _tooltipTimer;
 
-        Hide();
-    }
-
-    void SetText(string tooltipText)
-    {
-        _textMeshPro.SetText(tooltipText);
-        _textMeshPro.ForceMeshUpdate();
-
-
-        Vector2 textSize = _textMeshPro.GetRenderedValues(false);
-        Vector2 padding = new Vector2(8, 8);
-        _backgroundRectTransform.sizeDelta = textSize + padding;
-    }
-
-    void Update()
-    {
-        HandleFollowMouse();
-
-        if (_tooltipTimer != null)
+        void Awake()
         {
-            _tooltipTimer.Timer -= Time.deltaTime;
-            if (_tooltipTimer.Timer <= 0) Hide();
-        }
-    }
+            Instance = this;
+            _thisRectTransform = GetComponent<RectTransform>();
+            _textMeshPro = transform.Find("text").GetComponent<TextMeshProUGUI>();
+            _backgroundRectTransform = transform.Find("background").GetComponent<RectTransform>();
 
-    void HandleFollowMouse()
-    {
-        Vector2 anchoredPosition = Input.mousePosition / canvasRectTransform.localScale.x;
-        if (anchoredPosition.x + _backgroundRectTransform.rect.width > canvasRectTransform.rect.width)
-        {
-            anchoredPosition.x = canvasRectTransform.rect.width - _backgroundRectTransform.rect.width;
+            Hide();
         }
 
-        if (anchoredPosition.y + _backgroundRectTransform.rect.height > canvasRectTransform.rect.height)
+        void SetText(string tooltipText)
         {
-            anchoredPosition.y = canvasRectTransform.rect.height - _backgroundRectTransform.rect.height;
+            _textMeshPro.SetText(tooltipText);
+            _textMeshPro.ForceMeshUpdate();
+
+
+            Vector2 textSize = _textMeshPro.GetRenderedValues(false);
+            Vector2 padding = new Vector2(8, 8);
+            _backgroundRectTransform.sizeDelta = textSize + padding;
         }
 
-        _thisRectTransform.anchoredPosition = anchoredPosition;
-    }
+        void Update()
+        {
+            HandleFollowMouse();
 
-    public void Show(string tooltipText, TooltipTimer tooltipTimer = null)
-    {
-        _tooltipTimer = tooltipTimer;
-        gameObject.SetActive(true);
-        SetText(tooltipText);
-        HandleFollowMouse();
-    }
+            if (_tooltipTimer != null)
+            {
+                _tooltipTimer.Timer -= Time.deltaTime;
+                if (_tooltipTimer.Timer <= 0) Hide();
+            }
+        }
 
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
+        void HandleFollowMouse()
+        {
+            Vector2 anchoredPosition = Input.mousePosition / canvasRectTransform.localScale.x;
+            if (anchoredPosition.x + _backgroundRectTransform.rect.width > canvasRectTransform.rect.width)
+            {
+                anchoredPosition.x = canvasRectTransform.rect.width - _backgroundRectTransform.rect.width;
+            }
 
-    public class TooltipTimer
-    {
-        public float Timer;
+            if (anchoredPosition.y + _backgroundRectTransform.rect.height > canvasRectTransform.rect.height)
+            {
+                anchoredPosition.y = canvasRectTransform.rect.height - _backgroundRectTransform.rect.height;
+            }
+
+            _thisRectTransform.anchoredPosition = anchoredPosition;
+        }
+
+        public void Show(string tooltipText, TooltipTimer tooltipTimer = null)
+        {
+            _tooltipTimer = tooltipTimer;
+            gameObject.SetActive(true);
+            SetText(tooltipText);
+            HandleFollowMouse();
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public class TooltipTimer
+        {
+            public float Timer;
+        }
     }
 }

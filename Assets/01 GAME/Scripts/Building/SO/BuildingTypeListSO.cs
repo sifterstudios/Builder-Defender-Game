@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObjects/BuildingTypeList")]
-public class BuildingTypeListSO : ScriptableObject
+namespace BD.Building.SO
 {
-    public List<BuildingTypeSO> list;
+    [CreateAssetMenu(menuName = "ScriptableObjects/BuildingTypeList")]
+    public class BuildingTypeListSO : ScriptableObject
+    {
+        public List<BuildingTypeSO> list;
+    }
 }

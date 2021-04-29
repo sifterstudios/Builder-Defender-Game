@@ -1,6 +1,10 @@
+using BD.Resource.SO;
 using UnityEngine;
 
-public class ResourceNode : MonoBehaviour
+namespace BD.Resource
 {
-    public ResourceTypeSO resourceType;
+    public class ResourceNode : MonoBehaviour
+    {
+        public ResourceTypeSO resourceType;
+    }
 }

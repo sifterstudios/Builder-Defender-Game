@@ -1,78 +1,82 @@
 using System;
 using System.Collections.Generic;
+using BD.Resource.SO;
 using UnityEngine;
 
-public class ResourceManager : MonoBehaviour
+namespace BD.Resource
 {
-    public static ResourceManager Instance { get; private set; }
-
-    public event EventHandler OnResourceAmountChanged;
-
-    [SerializeField] List<ResourceAmount> startingResourceAmountList;
-    Dictionary<ResourceTypeSO, int> _resourceAmountDictionary;
-
-
-    void Awake()
+    public class ResourceManager : MonoBehaviour
     {
-        Instance = this;
-        _resourceAmountDictionary = new Dictionary<ResourceTypeSO, int>();
+        public static ResourceManager Instance { get; private set; }
 
-        ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
+        public event EventHandler OnResourceAmountChanged;
 
-        foreach (ResourceTypeSO resourceType in resourceTypeList.list)
+        [SerializeField] List<ResourceAmount> startingResourceAmountList;
+        Dictionary<ResourceTypeSO, int> _resourceAmountDictionary;
+
+
+        void Awake()
         {
-            _resourceAmountDictionary[resourceType] = 0;
-        }
+            Instance = this;
+            _resourceAmountDictionary = new Dictionary<ResourceTypeSO, int>();
 
-        foreach (ResourceAmount resourceAmount in startingResourceAmountList)
-        {
-            AddResource(resourceAmount.resourceType, resourceAmount.amount);
-        }
-    }
+            ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
 
-    void TestLogResourceAmountDictionary()
-    {
-        foreach (ResourceTypeSO resourceType in _resourceAmountDictionary.Keys)
-        {
-            Debug.Log(resourceType.nameString + ": " + _resourceAmountDictionary[resourceType]);
-        }
-    }
-
-    public void AddResource(ResourceTypeSO resourceType, int amount)
-    {
-        _resourceAmountDictionary[resourceType] += amount;
-        OnResourceAmountChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public int GetResourceAmount(ResourceTypeSO resourceType)
-    {
-        return _resourceAmountDictionary[resourceType];
-    }
-
-    public bool CanAfford(ResourceAmount[] resourceAmountArray)
-    {
-        foreach (ResourceAmount resourceAmount in resourceAmountArray)
-        {
-            if (GetResourceAmount(resourceAmount.resourceType) >= resourceAmount.amount)
+            foreach (ResourceTypeSO resourceType in resourceTypeList.list)
             {
-                // Can afford
+                _resourceAmountDictionary[resourceType] = 0;
             }
-            else
+
+            foreach (ResourceAmount resourceAmount in startingResourceAmountList)
             {
-                // Cannot afford this!
-                return false;
+                AddResource(resourceAmount.resourceType, resourceAmount.amount);
             }
         }
 
-        // Can afford all
-        return true;
-    }
-
-    public void SpendResources(ResourceAmount[] resourceAmountArray)
-    {
-        foreach (ResourceAmount resourceAmount in resourceAmountArray)
+        void TestLogResourceAmountDictionary()
         {
-            _resourceAmountDictionary[resourceAmount.resourceType] -= resourceAmount.amount;
+            foreach (ResourceTypeSO resourceType in _resourceAmountDictionary.Keys)
+            {
+                Debug.Log(resourceType.nameString + ": " + _resourceAmountDictionary[resourceType]);
+            }
+        }
+
+        public void AddResource(ResourceTypeSO resourceType, int amount)
+        {
+            _resourceAmountDictionary[resourceType] += amount;
+            OnResourceAmountChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        public int GetResourceAmount(ResourceTypeSO resourceType)
+        {
+            return _resourceAmountDictionary[resourceType];
+        }
+
+        public bool CanAfford(ResourceAmount[] resourceAmountArray)
+        {
+            foreach (ResourceAmount resourceAmount in resourceAmountArray)
+            {
+                if (GetResourceAmount(resourceAmount.resourceType) >= resourceAmount.amount)
+                {
+                    // Can afford
+                }
+                else
+                {
+                    // Cannot afford this!
+                    return false;
+                }
+            }
+
+            // Can afford all
+            return true;
+        }
+
+        public void SpendResources(ResourceAmount[] resourceAmountArray)
+        {
+            foreach (ResourceAmount resourceAmount in resourceAmountArray)
+            {
+                _resourceAmountDictionary[resourceAmount.resourceType] -= resourceAmount.amount;
+            }
         }
     }
 }

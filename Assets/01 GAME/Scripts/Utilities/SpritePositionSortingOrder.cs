@@ -1,25 +1,28 @@
 using UnityEngine;
 
-public class SpritePositionSortingOrder : MonoBehaviour
+namespace BD.Utilities
 {
-    [SerializeField] bool runOnce;
-    [SerializeField] float positionOffsetY;
-    SpriteRenderer _spriteRenderer;
-    float _precisionMultiplier = 5f;
-
-
-    void Awake()
+    public class SpritePositionSortingOrder : MonoBehaviour
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+        [SerializeField] bool runOnce;
+        [SerializeField] float positionOffsetY;
+        SpriteRenderer _spriteRenderer;
+        float _precisionMultiplier = 5f;
 
-    void LateUpdate()
-    {
-        _spriteRenderer.sortingOrder = (int) (-(transform.position.y + positionOffsetY)* _precisionMultiplier);
 
-        if (runOnce)
+        void Awake()
         {
-            Destroy(this);
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        void LateUpdate()
+        {
+            _spriteRenderer.sortingOrder = (int) (-(transform.position.y + positionOffsetY)* _precisionMultiplier);
+
+            if (runOnce)
+            {
+                Destroy(this);
+            }
         }
     }
 }

@@ -52,46 +52,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceNode.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Health\HealthBar.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\ArrowProjectile.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingGhost.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingManager.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceManager.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Enemy\EnemyWaveManager.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingTypeHolder.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingDemolishButton.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\SO\BuildingTypeListSO.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Camera\CameraHandler.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Resource\SO\ResourceTypeSO.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\UI\BuildingTypeSelectUI.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\Building.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Utilities\SpritePositionSortingOrder.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\SO\BuildingTypeSO.cs" />
      <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Resource\SO\ResourceTypeListSO.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceGeneratorOverlay.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceAmount.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Enemy\EnemyWaveUI.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingConstruction.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\Tower.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Utilities\MouseEnterExitEvents.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceNearbyOverlay.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\UI\ResourcesUI.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\UI\TooltipUI.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceGenerator.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Enemy\Enemy.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceGeneratorData.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\ConstructionTimerUI.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Health\HealthSystem.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Utilities\UtilsClass.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\UI\GameOverUI.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Utilities\GameSceneManager.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingRepairButton.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Sound\SoundManager.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\UI\OptionsUI.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\Sound\MusicManager.cs" />
-     <Compile Include="Assets\01 GAME\Scripts\UI\MainMenuUI.cs" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -932,6 +893,10 @@
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj">
       <Project>{ada5dd3c-18f7-9059-c48e-f835793f1f5f}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="BuilderDefenderAssembly.csproj">
+      <Project>{09b95573-21ee-8688-192a-f9f71f524aa5}</Project>
+      <Name>BuilderDefenderAssembly</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,13 +1,17 @@
+using BD.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainMenuUI : MonoBehaviour
+namespace BD.UI
 {
-    void Awake()
+    public class MainMenuUI : MonoBehaviour
     {
-        transform.Find("playBtn").GetComponent<Button>().onClick.AddListener(
-            () => GameSceneManager.Load(GameSceneManager.Scene.GameScene));
-        transform.Find("quitBtn").GetComponent<Button>().onClick.AddListener(
-            Application.Quit);
+        void Awake()
+        {
+            transform.Find("playBtn").GetComponent<Button>().onClick.AddListener(
+                () => GameSceneManager.Load(GameSceneManager.Scene.GameScene));
+            transform.Find("quitBtn").GetComponent<Button>().onClick.AddListener(
+                Application.Quit);
+        }
     }
 }

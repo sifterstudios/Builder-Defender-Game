@@ -1,54 +1,55 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBar : MonoBehaviour
+namespace BD.Health
 {
-    [SerializeField] HealthSystem healthSystem;
-
-    Transform _barTransform;
-
-    void Awake()
+    public class HealthBar : MonoBehaviour
     {
-        _barTransform = transform.Find("bar");
-    }
+        [SerializeField] HealthSystem healthSystem;
 
-    void Start()
-    {
-        healthSystem.OnDamaged += HealthSystem_OnDamaged;
-        healthSystem.OnHealed += HealthSystem_OnHealed;
+        Transform _barTransform;
 
-        UpdateBar();
-        UpdateHealthBarVisible();
-    }
-
-    void HealthSystem_OnHealed(object sender, EventArgs e)
-    {
-        UpdateBar();
-        UpdateHealthBarVisible();
-    }
-
-    void HealthSystem_OnDamaged(object sender, EventArgs e)
-    {
-        UpdateBar();
-        UpdateHealthBarVisible();
-    }
-
-    void UpdateBar()
-    {
-        _barTransform.localScale = new Vector3(healthSystem.GetHealthAmountNormalized(), 1, 1);
-    }
-
-    void UpdateHealthBarVisible()
-    {
-        if (healthSystem.IsFullHealth())
+        void Awake()
         {
-            gameObject.SetActive(false);
+            _barTransform = transform.Find("bar");
         }
-        else
+
+        void Start()
         {
-            gameObject.SetActive(true);
+            healthSystem.OnDamaged += HealthSystem_OnDamaged;
+            healthSystem.OnHealed += HealthSystem_OnHealed;
+
+            UpdateBar();
+            UpdateHealthBarVisible();
+        }
+
+        void HealthSystem_OnHealed(object sender, EventArgs e)
+        {
+            UpdateBar();
+            UpdateHealthBarVisible();
+        }
+
+        void HealthSystem_OnDamaged(object sender, EventArgs e)
+        {
+            UpdateBar();
+            UpdateHealthBarVisible();
+        }
+
+        void UpdateBar()
+        {
+            _barTransform.localScale = new Vector3(healthSystem.GetHealthAmountNormalized(), 1, 1);
+        }
+
+        void UpdateHealthBarVisible()
+        {
+            if (healthSystem.IsFullHealth())
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                gameObject.SetActive(true);
+            }
         }
     }
 }

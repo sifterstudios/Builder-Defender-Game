@@ -1,33 +1,35 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MusicManager : MonoBehaviour
+namespace BD.Sound
 {
-    float volume = .5f;
-    AudioSource _audioSource;
-
-    void Awake()
+    public class MusicManager : MonoBehaviour
     {
-        _audioSource = GetComponent<AudioSource>();
-        _audioSource.volume = volume;
-    }
+        float _volume = .5f;
+        AudioSource _audioSource;
 
-    public void IncVol()
-    {
-        volume += .1f;
-        volume = Mathf.Clamp01(volume);
-        _audioSource.volume = volume;
-    }
+        void Awake()
+        {
+            _audioSource = GetComponent<AudioSource>();
+            _audioSource.volume = _volume;
+        }
 
-    public void DecVol()
-    {
-        volume -= .1f;
-        volume = Mathf.Clamp01(volume);
-        _audioSource.volume = volume;
-    }
+        public void IncVol()
+        {
+            _volume += .1f;
+            _volume = Mathf.Clamp01(_volume);
+            _audioSource.volume = _volume;
+        }
 
-    public float GetVolume()
-    {
-        return volume;
+        public void DecVol()
+        {
+            _volume -= .1f;
+            _volume = Mathf.Clamp01(_volume);
+            _audioSource.volume = _volume;
+        }
+
+        public float GetVolume()
+        {
+            return _volume;
+        }
     }
 }

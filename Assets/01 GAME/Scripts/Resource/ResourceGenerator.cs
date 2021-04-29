@@ -1,4 +1,6 @@
 using System;
+using BD.Building;
+using BD.Resource;
 using UnityEngine;
 
 public class ResourceGenerator : MonoBehaviour

@@ -1,21 +1,26 @@
+using BD.Building.SO;
+using BD.Resource;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuildingDemolishButton : MonoBehaviour
+namespace BD.Building
 {
-    [SerializeField] Building building;
-
-    void Awake()
+    public class BuildingDemolishButton : MonoBehaviour
     {
-        transform.Find("button").GetComponent<Button>().onClick.AddListener(() =>
+        [SerializeField] Building building;
+
+        void Awake()
         {
-            BuildingTypeSO buildingType = building.GetComponent<BuildingTypeHolder>().buildingType;
-            foreach (ResourceAmount resourceAmount in buildingType.constructionResourceCostArray)
+            transform.Find("button").GetComponent<Button>().onClick.AddListener(() =>
             {
-                ResourceManager.Instance.AddResource(resourceAmount.resourceType,
-                    Mathf.FloorToInt((resourceAmount.amount * .6f)));
-                Destroy(building.gameObject);
-            }
-        });
+                BuildingTypeSO buildingType = building.GetComponent<BuildingTypeHolder>().buildingType;
+                foreach (ResourceAmount resourceAmount in buildingType.constructionResourceCostArray)
+                {
+                    ResourceManager.Instance.AddResource(resourceAmount.resourceType,
+                        Mathf.FloorToInt((resourceAmount.amount * .6f)));
+                    Destroy(building.gameObject);
+                }
+            });
+        }
     }
 }

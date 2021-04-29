@@ -1,3 +1,5 @@
+using BD.Resource.SO;
+
 [System.Serializable]
 public class ResourceGeneratorData
 {

@@ -1,67 +1,69 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using BD.Sound;
+using BD.Utilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OptionsUI : MonoBehaviour
+namespace BD.UI
 {
-    [SerializeField] SoundManager soundManager;
-    [SerializeField] MusicManager musicManager;
-    TextMeshProUGUI _soundVolumeText;
-    TextMeshProUGUI _musicVolumeText;
-
-
-    void Awake()
+    public class OptionsUI : MonoBehaviour
     {
-        _soundVolumeText = transform.Find("soundVolumeText").GetComponent<TextMeshProUGUI>();
-        _musicVolumeText = transform.Find("musicVolumeText").GetComponent<TextMeshProUGUI>();
-        transform.Find("soundIncBtn").GetComponent<Button>().onClick.AddListener(() =>
-        {
-            soundManager.IncVol();
-            UpdateText();
-        });
-        transform.Find("soundDecBtn").GetComponent<Button>().onClick.AddListener(() =>
-        {
-            soundManager.DecVol();
-            UpdateText();
-        });
-        transform.Find("musicIncBtn").GetComponent<Button>().onClick.AddListener(() =>
-        {
-            musicManager.IncVol();
-            UpdateText();
-        });
-        transform.Find("musicDecBtn").GetComponent<Button>().onClick.AddListener(() =>
-        {
-            musicManager.DecVol();
-            UpdateText();
-        });
-        transform.Find("mainMenuBtn").GetComponent<Button>().onClick.AddListener(() =>
-        {
-            GameSceneManager.Load(GameSceneManager.Scene.MainMenuScene);
-            Time.timeScale = 1f;
-        });
-    }
+        [SerializeField] SoundManager soundManager;
+        [SerializeField] MusicManager musicManager;
+        TextMeshProUGUI _soundVolumeText;
+        TextMeshProUGUI _musicVolumeText;
 
-    void Start()
-    {
-        UpdateText();
-        gameObject.SetActive(false);
-    }
 
-    void UpdateText()
-    {
-        _soundVolumeText.SetText(Mathf.RoundToInt(soundManager.GetVolume() * 10).ToString());
-        _musicVolumeText.SetText(Mathf.RoundToInt(musicManager.GetVolume() * 10).ToString());
-    }
+        void Awake()
+        {
+            _soundVolumeText = transform.Find("soundVolumeText").GetComponent<TextMeshProUGUI>();
+            _musicVolumeText = transform.Find("musicVolumeText").GetComponent<TextMeshProUGUI>();
+            transform.Find("soundIncBtn").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                soundManager.IncVol();
+                UpdateText();
+            });
+            transform.Find("soundDecBtn").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                soundManager.DecVol();
+                UpdateText();
+            });
+            transform.Find("musicIncBtn").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                musicManager.IncVol();
+                UpdateText();
+            });
+            transform.Find("musicDecBtn").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                musicManager.DecVol();
+                UpdateText();
+            });
+            transform.Find("mainMenuBtn").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                GameSceneManager.Load(GameSceneManager.Scene.MainMenuScene);
+                Time.timeScale = 1f;
+            });
+        }
 
-    public void ToggleOptionsVisibility()
-    {
-        gameObject.SetActive(!gameObject.activeSelf);
-        if (gameObject.activeSelf)
-            Time.timeScale = 0f;
-        else
-            Time.timeScale = 1f;
+        void Start()
+        {
+            UpdateText();
+            gameObject.SetActive(false);
+        }
+
+        void UpdateText()
+        {
+            _soundVolumeText.SetText(Mathf.RoundToInt(soundManager.GetVolume() * 10).ToString());
+            _musicVolumeText.SetText(Mathf.RoundToInt(musicManager.GetVolume() * 10).ToString());
+        }
+
+        public void ToggleOptionsVisibility()
+        {
+            gameObject.SetActive(!gameObject.activeSelf);
+            if (gameObject.activeSelf)
+                Time.timeScale = 0f;
+            else
+                Time.timeScale = 1f;
+        }
     }
 }

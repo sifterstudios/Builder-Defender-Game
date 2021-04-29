@@ -361,6 +361,10 @@ PrefabInstance:
       propertyPath: BuildingConstruction
       value: 
       objectReference: {fileID: 1468456951914143568}
+    - target: {fileID: 7899615920539651314, guid: 1f5fce7e2f6ddda4dae1ba1f181daae1, type: 3}
+      propertyPath: buildingConstruction
+      value: 
+      objectReference: {fileID: 1468456951914143568}
     - target: {fileID: 8163042324142200629, guid: 1f5fce7e2f6ddda4dae1ba1f181daae1, type: 3}
       propertyPath: m_Name
       value: pfConstructionTimerUI

@@ -1,21 +1,21 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ConstructionTimerUI : MonoBehaviour
+namespace BD.Building
 {
-    [SerializeField] BuildingConstruction BuildingConstruction;
-    Image _constructionProgressImage;
-
-    void Awake()
+    public class ConstructionTimerUI : MonoBehaviour
     {
-        _constructionProgressImage = transform.Find("mask").Find("image").GetComponent<Image>();
-    }
+        [SerializeField] BuildingConstruction buildingConstruction;
+        Image _constructionProgressImage;
 
-    void Update()
-    {
-        _constructionProgressImage.fillAmount = BuildingConstruction.GetConstructionTimerNormalized();
+        void Awake()
+        {
+            _constructionProgressImage = transform.Find("mask").Find("image").GetComponent<Image>();
+        }
+
+        void Update()
+        {
+            _constructionProgressImage.fillAmount = buildingConstruction.GetConstructionTimerNormalized();
+        }
     }
 }

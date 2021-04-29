@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObjects/ResourceTypeList")]
-public class ResourceTypeListSO : ScriptableObject
+namespace BD.Resource.SO
 {
-    public List<ResourceTypeSO> list;
+    [CreateAssetMenu(menuName = "ScriptableObjects/ResourceTypeList")]
+    public class ResourceTypeListSO : ScriptableObject
+    {
+        public List<ResourceTypeSO> list;
+    }
 }

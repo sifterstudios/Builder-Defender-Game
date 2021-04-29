@@ -1,36 +1,37 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Ludiq.PeekCore.CodeDom;
+using BD.Enemy;
+using BD.Utilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameOverUI : MonoBehaviour
+namespace BD.UI
 {
-    public static GameOverUI Instance { get; private set; }
-
-    void Awake()
+    public class GameOverUI : MonoBehaviour
     {
-        Instance = this;
-        transform.Find("retryBtn").GetComponent<Button>().onClick.AddListener(() =>
-            GameSceneManager.Load(GameSceneManager.Scene.GameScene));
-        transform.Find("mainMenuBtn").GetComponent<Button>().onClick.AddListener(() =>
-            GameSceneManager.Load(GameSceneManager.Scene.MainMenuScene));
+        public static GameOverUI Instance { get; private set; }
 
-        Hide();
-    }
+        void Awake()
+        {
+            Instance = this;
+            transform.Find("retryBtn").GetComponent<Button>().onClick.AddListener(() =>
+                GameSceneManager.Load(GameSceneManager.Scene.GameScene));
+            transform.Find("mainMenuBtn").GetComponent<Button>().onClick.AddListener(() =>
+                GameSceneManager.Load(GameSceneManager.Scene.MainMenuScene));
 
-    public void Show()
-    {
-        gameObject.SetActive(true);
+            Hide();
+        }
 
-        transform.Find("wavesSurvivedText").GetComponent<TextMeshProUGUI>()
-            .SetText("You Survived " + EnemyWaveManager.Instance.GetWaveNumber() + " Waves!");
-    }
+        public void Show()
+        {
+            gameObject.SetActive(true);
 
-    public void Hide()
-    {
-        gameObject.SetActive(false);
+            transform.Find("wavesSurvivedText").GetComponent<TextMeshProUGUI>()
+                .SetText("You Survived " + EnemyWaveManager.Instance.GetWaveNumber() + " Waves!");
+        }
+
+        void Hide()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

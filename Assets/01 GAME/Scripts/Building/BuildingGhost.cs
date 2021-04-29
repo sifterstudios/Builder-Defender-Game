@@ -1,52 +1,56 @@
-using System;
+using BD.Resource;
+using BD.Utilities;
 using UnityEngine;
 
-public class BuildingGhost : MonoBehaviour
+namespace BD.Building
 {
-    GameObject _spriteGameObject;
-    ResourceNearbyOverlay _resourceNearbyOverlay;
-
-    void Awake()
+    public class BuildingGhost : MonoBehaviour
     {
-        _spriteGameObject = transform.Find("sprite").gameObject;
-        _resourceNearbyOverlay = transform.Find("pfResourceNearbyOverlay").GetComponent<ResourceNearbyOverlay>();
-        Hide();
-    }
+        GameObject _spriteGameObject;
+        ResourceNearbyOverlay _resourceNearbyOverlay;
 
-    void Start()
-    {
-        BuildingManager.Instance.OnActiveBuildingTypeChanged += BuildingManager_OnActiveBuildingTypeChanged;
-    }
-
-    void BuildingManager_OnActiveBuildingTypeChanged(object sender,
-        BuildingManager.OnActiveBuildingTypeChangedEventArgs e)
-    {
-        if (e.ActiveBuildingType == null)
+        void Awake()
         {
+            _spriteGameObject = transform.Find("sprite").gameObject;
+            _resourceNearbyOverlay = transform.Find("pfResourceNearbyOverlay").GetComponent<ResourceNearbyOverlay>();
             Hide();
-            _resourceNearbyOverlay.Hide();
         }
-        else
+
+        void Start()
         {
-            Show(e.ActiveBuildingType.sprite);
-            if (e.ActiveBuildingType.hasResourceGeneratorData)
-            {
-                _resourceNearbyOverlay.Show(e.ActiveBuildingType.resourceGeneratorData);
-            }
-            else _resourceNearbyOverlay.Hide();
+            BuildingManager.Instance.OnActiveBuildingTypeChanged += BuildingManager_OnActiveBuildingTypeChanged;
         }
-    }
 
-    void Update() => transform.position = UtilsClass.GetMouseWorldPosition();
+        void BuildingManager_OnActiveBuildingTypeChanged(object sender,
+            BuildingManager.OnActiveBuildingTypeChangedEventArgs e)
+        {
+            if (e.ActiveBuildingType == null)
+            {
+                Hide();
+                _resourceNearbyOverlay.Hide();
+            }
+            else
+            {
+                Show(e.ActiveBuildingType.sprite);
+                if (e.ActiveBuildingType.hasResourceGeneratorData)
+                {
+                    _resourceNearbyOverlay.Show(e.ActiveBuildingType.resourceGeneratorData);
+                }
+                else _resourceNearbyOverlay.Hide();
+            }
+        }
 
-    void Show(Sprite ghostSprite)
-    {
-        _spriteGameObject.SetActive(true);
-        _spriteGameObject.GetComponent<SpriteRenderer>().sprite = ghostSprite;
-    }
+        void Update() => transform.position = UtilsClass.GetMouseWorldPosition();
 
-    void Hide()
-    {
-        _spriteGameObject.SetActive(false);
+        void Show(Sprite ghostSprite)
+        {
+            _spriteGameObject.SetActive(true);
+            _spriteGameObject.GetComponent<SpriteRenderer>().sprite = ghostSprite;
+        }
+
+        void Hide()
+        {
+            _spriteGameObject.SetActive(false);
+        }
     }
 }

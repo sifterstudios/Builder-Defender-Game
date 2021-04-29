@@ -1,32 +1,39 @@
+using BD.Health;
+using BD.Resource;
+using BD.Resource.SO;
+using BD.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuildingRepairButton : MonoBehaviour
+namespace BD.Building
 {
-    [SerializeField] HealthSystem healthSystem;
-    [SerializeField] private ResourceTypeSO goldResourceType;
-
-
-    void Awake()
+    public class BuildingRepairButton : MonoBehaviour
     {
-        transform.Find("button").GetComponent<Button>().onClick.AddListener(() =>
-        {
-            int missingHealth = healthSystem.GetHealthAmountMax() - healthSystem.GetHealthAmount();
-            int repairCost = missingHealth / 2;
+        [SerializeField] HealthSystem healthSystem;
+        [SerializeField] private ResourceTypeSO goldResourceType;
 
-            ResourceAmount[] resourceAmountCost = new ResourceAmount[]
-                {new ResourceAmount {resourceType = goldResourceType, amount = repairCost}};
-            if (ResourceManager.Instance.CanAfford(resourceAmountCost))
+
+        void Awake()
+        {
+            transform.Find("button").GetComponent<Button>().onClick.AddListener(() =>
             {
-                // Cam afford the repairs
-                ResourceManager.Instance.SpendResources(resourceAmountCost);
-                healthSystem.HealFull();
-            }
-            else
-            {
-                // Cannot afford the repairs!
-                TooltipUI.Instance.Show("Cannot afford repair cost!", new TooltipUI.TooltipTimer {Timer = 2f});
-            }
-        });
+                int missingHealth = healthSystem.GetHealthAmountMax() - healthSystem.GetHealthAmount();
+                int repairCost = missingHealth / 2;
+
+                ResourceAmount[] resourceAmountCost = new ResourceAmount[]
+                    {new ResourceAmount {resourceType = goldResourceType, amount = repairCost}};
+                if (ResourceManager.Instance.CanAfford(resourceAmountCost))
+                {
+                    // Cam afford the repairs
+                    ResourceManager.Instance.SpendResources(resourceAmountCost);
+                    healthSystem.HealFull();
+                }
+                else
+                {
+                    // Cannot afford the repairs!
+                    TooltipUI.Instance.Show("Cannot afford repair cost!", new TooltipUI.TooltipTimer {Timer = 2f});
+                }
+            });
+        }
     }
 }
