@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 706, y: 492}
   m_MaxSize: {x: 18001, y: 14042}
   vertical: 0
-  controlID: 11429
+  controlID: 43189
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,7 +94,7 @@ MonoBehaviour:
       y: 21
       width: 1419
       height: 510
-    m_Scale: {x: 1.0910671, y: 1.0910671}
+    m_Scale: {x: 1, y: 1}
     m_Translation: {x: 709.5, y: 255}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -102,10 +102,10 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -650.2808
-      y: -233.71616
-      width: 1300.5616
-      height: 467.4323
+      x: -709.5
+      y: -255
+      width: 1419
+      height: 510
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1773.75, y: 663.75}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 431, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 1
-  controlID: 11430
+  controlID: 43190
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 349.3216, y: 450.92075, z: -64.20232}
+    m_Target: {x: -96.21385, y: 57.099102, z: -65.25781}
     speed: 2
-    m_Value: {x: 349.3216, y: 450.92075, z: -64.20232}
+    m_Value: {x: -96.21385, y: 57.099102, z: -65.25781}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -256,9 +256,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 520.4003
+    m_Target: 439.1064
     speed: 2
-    m_Value: 520.4003
+    m_Value: 439.1064
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_MinSize: {x: 431, y: 271}
   m_MaxSize: {x: 14001, y: 10021}
   vertical: 0
-  controlID: 11431
+  controlID: 43191
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -453,22 +453,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/01 GAME/Sound FX/Resources
+    - Assets/01 GAME/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/01 GAME/Sound FX/Resources
+  - Assets/01 GAME/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\02 - Game Dev\Unity\Udemy\Awesome-Builder-Defender-UDEMY
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 50}
-    m_SelectedIDs: ae9e0200
-    m_LastClickedID: 171694
-    m_ExpandedIDs: 00000000786900007a6900007c690000806900008269000084690000b269000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 387e0000
+    m_LastClickedID: 32312
+    m_ExpandedIDs: 00000000786900007a6900007c69000080690000826900008469000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -521,9 +521,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 341cfdff
-    m_LastClickedInstanceID: -189388
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 5e0a0900
+    m_LastClickedInstanceID: 592478
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300003676000062750000ba650000e85e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -189388
+  m_LastSelectedObjectID: -331706
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -697,7 +697,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 62a6ffff36fbffff565f0000
+      m_ExpandedIDs: 70e7f7ff883efafff097faffdaf8faff2e01fbff2806fbffe207fbff5c08fbff60affcff44bdfcff36fbffff565f0000eeff08009c050900
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -713,7 +713,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 13}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -779,8 +779,8 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -189388
-  m_LastVerticalScrollValue: 0
+  m_LastInspectedObjectInstanceID: 592478
+  m_LastVerticalScrollValue: 228.00006
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: ' Grabbit'
-    m_Image: {fileID: 0}
+    m_Image: {fileID: 2800000, guid: 12dba8acdd9a09343a54a35692110c15, type: 3}
     m_Tooltip: It's a Rabbit that Grabs!
   m_Pos:
     serializedVersion: 2
@@ -810,6 +810,6 @@ MonoBehaviour:
     width: 627
     height: 1038
   m_ViewDataDictionary: {fileID: 0}
-  ColliderMeshContainer: {fileID: 0}
+  ColliderMeshContainer: {fileID: 11400000, guid: 63b9df3452a4f1f44ac184d2d102d96f, type: 2}
   CurrentSettings: {fileID: 11400000, guid: 2c7bba9441c3a23448241a6fd3c0456a, type: 2}
   CurrentTool: {fileID: 0}
