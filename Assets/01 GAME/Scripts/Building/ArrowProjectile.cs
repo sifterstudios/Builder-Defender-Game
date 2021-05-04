@@ -1,3 +1,4 @@
+using BD.Utilities;
 using Health;
 using UnityEngine;
 using Utilities;
@@ -8,7 +9,7 @@ namespace Building
     {
         Vector3 _lastMoveDir;
 
-        Enemy.Enemy _targetEnemy;
+        BD.Enemy.Enemy _targetEnemy;
         float _timeToDie = 2f;
 
         void Update()
@@ -34,7 +35,7 @@ namespace Building
 
         void OnTriggerEnter2D(Collider2D other)
         {
-            var enemy = other.GetComponent<Enemy.Enemy>();
+            var enemy = other.GetComponent<BD.Enemy.Enemy>();
             if (enemy != null)
             {
                 // Hit an enemy!
@@ -45,9 +46,9 @@ namespace Building
             }
         }
 
-        public static ArrowProjectile Create(Vector3 position, Enemy.Enemy enemy)
+        public static ArrowProjectile Create(Vector3 position, BD.Enemy.Enemy enemy)
         {
-            var pfArrowProjectile = Resources.Load<Transform>("pfArrowProjectile");
+            var pfArrowProjectile = GameAssets.Instance.pfArrowProjectile;
             var arrowTransform = Instantiate(pfArrowProjectile, position, Quaternion.identity);
 
             var arrowProjectile = arrowTransform.GetComponent<ArrowProjectile>();
@@ -55,7 +56,7 @@ namespace Building
             return arrowProjectile;
         }
 
-        void SetTarget(Enemy.Enemy targetEnemy)
+        void SetTarget(BD.Enemy.Enemy targetEnemy)
         {
             _targetEnemy = targetEnemy;
         }

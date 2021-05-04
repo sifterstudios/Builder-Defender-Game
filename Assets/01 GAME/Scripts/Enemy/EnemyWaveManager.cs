@@ -54,7 +54,7 @@ namespace Enemy
                         if (_nextEnemySpawnTimer < 0f)
                         {
                             _nextEnemySpawnTimer = Random.Range(0f, .2f);
-                            Enemy.Create(_spawnPosition + UtilsClass.GetRandomDir() * Random.Range(0f, 10f));
+                            BD.Enemy.Enemy.Create(_spawnPosition + UtilsClass.GetRandomDir() * Random.Range(0f, 10f));
                             _remainingEnemySpawnAmount--;
 
                             if (_remainingEnemySpawnAmount <= 0)

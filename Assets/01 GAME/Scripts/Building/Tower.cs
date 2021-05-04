@@ -9,7 +9,7 @@ namespace Building
         readonly float _lookForTargetTimerMax = .2f;
         Vector3 _projectileSpawnPosition;
         float _shootTimer;
-        Enemy.Enemy _targetEnemy;
+        BD.Enemy.Enemy _targetEnemy;
 
         void Awake()
         {
@@ -29,7 +29,7 @@ namespace Building
 
             foreach (var col in collider2DArray)
             {
-                var enemy = col.GetComponent<Enemy.Enemy>();
+                var enemy = col.GetComponent<BD.Enemy.Enemy>();
                 if (enemy != null)
                 {
                     //It's a enemy!

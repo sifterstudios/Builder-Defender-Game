@@ -1,5 +1,6 @@
 ﻿using System;
 using BD.Sound;
+using BD.Utilities;
 using Building.SO;
 using Camera;
 using Health;
@@ -59,7 +60,7 @@ namespace Building
 
         void HealthSystem_OnDied(object sender, EventArgs e)
         {
-            Instantiate(Resources.Load<Transform>("pfBuildingDestroyedParticles"),
+            Instantiate(GameAssets.Instance.pfBuildingDestroyedParticles,
                 transform.position, Quaternion.identity);
             Destroy(gameObject);
             SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingDestroyed);

@@ -1,4 +1,5 @@
 using BD.Sound;
+using BD.Utilities;
 using Building.SO;
 using Unity.Mathematics;
 using UnityEngine;
@@ -23,7 +24,7 @@ namespace Building
             _buildingTypeHolder = GetComponent<BuildingTypeHolder>();
             _constructionMaterial = _spriteRenderer.material;
 
-            Instantiate(Resources.Load<Transform>("pfBuildingPlacedParticles"),
+            Instantiate(GameAssets.Instance.pfBuildingPlacedParticles,
                 transform.position, Quaternion.identity);
         }
 
@@ -35,7 +36,7 @@ namespace Building
             if (_constructionTimer <= 0f)
             {
                 Instantiate(_buildingType.prefab, transform.position, quaternion.identity);
-                Instantiate(Resources.Load<Transform>("pfBuildingPlacedParticles"),
+                Instantiate(GameAssets.Instance.pfBuildingPlacedParticles,
                     transform.position, Quaternion.identity);
 
                 SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingPlaced);
@@ -45,7 +46,7 @@ namespace Building
 
         public static BuildingConstruction Create(Vector3 position, BuildingTypeSO buildingType)
         {
-            var pfBuildingConstruction = Resources.Load<Transform>("pfBuildingConstruction");
+            var pfBuildingConstruction = GameAssets.Instance.pfBuildingConstruction;
             var buildingConstructionTransform =
                 Instantiate(pfBuildingConstruction, position, Quaternion.identity);
 

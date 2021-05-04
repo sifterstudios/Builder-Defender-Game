@@ -1,5 +1,6 @@
 using System;
 using BD.Sound;
+using BD.Utilities;
 using Building;
 using Camera;
 using Health;
@@ -7,7 +8,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Enemy
+namespace BD.Enemy
 {
     public class Enemy : MonoBehaviour
     {
@@ -48,8 +49,7 @@ namespace Enemy
 
         public static Enemy Create(Vector3 position)
         {
-            var pfEnemy = Resources.Load<Transform>("pfEnemy");
-            var enemyTransform = Instantiate(pfEnemy, position, Quaternion.identity);
+            var enemyTransform = Instantiate(GameAssets.Instance.pfEnemy, position, Quaternion.identity);
 
             var enemy = enemyTransform.GetComponent<Enemy>();
             return enemy;
@@ -67,7 +67,7 @@ namespace Enemy
             SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
             CinemachineShake.Instance.ShakeCamera(4f, .1f);
             ChromaticAberrationEffect.Instance.SetWeight(.5f);
-            Instantiate(Resources.Load<Transform>("pfEnemyDieParticles"),
+            Instantiate(GameAssets.Instance.pfEnemyDieParticles,
                 transform.position, quaternion.identity);
             Destroy(gameObject);
         }

@@ -1,3 +1,4 @@
+using BD.Resource;
 using Resource;
 using UnityEngine;
 using Utilities;

@@ -24,8 +24,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 185
 --- !u!114 &-3920799397709470612
 MonoBehaviour:
@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: FMOD/Awesome Builder Defender Game/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637553940783004867
+  lastModified: 637557600843999032
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -70,8 +70,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 17133
 --- !u!114 &11400000
 MonoBehaviour:
@@ -102,7 +102,7 @@ MonoBehaviour:
   - {fileID: -3920799397709470612}
   StringsBanks:
   - {fileID: 2805398480157310391}
-  stringsBankWriteTime: 637553940783014721
+  stringsBankWriteTime: 637557600844019282
   cacheVersion: 7
 --- !u!114 &1243655670775339794
 MonoBehaviour:
@@ -128,8 +128,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 198
 --- !u!114 &2805398480157310391
 MonoBehaviour:
@@ -146,11 +146,11 @@ MonoBehaviour:
   Path: FMOD/Awesome Builder Defender Game/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637553940783014721
+  lastModified: 637557600844019282
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1090
+    Value: 1140
   Exists: 1
 --- !u!114 &3290311033443997788
 MonoBehaviour:
@@ -176,8 +176,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 5300
 --- !u!114 &5001250647851814725
 MonoBehaviour:
@@ -203,8 +203,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 990
 --- !u!114 &6266519165613805544
 MonoBehaviour:
@@ -230,8 +230,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 957
 --- !u!114 &6652852700879460677
 MonoBehaviour:
@@ -257,8 +257,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 986
 --- !u!114 &7674922561316444745
 MonoBehaviour:
@@ -284,6 +284,6 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 213

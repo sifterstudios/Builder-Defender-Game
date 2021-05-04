@@ -1269,13 +1269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340784445bc01c748b8ceaca339de5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingResourceAmountList:
-  - resourceType: {fileID: 11400000, guid: 7186882e384914648b8b140146e6e3de, type: 2}
-    amount: 100
-  - resourceType: {fileID: 11400000, guid: cc750a121534b55479310ddd4f57e67f, type: 2}
-    amount: 100
-  - resourceType: {fileID: 11400000, guid: 75c0e58f1acadfd489ffe137dc6701a5, type: 2}
-    amount: 100
+  startingResourceAmountList: []
 --- !u!1001 &64757319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45003,6 +44997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1948615911}
   - component: {fileID: 1948615910}
+  - component: {fileID: 1948615912}
   m_Layer: 0
   m_Name: Global Light 2D
   m_TagString: Untagged
@@ -45065,6 +45060,48 @@ Transform:
   m_Father: {fileID: 102600027}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1948615912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948615909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca9a46fe1794bf4ca63eb498d580c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 0.78125805, b: 0.4669811, a: 1}
+    key2: {r: 0.57254905, g: 0.75686276, b: 0.8039216, a: 0}
+    key3: {r: 0.5711552, g: 0.7535942, b: 0.8018868, a: 0}
+    key4: {r: 0.8490566, g: 0.75206995, b: 0.5246529, a: 0}
+    key5: {r: 1, g: 1, b: 1, a: 0}
+    key6: {r: 1, g: 1, b: 1, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 16962
+    ctime1: 23708
+    ctime2: 31033
+    ctime3: 38936
+    ctime4: 47609
+    ctime5: 57440
+    ctime6: 57440
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 6
+    m_NumAlphaKeys: 2
+  secondsPerDay: 60
 --- !u!1001 &1949495448
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -67,10 +67,10 @@ namespace Enemy
             var targetMaxRadius = 9999f;
             var collider2DArray = Physics2D.OverlapCircleAll(_camera.transform.position, targetMaxRadius);
 
-            Enemy targetEnemy = null;
+            BD.Enemy.Enemy targetEnemy = null;
             foreach (var col in collider2DArray)
             {
-                var enemy = col.GetComponent<Enemy>();
+                var enemy = col.GetComponent<BD.Enemy.Enemy>();
                 if (enemy != null)
                 {
                     //It's a enemy!

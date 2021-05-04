@@ -25,7 +25,7 @@ namespace BD.Sound
 
         void StopAllPlayerEvents()
         {
-            Bus masterBus = RuntimeManager.GetBus("bus:/");
+            Bus masterBus = RuntimeManager.GetBus("bus:/MusicLvl");
             masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
 

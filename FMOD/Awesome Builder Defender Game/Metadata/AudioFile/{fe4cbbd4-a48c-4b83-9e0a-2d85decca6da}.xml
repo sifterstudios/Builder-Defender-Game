@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{fe4cbbd4-a48c-4b83-9e0a-2d85decca6da}">
+		<property name="assetPath">
+			<value>SFX/BuildingDestroyed.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.95714285714285718</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{908f7a6c-b162-439f-8273-859db83ade31}</destination>
+		</relationship>
+	</object>
+</objects>

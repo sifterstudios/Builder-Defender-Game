@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{ea9abfa6-df36-43c5-bf47-34fceef11b12}">
+		<property name="assetPath">
+			<value>SFX/EnemyHit.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.18575963718820862</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{908f7a6c-b162-439f-8273-859db83ade31}</destination>
+		</relationship>
+	</object>
+</objects>
