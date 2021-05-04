@@ -35,41 +35,80 @@ namespace FMODUnity
         }
 
         public override string DisplayName { get { return "Linux"; } }
-        public override void DeclareUnityMappings(Settings settings)
+        public override void DeclareRuntimePlatforms(Settings settings)
         {
             settings.DeclareRuntimePlatform(RuntimePlatform.LinuxPlayer, this);
-
-#if UNITY_EDITOR
-            settings.DeclareBuildTarget(BuildTarget.StandaloneLinux64, this);
-#if !UNITY_2019_2_OR_NEWER
-            settings.DeclareBuildTarget(BuildTarget.StandaloneLinux, this);
-            settings.DeclareBuildTarget(BuildTarget.StandaloneLinuxUniversal, this);
-#endif
-#endif
         }
 
 #if UNITY_EDITOR
+        public override IEnumerable<BuildTarget> GetBuildTargets()
+        {
+            yield return BuildTarget.StandaloneLinux64;
+#if !UNITY_2019_2_OR_NEWER
+            yield return BuildTarget.StandaloneLinux;
+            yield return BuildTarget.StandaloneLinuxUniversal;
+#endif
+        }
+
         public override Legacy.Platform LegacyIdentifier { get { return Legacy.Platform.Linux; } }
 
-        protected override IEnumerable<string> GetRelativeBinaryPaths(BuildTarget buildTarget, bool allVariants, string suffix)
+        protected override BinaryAssetFolderInfo GetBinaryAssetFolder(BuildTarget buildTarget)
         {
-            switch (buildTarget)
-            {
-                case BuildTarget.StandaloneLinux64:
-                    yield return string.Format("linux/x86_64/libfmodstudio{0}.so", suffix);
-                    break;
-#if !UNITY_2019_2_OR_NEWER
-                case BuildTarget.StandaloneLinux:
-                    yield return string.Format("linux/x86/libfmodstudio{0}.so", suffix);
-                    break;
-                case BuildTarget.StandaloneLinuxUniversal:
-                    yield return string.Format("linux/x86/libfmodstudio{0}.so", suffix);
-                    yield return string.Format("linux/x86_64/libfmodstudio{0}.so", suffix);
-                    break;
-#endif
-                default:
-                    throw new System.NotSupportedException("Unrecognised Build Target");
+            return new BinaryAssetFolderInfo("linux", "Plugins");
+        }
 
+        protected override IEnumerable<FileRecord> GetBinaryFiles(BuildTarget buildTarget, bool allVariants, string suffix)
+        {
+            foreach (string architecture in GetArchitectures(buildTarget))
+            {
+                yield return new FileRecord(string.Format("{0}/libfmodstudio{1}.so", architecture, suffix));
+            }
+        }
+
+        protected override IEnumerable<FileRecord> GetOptionalBinaryFiles(BuildTarget buildTarget, bool allVariants)
+        {
+            if (allVariants)
+            {
+                foreach (string architecture in new string[] { "x86", "x86_64" })
+                {
+                    yield return new FileRecord(string.Format("{0}/libfmod.so", architecture));
+                    yield return new FileRecord(string.Format("{0}/libfmodL.so", architecture));
+                }
+
+#if UNITY_2019_2_OR_NEWER
+                // In Unity before 2019.2, these would be returned by GetBinaryFiles above
+                yield return new FileRecord("x86/libfmodstudio.so");
+                yield return new FileRecord("x86/libfmodstudioL.so");
+
+                // In Unity before 2019.2, these would be returned by the GetArchitectures loop below
+                yield return new FileRecord("x86/libgvraudio.so");
+                yield return new FileRecord("x86/libresonanceaudio.so");
+#endif
+            }
+
+            foreach (string architecture in GetArchitectures(buildTarget))
+            {
+                yield return new FileRecord(string.Format("{0}/libgvraudio.so", architecture));
+                yield return new FileRecord(string.Format("{0}/libresonanceaudio.so", architecture));
+            }
+        }
+
+        private static IEnumerable<string> GetArchitectures(BuildTarget buildTarget)
+        {
+            bool universal = false;
+
+#if !UNITY_2019_2_OR_NEWER
+            universal = (buildTarget == BuildTarget.StandaloneLinuxUniversal);
+
+            if (universal || buildTarget == BuildTarget.StandaloneLinux)
+            {
+                yield return "x86";
+            }
+#endif
+
+            if (universal || buildTarget == BuildTarget.StandaloneLinux64)
+            {
+                yield return "x86_64";
             }
         }
 #endif

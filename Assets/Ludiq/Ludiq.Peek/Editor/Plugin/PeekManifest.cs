@@ -1,13 +1,11 @@
-using Ludiq.Peek;
+using Ludiq.Ludiq.Peek.Editor.Plugin;
 using Ludiq.PeekCore;
 
 [assembly: MapToPlugin(typeof(PeekManifest), PeekPlugin.ID)]
 
-namespace Ludiq.Peek
+namespace Ludiq.Ludiq.Peek.Editor.Plugin
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	public sealed class PeekManifest : PluginManifest
 	{
 		private PeekManifest(PeekPlugin plugin) : base(plugin) { }

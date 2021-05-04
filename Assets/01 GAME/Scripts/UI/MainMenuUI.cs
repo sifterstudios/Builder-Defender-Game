@@ -1,8 +1,8 @@
-using BD.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities;
 
-namespace BD.UI
+namespace UI
 {
     public class MainMenuUI : MonoBehaviour
     {

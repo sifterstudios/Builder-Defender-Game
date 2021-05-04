@@ -1,14 +1,12 @@
 using System.Linq;
+using Ludiq.Peek;
+using Ludiq.PeekCore;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityObject = UnityEngine.Object;
 
-namespace Ludiq.Peek
+namespace Ludiq.Ludiq.Peek.Editor.Utility
 {
-    using System.Collections.Generic;
-    // ReSharper disable once RedundantUsingDirective
-    using PeekCore;
+	// ReSharper disable once RedundantUsingDirective
 
 	public static class SceneViewUtility
 	{

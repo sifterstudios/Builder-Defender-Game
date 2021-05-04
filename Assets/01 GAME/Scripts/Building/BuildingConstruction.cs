@@ -1,20 +1,20 @@
-using BD.Building.SO;
 using BD.Sound;
+using Building.SO;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace BD.Building
+namespace Building
 {
     public class BuildingConstruction : MonoBehaviour
     {
-        float _constructionTimer;
-        float _constructionTimerMax;
-        BuildingTypeSO _buildingType;
+        static readonly int Progress = Shader.PropertyToID("_Progress");
         BoxCollider2D _boxCollider2D;
-        SpriteRenderer _spriteRenderer;
+        BuildingTypeSO _buildingType;
         BuildingTypeHolder _buildingTypeHolder;
         Material _constructionMaterial;
-        static readonly int Progress = Shader.PropertyToID("_Progress");
+        float _constructionTimer;
+        float _constructionTimerMax;
+        SpriteRenderer _spriteRenderer;
 
         void Awake()
         {
@@ -22,18 +22,9 @@ namespace BD.Building
             _spriteRenderer = transform.Find("sprite").GetComponent<SpriteRenderer>();
             _buildingTypeHolder = GetComponent<BuildingTypeHolder>();
             _constructionMaterial = _spriteRenderer.material;
-        }
 
-        public static BuildingConstruction Create(Vector3 position, BuildingTypeSO buildingType)
-        {
-            Transform pfBuildingConstruction = Resources.Load<Transform>("pfBuildingConstruction");
-            Transform buildingConstructionTransform =
-                Instantiate(pfBuildingConstruction, position, Quaternion.identity);
-
-            BuildingConstruction buildingConstruction =
-                buildingConstructionTransform.GetComponent<BuildingConstruction>();
-            buildingConstruction.SetBuildingType(buildingType);
-            return buildingConstruction;
+            Instantiate(Resources.Load<Transform>("pfBuildingPlacedParticles"),
+                transform.position, Quaternion.identity);
         }
 
         void Update()
@@ -44,9 +35,24 @@ namespace BD.Building
             if (_constructionTimer <= 0f)
             {
                 Instantiate(_buildingType.prefab, transform.position, quaternion.identity);
+                Instantiate(Resources.Load<Transform>("pfBuildingPlacedParticles"),
+                    transform.position, Quaternion.identity);
+
                 SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingPlaced);
                 Destroy(gameObject);
             }
+        }
+
+        public static BuildingConstruction Create(Vector3 position, BuildingTypeSO buildingType)
+        {
+            var pfBuildingConstruction = Resources.Load<Transform>("pfBuildingConstruction");
+            var buildingConstructionTransform =
+                Instantiate(pfBuildingConstruction, position, Quaternion.identity);
+
+            var buildingConstruction =
+                buildingConstructionTransform.GetComponent<BuildingConstruction>();
+            buildingConstruction.SetBuildingType(buildingType);
+            return buildingConstruction;
         }
 
         void SetBuildingType(BuildingTypeSO buildingType)

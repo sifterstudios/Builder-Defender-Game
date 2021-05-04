@@ -59,7 +59,7 @@ namespace FMODUnity
                 ReadEventCache();
                 forceRepaint = true;
             }
-
+            
             if (forceRepaint || (previewArea != null && previewArea.forceRepaint && nextRepaintTime < Time.realtimeSinceStartup))
             {
                 Repaint();
@@ -243,8 +243,7 @@ namespace FMODUnity
                 if ((TypeFilter & TypeFilter.Parameter) != 0)
                 {
                     CreateSubTree("Global Parameters", ParameterPrefix,
-                        EventManager.Parameters, p => ParameterPrefix + p.Name, parameterIcon,
-                        (path, p) => string.Format("{0}:{1:x}:{2:x}", path, p.ID.data1, p.ID.data2));
+                        EventManager.Parameters, p => p.StudioPath, parameterIcon);
                 }
 
                 List<TreeViewItem> rows = new List<TreeViewItem>();
@@ -257,14 +256,6 @@ namespace FMODUnity
                 nextFramedItemPath = null;
 
                 return rows;
-            }
-
-            private class NaturalComparer : IComparer<string>
-            {
-                public int Compare(string a, string b)
-                {
-                    return EditorUtility.NaturalCompare(a, b);
-                }
             }
 
             private static NaturalComparer naturalComparer = new NaturalComparer();
@@ -680,9 +671,11 @@ namespace FMODUnity
         {
             if (data is EditorEventRef)
             {
-                string path = (data as EditorEventRef).Path;
-                outputProperty.stringValue = path;
-                EditorUtils.UpdateParamsOnEmitter(outputProperty.serializedObject, path);
+                EditorEventRef eventRef = data as EditorEventRef;
+
+                outputProperty.SetEventReference(eventRef.Guid, eventRef.Path);
+
+                EditorUtils.UpdateParamsOnEmitter(outputProperty.serializedObject, eventRef.Path);
             }
             else if (data is EditorBankRef)
             {
@@ -1029,7 +1022,7 @@ namespace FMODUnity
                 }
                 if (GUILayout.Button(new GUIContent(openIcon, "Show Event in FMOD Studio"), buttonStyle, GUILayout.ExpandWidth(false)))
                 {
-                    string cmd = string.Format("studio.window.navigateTo(studio.project.lookup(\"{0}\"))", selectedEvent.Guid.ToString("b"));
+                    string cmd = string.Format("studio.window.navigateTo(studio.project.lookup(\"{0}\"))", selectedEvent.Guid);
                     EditorUtils.SendScriptCommand(cmd);
                 }
 
@@ -1084,7 +1077,7 @@ namespace FMODUnity
                 {
                     GUI.color = new Color(1.0f, 1.0f, 1.0f, 0.1f);
                 }
-
+                
                 GUILayout.Label(arena, GUILayout.ExpandWidth(false));
 
                 if (Event.current.type == EventType.Repaint)
@@ -1207,7 +1200,7 @@ namespace FMODUnity
 
                 int meterHeight = minimized ? 86 : 128;
                 int meterWidth = (int)((128 / (float)meterOff.height) * meterOff.width);
-
+                
                 List<float> meterPositions = meterPositionsForSpeakerMode(speakerModeForChannelCount(metering.Length), meterWidth, 2, 6);
 
                 const int MeterCountMaximum = 16;
@@ -1224,7 +1217,7 @@ namespace FMODUnity
                     Rect meterRect = new Rect(baseX + meterPositions[i], fullRect.y, meterWidth, fullRect.height);
 
                     GUI.DrawTexture(meterRect, meterOff);
-
+                    
                     float db = 20.0f * Mathf.Log10(metering[i] * Mathf.Sqrt(2.0f));
                     db = Mathf.Clamp(db, -80.0f, 10.0f);
                     float visible = 0;
@@ -1453,9 +1446,11 @@ namespace FMODUnity
         {
             BeginInspectorPopup(property, TypeFilter.Event);
 
-            if (!string.IsNullOrEmpty(property.stringValue))
+            SerializedProperty pathProperty = property.FindPropertyRelative("Path");
+
+            if (!string.IsNullOrEmpty(pathProperty.stringValue))
             {
-                treeView.JumpToEvent(property.stringValue);
+                treeView.JumpToEvent(pathProperty.stringValue);
             }
         }
 
@@ -1516,7 +1511,7 @@ namespace FMODUnity
 #endif
 
             EditorApplication.hierarchyWindowItemOnGUI += HierarchyUpdate;
-
+            
             IsOpen = true;
         }
 
@@ -1553,7 +1548,10 @@ namespace FMODUnity
                         Undo.SetCurrentGroupName("Add Studio Event Emitter");
 
                         StudioEventEmitter emitter = Undo.AddComponent<StudioEventEmitter>(target);
-                        emitter.Event = (data as EditorEventRef).Path;
+
+                        EditorEventRef eventRef = data as EditorEventRef;
+                        emitter.EventReference.Path = eventRef.Path;
+                        emitter.EventReference.Guid = eventRef.Guid;
                     }
                     else if (data is EditorBankRef)
                     {
@@ -1589,13 +1587,16 @@ namespace FMODUnity
 
                 if (data is EditorEventRef)
                 {
-                    string path = (data as EditorEventRef).Path;
+                    EditorEventRef eventRef = data as EditorEventRef;
+
+                    string path = eventRef.Path;
 
                     string name = path.Substring(path.LastIndexOf("/") + 1);
                     newObject = new GameObject(name + " Emitter");
 
                     StudioEventEmitter emitter = newObject.AddComponent<StudioEventEmitter>();
-                    emitter.Event = path;
+                    emitter.EventReference.Path = path;
+                    emitter.EventReference.Guid = eventRef.Guid;
 
                     Undo.RegisterCreatedObjectUndo(newObject, "Create Studio Event Emitter");
                 }
@@ -1640,7 +1641,7 @@ namespace FMODUnity
             {
                 DragAndDrop.visualMode = DragAndDropVisualMode.Move;
                 DragAndDrop.AcceptDrag();
-                Event.current.Use();
+                Event.current.Use(); 
             }
         }
     }

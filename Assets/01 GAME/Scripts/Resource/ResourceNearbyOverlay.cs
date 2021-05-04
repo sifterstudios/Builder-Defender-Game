@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace BD.Resource
+namespace Resource
 {
     public class ResourceNearbyOverlay : MonoBehaviour
     {
@@ -14,18 +14,19 @@ namespace BD.Resource
 
         void Update()
         {
-            int nearbyResourceAmount = ResourceGenerator.GetNearbyResourceAmount(_resourceGeneratorData, transform.position);
-            float percent = Mathf.RoundToInt((float) nearbyResourceAmount / _resourceGeneratorData.maxResourceAmount * 100f);
+            var nearbyResourceAmount =
+                ResourceGenerator.GetNearbyResourceAmount(_resourceGeneratorData, transform.position);
+            float percent =
+                Mathf.RoundToInt((float) nearbyResourceAmount / _resourceGeneratorData.maxResourceAmount * 100f);
             transform.Find("text").GetComponent<TextMeshPro>().SetText(percent + "%");
         }
 
         public void Show(ResourceGeneratorData resourceGeneratorData)
         {
-            this._resourceGeneratorData = resourceGeneratorData;
+            _resourceGeneratorData = resourceGeneratorData;
             gameObject.SetActive(true);
 
             transform.Find("icon").GetComponent<SpriteRenderer>().sprite = resourceGeneratorData.resourceType.sprite;
-
         }
 
         public void Hide()

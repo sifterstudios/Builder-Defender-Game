@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 
-namespace BD.Utilities
+namespace Utilities
 {
     public static class UtilsClass
     {
         static UnityEngine.Camera _mainCamera;
+
         public static Vector3 GetMouseWorldPosition()
         {
             if (_mainCamera == null) _mainCamera = UnityEngine.Camera.main;
-            Vector3 mouseWorldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            var mouseWorldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPosition.z = 0f;
             return mouseWorldPosition;
         }
@@ -20,8 +21,8 @@ namespace BD.Utilities
 
         public static float GetAngleFromVector(Vector3 vector)
         {
-            float radians = Mathf.Atan2(vector.y, vector.x);
-            float degrees = radians * Mathf.Rad2Deg;
+            var radians = Mathf.Atan2(vector.y, vector.x);
+            var degrees = radians * Mathf.Rad2Deg;
             return degrees;
         }
     }

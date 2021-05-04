@@ -1,16 +1,13 @@
 ﻿using System.Diagnostics;
-using Ludiq.Peek;
+using Ludiq.Ludiq.Peek.Editor.Plugin;
 using Ludiq.PeekCore;
 using UnityEditor;
-using UnityEngine;
 
 [assembly: MapToPlugin(typeof(PeekResources), PeekPlugin.ID)]
 
-namespace Ludiq.Peek
+namespace Ludiq.Ludiq.Peek.Editor.Plugin
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	class PeekSetupCompletePage : SetupCompletePage
 	{
 		public PeekSetupCompletePage(Product product, EditorWindow window) : base(product, window) { }

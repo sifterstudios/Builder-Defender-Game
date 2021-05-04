@@ -1,10 +1,14 @@
-using BD.Resource.SO;
+using System;
+using Resource.SO;
 
-[System.Serializable]
-public class ResourceGeneratorData
+namespace Resource
 {
-    public float timerMax;
-    public ResourceTypeSO resourceType;
-    public float resourceDetectionRadius;
-    public int maxResourceAmount;
+    [Serializable]
+    public class ResourceGeneratorData
+    {
+        public float timerMax;
+        public ResourceTypeSO resourceType;
+        public float resourceDetectionRadius;
+        public int maxResourceAmount;
+    }
 }

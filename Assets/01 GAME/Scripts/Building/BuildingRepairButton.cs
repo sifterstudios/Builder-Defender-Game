@@ -1,26 +1,26 @@
-using BD.Health;
-using BD.Resource;
-using BD.Resource.SO;
-using BD.UI;
+using Health;
+using Resource;
+using Resource.SO;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BD.Building
+namespace Building
 {
     public class BuildingRepairButton : MonoBehaviour
     {
         [SerializeField] HealthSystem healthSystem;
-        [SerializeField] private ResourceTypeSO goldResourceType;
+        [SerializeField] ResourceTypeSO goldResourceType;
 
 
         void Awake()
         {
             transform.Find("button").GetComponent<Button>().onClick.AddListener(() =>
             {
-                int missingHealth = healthSystem.GetHealthAmountMax() - healthSystem.GetHealthAmount();
-                int repairCost = missingHealth / 2;
+                var missingHealth = healthSystem.GetHealthAmountMax() - healthSystem.GetHealthAmount();
+                var repairCost = missingHealth / 2;
 
-                ResourceAmount[] resourceAmountCost = new ResourceAmount[]
+                ResourceAmount[] resourceAmountCost =
                     {new ResourceAmount {resourceType = goldResourceType, amount = repairCost}};
                 if (ResourceManager.Instance.CanAfford(resourceAmountCost))
                 {

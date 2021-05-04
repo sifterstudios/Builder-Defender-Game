@@ -1,4 +1,4 @@
-﻿namespace Ludiq.Peek
+﻿namespace Ludiq.Ludiq.Peek.Editor.Plugin.Configuration
 {
 	public enum CreatorParenting
 	{

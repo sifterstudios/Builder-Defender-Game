@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 
-namespace Ludiq
+namespace Ludiq.Ludiq.Peek.Editor.Utility
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	// Adapted from: https://stackoverflow.com/a/4598406
 	public sealed class ArrayEqualityComparer<T> : IEqualityComparer<T[]>
 	{

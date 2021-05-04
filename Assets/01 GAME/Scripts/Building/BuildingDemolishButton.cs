@@ -1,9 +1,8 @@
-using BD.Building.SO;
-using BD.Resource;
+using Resource;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BD.Building
+namespace Building
 {
     public class BuildingDemolishButton : MonoBehaviour
     {
@@ -13,11 +12,11 @@ namespace BD.Building
         {
             transform.Find("button").GetComponent<Button>().onClick.AddListener(() =>
             {
-                BuildingTypeSO buildingType = building.GetComponent<BuildingTypeHolder>().buildingType;
-                foreach (ResourceAmount resourceAmount in buildingType.constructionResourceCostArray)
+                var buildingType = building.GetComponent<BuildingTypeHolder>().buildingType;
+                foreach (var resourceAmount in buildingType.constructionResourceCostArray)
                 {
                     ResourceManager.Instance.AddResource(resourceAmount.resourceType,
-                        Mathf.FloorToInt((resourceAmount.amount * .6f)));
+                        Mathf.FloorToInt(resourceAmount.amount * .6f));
                     Destroy(building.gameObject);
                 }
             });

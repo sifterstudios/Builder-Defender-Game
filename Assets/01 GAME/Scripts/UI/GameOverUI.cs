@@ -1,10 +1,10 @@
-using BD.Enemy;
-using BD.Utilities;
+using Enemy;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities;
 
-namespace BD.UI
+namespace UI
 {
     public class GameOverUI : MonoBehaviour
     {

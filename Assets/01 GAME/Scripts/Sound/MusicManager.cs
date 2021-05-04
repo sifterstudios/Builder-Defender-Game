@@ -1,30 +1,48 @@
-﻿using UnityEngine;
+﻿using FMOD.Studio;
+using FMODUnity;
+using UnityEngine;
 
 namespace BD.Sound
 {
     public class MusicManager : MonoBehaviour
     {
+        public EventReference musicReference;
+        EventInstance _musicInstance;
         float _volume = .5f;
-        AudioSource _audioSource;
 
-        void Awake()
+        void Start()
         {
-            _audioSource = GetComponent<AudioSource>();
-            _audioSource.volume = _volume;
+            _volume = PlayerPrefs.GetFloat("musicVolume", .5f);
+            _musicInstance = RuntimeManager.CreateInstance(musicReference);
+            _musicInstance.setVolume(_volume);
+            _musicInstance.start();
+        }
+
+        void OnDestroy()
+        {
+            StopAllPlayerEvents();
+        }
+
+        void StopAllPlayerEvents()
+        {
+            Bus masterBus = RuntimeManager.GetBus("bus:/");
+            masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
 
         public void IncVol()
         {
             _volume += .1f;
             _volume = Mathf.Clamp01(_volume);
-            _audioSource.volume = _volume;
+            _musicInstance.setVolume(_volume);
+            PlayerPrefs.SetFloat("musicVolume", _volume);
         }
 
         public void DecVol()
         {
             _volume -= .1f;
             _volume = Mathf.Clamp01(_volume);
-            _audioSource.volume = _volume;
+            _musicInstance.setVolume(_volume);
+            PlayerPrefs.SetFloat("musicVolume", _volume);
         }
 
         public float GetVolume()

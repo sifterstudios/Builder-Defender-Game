@@ -1,30 +1,24 @@
 using System;
 using System.Collections.Generic;
-using BD.Utilities;
+using BD.Sound;
 using UnityEngine;
+using Utilities;
+using Random = UnityEngine.Random;
 
-namespace BD.Enemy
+namespace Enemy
 {
     public class EnemyWaveManager : MonoBehaviour
     {
-        public static EnemyWaveManager Instance { get; private set; }
-        public event EventHandler OnWaveNumberChanged;
-
-        enum State
-        {
-            WaitingToSpawnNextWave,
-            SpawningWave,
-        }
-
         [SerializeField] List<Transform> spawnPositionTransformList;
         [SerializeField] Transform nextWaveSpawnPositionTransform;
+        float _nextEnemySpawnTimer;
+        float _nextWaveSpawnTimer;
+        int _remainingEnemySpawnAmount;
+        Vector3 _spawnPosition;
 
         State _state;
         int _waveNumber;
-        float _nextWaveSpawnTimer;
-        float _nextEnemySpawnTimer;
-        int _remainingEnemySpawnAmount;
-        Vector3 _spawnPosition;
+        public static EnemyWaveManager Instance { get; private set; }
 
 
         void Awake()
@@ -35,7 +29,7 @@ namespace BD.Enemy
         void Start()
         {
             _state = State.WaitingToSpawnNextWave;
-            _spawnPosition = spawnPositionTransformList[UnityEngine.Random.Range(0, spawnPositionTransformList.Count)]
+            _spawnPosition = spawnPositionTransformList[Random.Range(0, spawnPositionTransformList.Count)]
                 .position;
             nextWaveSpawnPositionTransform.position = _spawnPosition;
             _nextWaveSpawnTimer = 3f;
@@ -48,10 +42,7 @@ namespace BD.Enemy
                 case State.WaitingToSpawnNextWave:
                 {
                     _nextWaveSpawnTimer -= Time.deltaTime;
-                    if (_nextWaveSpawnTimer < 0f)
-                    {
-                        SpawnWave();
-                    }
+                    if (_nextWaveSpawnTimer < 0f) SpawnWave();
 
                     break;
                 }
@@ -62,8 +53,8 @@ namespace BD.Enemy
                         _nextEnemySpawnTimer -= Time.deltaTime;
                         if (_nextEnemySpawnTimer < 0f)
                         {
-                            _nextEnemySpawnTimer = UnityEngine.Random.Range(0f, .2f);
-                            Enemy.Create(_spawnPosition + UtilsClass.GetRandomDir() * UnityEngine.Random.Range(0f, 10f));
+                            _nextEnemySpawnTimer = Random.Range(0f, .2f);
+                            Enemy.Create(_spawnPosition + UtilsClass.GetRandomDir() * Random.Range(0f, 10f));
                             _remainingEnemySpawnAmount--;
 
                             if (_remainingEnemySpawnAmount <= 0)
@@ -71,10 +62,10 @@ namespace BD.Enemy
                                 _state = State.WaitingToSpawnNextWave;
                                 _spawnPosition =
                                     spawnPositionTransformList[
-                                            UnityEngine.Random.Range(0, spawnPositionTransformList.Count)]
+                                            Random.Range(0, spawnPositionTransformList.Count)]
                                         .position;
                                 nextWaveSpawnPositionTransform.position = _spawnPosition;
-                                _nextWaveSpawnTimer = 10f;
+                                _nextWaveSpawnTimer = 15f;
                             }
                         }
                     }
@@ -84,12 +75,15 @@ namespace BD.Enemy
             }
         }
 
+        public event EventHandler OnWaveNumberChanged;
+
         void SpawnWave()
         {
             _remainingEnemySpawnAmount = 5 + 3 * _waveNumber;
             _state = State.SpawningWave;
             _waveNumber++;
             OnWaveNumberChanged?.Invoke(this, EventArgs.Empty);
+            SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyWaveStarting);
         }
 
         public int GetWaveNumber()
@@ -105,6 +99,12 @@ namespace BD.Enemy
         public Vector3 GetSpawnPosition()
         {
             return _spawnPosition;
+        }
+
+        enum State
+        {
+            WaitingToSpawnNextWave,
+            SpawningWave
         }
     }
 }

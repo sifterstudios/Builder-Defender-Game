@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using Ludiq.Ludiq.Peek.Editor.Plugin;
+using Ludiq.Ludiq.Peek.Editor.Plugin.Configuration;
 using Ludiq.Peek;
 using Ludiq.PeekCore;
 using UnityEditor;
@@ -8,11 +9,9 @@ using UnityEngine;
 
 [assembly: MapToPlugin(typeof(PeekConfiguration), PeekPlugin.ID)]
 
-namespace Ludiq.Peek
+namespace Ludiq.Ludiq.Peek.Editor.Plugin
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	public sealed class PeekConfiguration : PluginConfiguration
 	{
 		private PeekConfiguration(PeekPlugin plugin) : base(plugin) { }

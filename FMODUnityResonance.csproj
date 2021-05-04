@@ -292,14 +292,23 @@
  <Reference Include="UnityEditor.UWP.Extensions">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="Sirenix.Serialization">
- <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
- </Reference>
  <Reference Include="Sirenix.OdinInspector.Attributes">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization.Config">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.Utilities.Editor">
+ <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.Utilities">
+ <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.NRefactory">
+ <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Library/PackageCache/com.unity.render-pipelines.core@10.4.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.Serialization">
+ <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="RainbowCore">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/RainbowAssets/!Core/Assemblies/RainbowCore.dll</HintPath>
@@ -307,17 +316,8 @@
  <Reference Include="Ludiq.OdinSerializer">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Ludiq/Ludiq.PeekCore/Runtime/Dependencies/OdinSerializer/EditorOnly/Ludiq.OdinSerializer.dll</HintPath>
  </Reference>
- <Reference Include="Sirenix.Utilities.Editor">
- <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Sirenix.OdinInspector.Editor">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Sirenix.Utilities">
- <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.NRefactory">
- <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Library/PackageCache/com.unity.render-pipelines.core@10.4.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
  </Reference>
  <Reference Include="RainbowFolders">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Assemblies/RainbowFolders.dll</HintPath>

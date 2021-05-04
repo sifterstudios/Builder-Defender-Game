@@ -2,13 +2,10 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace BD.Utilities
+namespace Utilities
 {
     public class MouseEnterExitEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        public event EventHandler OnMouseEnter;
-        public event EventHandler OnMouseExit;
-
         public void OnPointerEnter(PointerEventData eventData)
         {
             OnMouseEnter?.Invoke(this, EventArgs.Empty);
@@ -18,5 +15,8 @@ namespace BD.Utilities
         {
             OnMouseExit?.Invoke(this, EventArgs.Empty);
         }
+
+        public event EventHandler OnMouseEnter;
+        public event EventHandler OnMouseExit;
     }
 }

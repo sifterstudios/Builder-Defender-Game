@@ -1,21 +1,24 @@
-using System;
 using Cinemachine;
 using UnityEngine;
 
-namespace BD.Camera
+namespace Camera
 {
     public class CameraHandler : MonoBehaviour
     {
-        public static CameraHandler Instance { get; private set; }
         [SerializeField] CinemachineVirtualCamera cinemachineVirtualCamera;
+        bool _edgeScrolling;
 
         float _orthographicSize;
         float _targetorthographicSize;
-        bool _edgeScrolling;
+        public static CameraHandler Instance { get; private set; }
 
-        void Awake() => Instance = this;
+        void Awake()
+        {
+            Instance = this;
+            _edgeScrolling = PlayerPrefs.GetInt("edgeScrolling", 1) == 1;
+        }
 
-        private void Start()
+        void Start()
         {
             _orthographicSize = cinemachineVirtualCamera.m_Lens.OrthographicSize;
             _targetorthographicSize = _orthographicSize;
@@ -29,14 +32,14 @@ namespace BD.Camera
 
         void HandleZoom()
         {
-            float zoomAmount = 2f;
+            var zoomAmount = 2f;
             _targetorthographicSize += Input.mouseScrollDelta.y * zoomAmount;
 
-            float minOrtographicSize = 10f;
-            float maxOrtographicSize = 30f;
+            var minOrtographicSize = 10f;
+            var maxOrtographicSize = 30f;
             _targetorthographicSize = Mathf.Clamp(_targetorthographicSize, minOrtographicSize, maxOrtographicSize);
 
-            float zoomSpeed = 5f;
+            var zoomSpeed = 5f;
             _orthographicSize = Mathf.Lerp(_orthographicSize, _targetorthographicSize, Time.deltaTime * zoomSpeed);
 
             cinemachineVirtualCamera.m_Lens.OrthographicSize = _orthographicSize;
@@ -44,8 +47,8 @@ namespace BD.Camera
 
         void HandleMovement()
         {
-            float x = Input.GetAxisRaw("Horizontal");
-            float y = Input.GetAxisRaw("Vertical");
+            var x = Input.GetAxisRaw("Horizontal");
+            var y = Input.GetAxisRaw("Vertical");
 
             if (_edgeScrolling)
             {
@@ -57,17 +60,23 @@ namespace BD.Camera
                 if (Input.mousePosition.y > Screen.height - edgeScrollingSize) y = 1f;
 
                 if (Input.mousePosition.y < edgeScrollingSize) y = -1f;
-                
             }
-            Vector3 moveDir = new Vector3(x, y).normalized;
-            float moveSpeed = 30f;
+
+            var moveDir = new Vector3(x, y).normalized;
+            var moveSpeed = 30f;
 
             transform.position += moveDir * (moveSpeed * Time.deltaTime);
         }
-        public void SetEdgeScrolling (bool edgeScrolling) => _edgeScrolling = edgeScrolling;
 
-        public bool GetEdgeScrolling() => _edgeScrolling;
+        public void SetEdgeScrolling(bool edgeScrolling)
+        {
+            _edgeScrolling = edgeScrolling;
+            PlayerPrefs.SetInt("edgeScrolling", edgeScrolling ? 1 : 0);
+        }
+
+        public bool GetEdgeScrolling()
+        {
+            return _edgeScrolling;
+        }
     }
-
-
 }

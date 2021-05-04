@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
-public class GradientHolder : MonoBehaviour {
+namespace _.Scripts
+{
+    public class GradientHolder : MonoBehaviour {
 
-    [SerializeField] private Gradient gradient;
+        [SerializeField] private Gradient gradient;
 
 
+    }
 }

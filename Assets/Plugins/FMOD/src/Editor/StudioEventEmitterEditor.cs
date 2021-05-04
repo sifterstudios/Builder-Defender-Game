@@ -21,7 +21,7 @@ namespace FMODUnity
         {
             var emitter = target as StudioEventEmitter;
 
-            EditorEventRef editorEvent = EventManager.EventFromPath(emitter.Event);
+            EditorEventRef editorEvent = EventManager.EventFromGUID(emitter.EventReference.Guid);
             if (editorEvent != null && editorEvent.Is3D)
             {
                 EditorGUI.BeginChangeCheck();
@@ -43,7 +43,8 @@ namespace FMODUnity
             var begin = serializedObject.FindProperty("PlayEvent");
             var end = serializedObject.FindProperty("StopEvent");
             var tag = serializedObject.FindProperty("CollisionTag");
-            var ev = serializedObject.FindProperty("Event");
+            var eventReference = serializedObject.FindProperty("EventReference");
+            var eventPath = eventReference.FindPropertyRelative("Path");
             var fadeout = serializedObject.FindProperty("AllowFadeout");
             var once = serializedObject.FindProperty("TriggerOnce");
             var preload = serializedObject.FindProperty("Preload");
@@ -62,13 +63,17 @@ namespace FMODUnity
 
             EditorGUI.BeginChangeCheck();
 
-            EditorGUILayout.PropertyField(ev, new GUIContent("Event"));
+            const string EventReferenceLabel = "Event";
 
-            EditorEventRef editorEvent = EventManager.EventFromPath(ev.stringValue);
+            EditorUtils.DrawLegacyEvent(serializedObject.FindProperty("Event"), EventReferenceLabel);
+
+            EditorGUILayout.PropertyField(eventReference, new GUIContent(EventReferenceLabel));
+
+            EditorEventRef editorEvent = EventManager.EventFromPath(eventPath.stringValue);
 
             if (EditorGUI.EndChangeCheck())
             {
-                EditorUtils.UpdateParamsOnEmitter(serializedObject, ev.stringValue);
+                EditorUtils.UpdateParamsOnEmitter(serializedObject, eventPath.stringValue);
                 if (editorEvent != null)
                 {
                     overrideAtt.boolValue = false;
@@ -105,7 +110,7 @@ namespace FMODUnity
                     EditorGUI.EndDisabledGroup();
                 }
 
-                parameterValueView.OnGUI(editorEvent, !ev.hasMultipleDifferentValues);
+                parameterValueView.OnGUI(editorEvent, !eventReference.hasMultipleDifferentValues);
 
                 fadeout.isExpanded = EditorGUILayout.Foldout(fadeout.isExpanded, "Advanced Controls");
                 if (fadeout.isExpanded)

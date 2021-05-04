@@ -1,18 +1,18 @@
-using BD.Camera;
 using BD.Sound;
-using BD.Utilities;
+using Camera;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities;
 
-namespace BD.UI
+namespace UI
 {
     public class OptionsUI : MonoBehaviour
     {
         [SerializeField] SoundManager soundManager;
         [SerializeField] MusicManager musicManager;
-        TextMeshProUGUI _soundVolumeText;
         TextMeshProUGUI _musicVolumeText;
+        TextMeshProUGUI _soundVolumeText;
 
 
         void Awake()
@@ -45,7 +45,7 @@ namespace BD.UI
                 Time.timeScale = 1f;
             });
             transform.Find("edgeScrollingToggle").GetComponent<Toggle>().onValueChanged.AddListener(
-                (bool set) => { CameraHandler.Instance.SetEdgeScrolling(set); });
+                set => { CameraHandler.Instance.SetEdgeScrolling(set); });
         }
 
         void Start()

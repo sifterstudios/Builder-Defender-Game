@@ -1,6 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7672939267399907286
+--- !u!114 &-5653078365870061717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/EnemyHit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/EnemyHit
+  Guid:
+    Data1: 773930590
+    Data2: 1205750572
+    Data3: -24795757
+    Data4: 577950216
+  Banks:
+  - {fileID: -3920799397709470612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 185
+--- !u!114 &-3920799397709470612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,11 +42,96 @@ MonoBehaviour:
   Path: FMOD/Awesome Builder Defender Game/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637546444910845754
+  lastModified: 637553940783004867
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &-2506834525166092732
+--- !u!114 &-2205937373298795791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music
+  Guid:
+    Data1: -1342748072
+    Data2: 1195658285
+    Data3: 1549467306
+    Data4: -2130120281
+  Banks:
+  - {fileID: -3920799397709470612}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 17133
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 2805398480157310391}
+  - {fileID: -3920799397709470612}
+  EditorEvents:
+  - {fileID: 6652852700879460677}
+  - {fileID: -2205937373298795791}
+  - {fileID: -5653078365870061717}
+  - {fileID: 5001250647851814725}
+  - {fileID: 7674922561316444745}
+  - {fileID: 3290311033443997788}
+  - {fileID: 1243655670775339794}
+  - {fileID: 6266519165613805544}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -3920799397709470612}
+  StringsBanks:
+  - {fileID: 2805398480157310391}
+  stringsBankWriteTime: 637553940783014721
+  cacheVersion: 7
+--- !u!114 &1243655670775339794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/BuildingDamaged
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/BuildingDamaged
+  Guid:
+    Data1: 912377311
+    Data2: 1288664211
+    Data3: -155310919
+    Data4: -669822646
+  Banks:
+  - {fileID: -3920799397709470612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 198
+--- !u!114 &2805398480157310391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,13 +146,13 @@ MonoBehaviour:
   Path: FMOD/Awesome Builder Defender Game/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637546444910845754
+  lastModified: 637553940783014721
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 700
+    Value: 1090
   Exists: 1
---- !u!114 &11400000
+--- !u!114 &3290311033443997788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,17 +161,129 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/EnemyWaveStarting
   m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -2506834525166092732}
-  - {fileID: -7672939267399907286}
-  EditorEvents: []
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -7672939267399907286}
-  StringsBanks:
-  - {fileID: -2506834525166092732}
-  stringsBankWriteTime: 637546444910845754
-  cacheVersion: 6
+  Path: event:/SFX/EnemyWaveStarting
+  Guid:
+    Data1: 1425509029
+    Data2: 1121741933
+    Data3: 1720364942
+    Data4: -1442133430
+  Banks:
+  - {fileID: -3920799397709470612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5300
+--- !u!114 &5001250647851814725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/EnemyDie
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/EnemyDie
+  Guid:
+    Data1: -603906971
+    Data2: 1205152183
+    Data3: -67276868
+    Data4: -1708097432
+  Banks:
+  - {fileID: -3920799397709470612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 990
+--- !u!114 &6266519165613805544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/BuildingDestroyed
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/BuildingDestroyed
+  Guid:
+    Data1: -1549629983
+    Data2: 1338994221
+    Data3: 1168600753
+    Data4: -2093081696
+  Banks:
+  - {fileID: -3920799397709470612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 957
+--- !u!114 &6652852700879460677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GameOver
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GameOver
+  Guid:
+    Data1: -1370336983
+    Data2: 1325354669
+    Data3: 1175674026
+    Data4: -1393197224
+  Banks:
+  - {fileID: -3920799397709470612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 986
+--- !u!114 &7674922561316444745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/BuildingPlaced
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/BuildingPlaced
+  Guid:
+    Data1: -1643518606
+    Data2: 1074958304
+    Data3: 1697259689
+    Data4: -1142822844
+  Banks:
+  - {fileID: -3920799397709470612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 213

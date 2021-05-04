@@ -1,18 +1,15 @@
 using System;
 using System.Collections.Generic;
-using BD.Resource.SO;
+using Resource.SO;
 using UnityEngine;
 
-namespace BD.Resource
+namespace Resource
 {
     public class ResourceManager : MonoBehaviour
     {
-        public static ResourceManager Instance { get; private set; }
-
-        public event EventHandler OnResourceAmountChanged;
-
         [SerializeField] List<ResourceAmount> startingResourceAmountList;
         Dictionary<ResourceTypeSO, int> _resourceAmountDictionary;
+        public static ResourceManager Instance { get; private set; }
 
 
         void Awake()
@@ -20,25 +17,20 @@ namespace BD.Resource
             Instance = this;
             _resourceAmountDictionary = new Dictionary<ResourceTypeSO, int>();
 
-            ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
+            var resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
 
-            foreach (ResourceTypeSO resourceType in resourceTypeList.list)
-            {
-                _resourceAmountDictionary[resourceType] = 0;
-            }
+            foreach (var resourceType in resourceTypeList.list) _resourceAmountDictionary[resourceType] = 0;
 
-            foreach (ResourceAmount resourceAmount in startingResourceAmountList)
-            {
+            foreach (var resourceAmount in startingResourceAmountList)
                 AddResource(resourceAmount.resourceType, resourceAmount.amount);
-            }
         }
+
+        public event EventHandler OnResourceAmountChanged;
 
         void TestLogResourceAmountDictionary()
         {
-            foreach (ResourceTypeSO resourceType in _resourceAmountDictionary.Keys)
-            {
+            foreach (var resourceType in _resourceAmountDictionary.Keys)
                 Debug.Log(resourceType.nameString + ": " + _resourceAmountDictionary[resourceType]);
-            }
         }
 
         public void AddResource(ResourceTypeSO resourceType, int amount)
@@ -54,8 +46,7 @@ namespace BD.Resource
 
         public bool CanAfford(ResourceAmount[] resourceAmountArray)
         {
-            foreach (ResourceAmount resourceAmount in resourceAmountArray)
-            {
+            foreach (var resourceAmount in resourceAmountArray)
                 if (GetResourceAmount(resourceAmount.resourceType) >= resourceAmount.amount)
                 {
                     // Can afford
@@ -65,7 +56,6 @@ namespace BD.Resource
                     // Cannot afford this!
                     return false;
                 }
-            }
 
             // Can afford all
             return true;
@@ -73,10 +63,8 @@ namespace BD.Resource
 
         public void SpendResources(ResourceAmount[] resourceAmountArray)
         {
-            foreach (ResourceAmount resourceAmount in resourceAmountArray)
-            {
+            foreach (var resourceAmount in resourceAmountArray)
                 _resourceAmountDictionary[resourceAmount.resourceType] -= resourceAmount.amount;
-            }
         }
     }
 }

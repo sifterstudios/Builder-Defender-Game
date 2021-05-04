@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BD.Building
+namespace Building
 {
     public class ConstructionTimerUI : MonoBehaviour
     {

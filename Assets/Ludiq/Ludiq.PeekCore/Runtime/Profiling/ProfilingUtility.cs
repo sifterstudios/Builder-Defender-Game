@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using Ludiq.Ludiq.PeekCore.Runtime.Profiling;
 using UnityEngine.Profiling;
 
 namespace Ludiq.PeekCore

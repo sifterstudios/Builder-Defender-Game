@@ -91,18 +91,13 @@ namespace FMODUnity
                     emitterProperty.FindPropertyRelative("Target").objectReferenceValue = emitter;
                 }
 
-                if (!string.IsNullOrEmpty(emitter.Event))
+                if (!emitter.EventReference.IsNull)
                 {
-                    expanded[emitterIndex] = EditorGUILayout.Foldout(expanded[emitterIndex], emitter.Event);
+                    expanded[emitterIndex] = EditorGUILayout.Foldout(expanded[emitterIndex], emitter.EventReference.Path);
                     if (expanded[emitterIndex])
                     {
-                        var eventRef = EventManager.EventFromPath(emitter.Event);
-                        if (emitter.Event.StartsWith("{"))
-                        {
-                            EditorGUI.BeginDisabledGroup(true);
-                            EditorGUILayout.TextField("Path:", eventRef.Path);
-                            EditorGUI.EndDisabledGroup();
-                        }
+                        var eventRef = EventManager.EventFromGUID(emitter.EventReference.Guid);
+
                         foreach (var paramRef in eventRef.Parameters)
                         {
                             bool set = false;

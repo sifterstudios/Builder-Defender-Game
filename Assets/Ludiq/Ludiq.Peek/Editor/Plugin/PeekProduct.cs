@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using Ludiq.Peek;
+using Ludiq.Ludiq.Peek.Editor.Plugin;
 using Ludiq.PeekCore;
 using UnityEditor;
 
 [assembly: RegisterProduct(typeof(PeekProduct), PeekProduct.ID)]
 
-namespace Ludiq.Peek
+namespace Ludiq.Ludiq.Peek.Editor.Plugin
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	public sealed class PeekProduct : Product
 	{
 		public PeekProduct() : base(ID) { }

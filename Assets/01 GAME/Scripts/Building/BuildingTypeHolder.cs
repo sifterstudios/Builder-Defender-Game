@@ -1,7 +1,7 @@
-using BD.Building.SO;
+using Building.SO;
 using UnityEngine;
 
-namespace BD.Building
+namespace Building
 {
     public class BuildingTypeHolder : MonoBehaviour
     {

@@ -12,7 +12,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>BD</RootNamespace>
     <ProjectGuid>{5999c995-5ed1-aa52-d711-2c4eee708b4c}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
@@ -52,7 +52,48 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceNode.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Health\HealthBar.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\ArrowProjectile.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingGhost.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingManager.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceManager.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Enemy\EnemyWaveManager.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingTypeHolder.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Camera\CinemachineShake.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingDemolishButton.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\SO\BuildingTypeListSO.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingRepairButton.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Camera\CameraHandler.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Utilities\GameSceneManager.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Resource\SO\ResourceTypeSO.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\UI\BuildingTypeSelectUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\Building.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Utilities\SpritePositionSortingOrder.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\SO\BuildingTypeSO.cs" />
      <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Resource\SO\ResourceTypeListSO.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceGeneratorOverlay.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Sound\MusicManager.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceAmount.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Enemy\EnemyWaveUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\UI\MainMenuUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\BuildingConstruction.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\Tower.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Utilities\MouseEnterExitEvents.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceNearbyOverlay.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Sound\SoundManager.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\UI\ResourcesUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\UI\OptionsUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\UI\TooltipUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceGenerator.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\UI\GameOverUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Enemy\Enemy.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Resource\ResourceGeneratorData.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Building\ConstructionTimerUI.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Health\HealthSystem.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Utilities\UtilsClass.cs" />
+     <Compile Include="Assets\01 GAME\Scripts\Camera\ChromaticAberrationEffect.cs" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -352,14 +393,20 @@
  <Reference Include="UnityEditor.UnityConnectModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
- <Reference Include="Sirenix.Serialization">
- <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
- </Reference>
  <Reference Include="Sirenix.OdinInspector.Attributes">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization.Config">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.Utilities.Editor">
+ <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.Utilities">
+ <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.Serialization">
+ <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="RainbowCore">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/RainbowAssets/!Core/Assemblies/RainbowCore.dll</HintPath>
@@ -367,14 +414,8 @@
  <Reference Include="Ludiq.OdinSerializer">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Ludiq/Ludiq.PeekCore/Runtime/Dependencies/OdinSerializer/EditorOnly/Ludiq.OdinSerializer.dll</HintPath>
  </Reference>
- <Reference Include="Sirenix.Utilities.Editor">
- <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Sirenix.OdinInspector.Editor">
  <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Sirenix.Utilities">
- <HintPath>D:/02 - Game Dev/Unity/Udemy/Awesome-Builder-Defender-UDEMY/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -893,10 +934,6 @@
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj">
       <Project>{ada5dd3c-18f7-9059-c48e-f835793f1f5f}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="BuilderDefenderAssembly.csproj">
-      <Project>{09b95573-21ee-8688-192a-f9f71f524aa5}</Project>
-      <Name>BuilderDefenderAssembly</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

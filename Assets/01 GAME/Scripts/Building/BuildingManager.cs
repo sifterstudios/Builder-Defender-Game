@@ -1,59 +1,48 @@
 using System;
-using BD.Building.SO;
-using BD.Health;
-using BD.Resource;
 using BD.Sound;
-using BD.UI;
-using BD.Utilities;
+using Building.SO;
+using Camera;
+using Health;
+using Resource;
+using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Utilities;
 
-namespace BD.Building
+namespace Building
 {
     public class BuildingManager : MonoBehaviour
     {
-        public class OnActiveBuildingTypeChangedEventArgs : EventArgs
-        {
-            public BuildingTypeSO ActiveBuildingType;
-        }
-
-        public static BuildingManager Instance { get; private set; }
-        public event EventHandler<OnActiveBuildingTypeChangedEventArgs> OnActiveBuildingTypeChanged;
-
         [SerializeField] Building hqBuilding;
 
         //BuildingTypeListSO _buildingTypeList;
         BuildingTypeSO _activeBuildingType;
+
+        public static BuildingManager Instance { get; private set; }
         //UnityEngine.Camera _mainCamera;
 
 
-        private void Awake()
+        void Awake()
         {
             Instance = this;
-           // _buildingTypeList = Resources.Load<BuildingTypeListSO>(nameof(BuildingTypeListSO));
+            // _buildingTypeList = Resources.Load<BuildingTypeListSO>(nameof(BuildingTypeListSO));
         }
 
         void Start()
         {
-           // _mainCamera = UnityEngine.Camera.main;
+            // _mainCamera = UnityEngine.Camera.main;
 
             hqBuilding.GetComponent<HealthSystem>().OnDied += HQOnDied;
-        }
-
-        void HQOnDied(object sender, EventArgs e)
-        {
-            SoundManager.Instance.PlaySound(SoundManager.Sound.GameOver);
-            GameOverUI.Instance.Show();
         }
 
         void Update()
         {
             if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
-            {
                 if (_activeBuildingType != null)
                 {
                     if
-                        (CanSpawnBuilding(_activeBuildingType, UtilsClass.GetMouseWorldPosition(), out string errorMessage))
+                        (CanSpawnBuilding(_activeBuildingType, UtilsClass.GetMouseWorldPosition(),
+                            out var errorMessage))
                     {
                         if (ResourceManager.Instance.CanAfford(_activeBuildingType.constructionResourceCostArray))
                         {
@@ -73,7 +62,15 @@ namespace BD.Building
                         TooltipUI.Instance.Show(errorMessage, new TooltipUI.TooltipTimer {Timer = 2f});
                     }
                 }
-            }
+        }
+
+        public event EventHandler<OnActiveBuildingTypeChangedEventArgs> OnActiveBuildingTypeChanged;
+
+        void HQOnDied(object sender, EventArgs e)
+        {
+            SoundManager.Instance.PlaySound(SoundManager.Sound.GameOver);
+            CinemachineShake.Instance.ShakeCamera(25f, .5f);
+            GameOverUI.Instance.Show();
         }
 
 
@@ -91,11 +88,11 @@ namespace BD.Building
 
         bool CanSpawnBuilding(BuildingTypeSO buildingType, Vector3 position, out string errorMessage)
         {
-            BoxCollider2D boxCollider2D = buildingType.prefab.GetComponent<BoxCollider2D>();
+            var boxCollider2D = buildingType.prefab.GetComponent<BoxCollider2D>();
 
-            Collider2D[] collider2DArray =
+            var collider2DArray =
                 Physics2D.OverlapBoxAll(position + (Vector3) boxCollider2D.offset, boxCollider2D.size, 0);
-            bool isAreaClear = collider2DArray.Length == 0;
+            var isAreaClear = collider2DArray.Length == 0;
             if (!isAreaClear)
             {
                 errorMessage = "Area is not clear!";
@@ -103,29 +100,27 @@ namespace BD.Building
             }
 
             collider2DArray = Physics2D.OverlapCircleAll(position, buildingType.minConstructionRadius);
-            foreach (Collider2D col in collider2DArray)
+            foreach (var col in collider2DArray)
             {
                 // Colliders inside the construction radius
-                BuildingTypeHolder buildingTypeHolder = col.GetComponent<BuildingTypeHolder>();
+                var buildingTypeHolder = col.GetComponent<BuildingTypeHolder>();
                 if (buildingTypeHolder != null)
-                {
                     if (buildingTypeHolder.buildingType == buildingType)
                     {
                         //There's already a building of this type within the construction radius!
                         errorMessage = "Too close ot another building of the same type!";
                         return false;
                     }
-                }
             }
 
-            float maxConstructionRadius = 25f;
+            var maxConstructionRadius = 25f;
             collider2DArray = Physics2D.OverlapCircleAll(position, maxConstructionRadius);
 
 
-            foreach (Collider2D col in collider2DArray)
+            foreach (var col in collider2DArray)
             {
                 // Colliders inside the construction radius
-                BuildingTypeHolder buildingTypeHolder = col.GetComponent<BuildingTypeHolder>();
+                var buildingTypeHolder = col.GetComponent<BuildingTypeHolder>();
                 if (buildingTypeHolder != null)
                 {
                     // It's a building!
@@ -141,6 +136,11 @@ namespace BD.Building
         public Building GetHqBuilding()
         {
             return hqBuilding;
+        }
+
+        public class OnActiveBuildingTypeChangedEventArgs : EventArgs
+        {
+            public BuildingTypeSO ActiveBuildingType;
         }
     }
 }

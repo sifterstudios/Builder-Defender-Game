@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Ludiq.PeekCore;
 
-namespace Ludiq.Peek
+namespace Ludiq.Ludiq.Peek.Editor.Utility
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	public static class ArrayTypeUtility
 	{
 		public static bool TryGetCommonType<T>(IEnumerable<T> enumerable, out Type commonType)

@@ -1,4 +1,7 @@
 using System.Collections.Generic;
+using Ludiq.Ludiq.Peek.Editor.Plugin;
+using Ludiq.Ludiq.Peek.Editor.Plugin.Configuration;
+using Ludiq.Ludiq.Peek.Editor.Tools.Utility;
 using Ludiq.Peek;
 using Ludiq.PeekCore.ReflectionMagic;
 using UnityEditor;

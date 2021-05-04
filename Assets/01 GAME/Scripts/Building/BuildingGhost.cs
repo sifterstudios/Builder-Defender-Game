@@ -1,13 +1,13 @@
-using BD.Resource;
-using BD.Utilities;
+using Resource;
 using UnityEngine;
+using Utilities;
 
-namespace BD.Building
+namespace Building
 {
     public class BuildingGhost : MonoBehaviour
     {
-        GameObject _spriteGameObject;
         ResourceNearbyOverlay _resourceNearbyOverlay;
+        GameObject _spriteGameObject;
 
         void Awake()
         {
@@ -19,6 +19,11 @@ namespace BD.Building
         void Start()
         {
             BuildingManager.Instance.OnActiveBuildingTypeChanged += BuildingManager_OnActiveBuildingTypeChanged;
+        }
+
+        void Update()
+        {
+            transform.position = UtilsClass.GetMouseWorldPosition();
         }
 
         void BuildingManager_OnActiveBuildingTypeChanged(object sender,
@@ -33,14 +38,10 @@ namespace BD.Building
             {
                 Show(e.ActiveBuildingType.sprite);
                 if (e.ActiveBuildingType.hasResourceGeneratorData)
-                {
                     _resourceNearbyOverlay.Show(e.ActiveBuildingType.resourceGeneratorData);
-                }
                 else _resourceNearbyOverlay.Hide();
             }
         }
-
-        void Update() => transform.position = UtilsClass.GetMouseWorldPosition();
 
         void Show(Sprite ghostSprite)
         {

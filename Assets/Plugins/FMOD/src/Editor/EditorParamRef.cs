@@ -12,6 +12,8 @@ namespace FMODUnity
         [SerializeField]
         public string Name;
         [SerializeField]
+        public string StudioPath;
+        [SerializeField]
         public float Min;
         [SerializeField]
         public float Max;

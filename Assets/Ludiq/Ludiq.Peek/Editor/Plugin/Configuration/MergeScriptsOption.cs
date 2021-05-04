@@ -1,8 +1,8 @@
-﻿namespace Ludiq.Peek
+﻿using Ludiq.PeekCore;
+
+namespace Ludiq.Ludiq.Peek.Editor.Plugin.Configuration
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	public enum MergeScriptsOption
 	{
 		Never,

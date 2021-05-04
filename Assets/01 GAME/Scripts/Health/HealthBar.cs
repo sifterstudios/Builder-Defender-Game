@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace BD.Health
+namespace Health
 {
     public class HealthBar : MonoBehaviour
     {
@@ -32,7 +32,7 @@ namespace BD.Health
 
         void ConstructHealthBarSeparators()
         {
-            Transform separatorTemplate = _separatorCointainer.Find("separatorTemplate");
+            var separatorTemplate = _separatorCointainer.Find("separatorTemplate");
             separatorTemplate.gameObject.SetActive(false);
             foreach (Transform separatorTransform in _separatorCointainer)
             {
@@ -40,14 +40,14 @@ namespace BD.Health
                 Destroy(separatorTransform.gameObject);
             }
 
-            int healthAmountPerSeparator = 10;
-            float barSize = 3f;
-            float barOneHealthAmountSize = barSize / healthSystem.GetHealthAmountMax();
-            int healthSeparatorCount = Mathf.FloorToInt(healthSystem.GetHealthAmountMax() / healthAmountPerSeparator);
+            var healthAmountPerSeparator = 10;
+            var barSize = 3f;
+            var barOneHealthAmountSize = barSize / healthSystem.GetHealthAmountMax();
+            var healthSeparatorCount = Mathf.FloorToInt(healthSystem.GetHealthAmountMax() / healthAmountPerSeparator);
 
-            for (int i = 1; i < healthSeparatorCount; i++)
+            for (var i = 1; i < healthSeparatorCount; i++)
             {
-                Transform separatorTransform = Instantiate(separatorTemplate, _separatorCointainer);
+                var separatorTransform = Instantiate(separatorTemplate, _separatorCointainer);
                 separatorTransform.gameObject.SetActive(true);
                 separatorTransform.localPosition = new Vector3(barOneHealthAmountSize * i * 10, 0, 0);
             }
@@ -75,13 +75,9 @@ namespace BD.Health
         void UpdateHealthBarVisible()
         {
             if (healthSystem.IsFullHealth())
-            {
                 gameObject.SetActive(false);
-            }
             else
-            {
                 gameObject.SetActive(true);
-            }
         }
     }
 }

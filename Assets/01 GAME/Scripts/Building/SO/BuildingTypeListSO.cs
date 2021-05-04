@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BD.Building.SO
+namespace Building.SO
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/BuildingTypeList")]
     public class BuildingTypeListSO : ScriptableObject

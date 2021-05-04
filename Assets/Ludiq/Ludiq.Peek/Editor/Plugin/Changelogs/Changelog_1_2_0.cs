@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using Ludiq.Peek;
+using Ludiq.Ludiq.Peek.Editor.Plugin;
+using Ludiq.Ludiq.Peek.Editor.Plugin.Changelogs;
 using Ludiq.PeekCore;
 
 [assembly: MapToPlugin(typeof(Changelog_1_2_0), PeekPlugin.ID)]
 [assembly: MapToPlugin(typeof(Changelog_1_2_0f1), PeekPlugin.ID)]
 [assembly: MapToPlugin(typeof(Changelog_1_2_0f2), PeekPlugin.ID)]
 
-namespace Ludiq.Peek
+namespace Ludiq.Ludiq.Peek.Editor.Plugin.Changelogs
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	internal class Changelog_1_2_0 : PluginChangelog
 	{
-		public Changelog_1_2_0(Plugin plugin) : base(plugin) { }
+		public Changelog_1_2_0(global::Ludiq.PeekCore.Plugin plugin) : base(plugin) { }
 		
 		public override SemanticVersion version => "1.2.0";
 		public override DateTime date => new DateTime(2020, 09, 19);
@@ -30,7 +29,7 @@ namespace Ludiq.Peek
 
 	internal class Changelog_1_2_0f1 : PluginChangelog
 	{
-		public Changelog_1_2_0f1(Plugin plugin) : base(plugin) { }
+		public Changelog_1_2_0f1(global::Ludiq.PeekCore.Plugin plugin) : base(plugin) { }
 
 		public override SemanticVersion version => "1.2.0f1";
 		public override DateTime date => new DateTime(2020, 09, 21);
@@ -46,7 +45,7 @@ namespace Ludiq.Peek
 
 	internal class Changelog_1_2_0f2 : PluginChangelog
 	{
-		public Changelog_1_2_0f2(Plugin plugin) : base(plugin) { }
+		public Changelog_1_2_0f2(global::Ludiq.PeekCore.Plugin plugin) : base(plugin) { }
 
 		public override SemanticVersion version => "1.2.0f2";
 		public override DateTime date => new DateTime(2020, 09, 22);

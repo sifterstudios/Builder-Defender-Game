@@ -1,13 +1,13 @@
-using System;
+using Ludiq.Ludiq.Peek.Editor.Plugin;
+using Ludiq.Peek;
+using Ludiq.PeekCore;
 using UnityEditor;
 using UnityEngine;
-using UnityObject = UnityEngine.Object;
+using Tool = Ludiq.Peek.Tool;
 
-namespace Ludiq.Peek
+namespace Ludiq.Ludiq.Peek.Editor.Tools.Utility
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	public sealed class AddComponentTool : Tool
 	{
 		public GameObject[] targets { get; }

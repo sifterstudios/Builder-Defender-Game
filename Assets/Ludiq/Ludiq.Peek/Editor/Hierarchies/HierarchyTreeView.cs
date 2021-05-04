@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using Ludiq.Ludiq.Peek.Editor.Plugin;
+using Ludiq.Ludiq.Peek.Editor.Plugin.Configuration;
+using Ludiq.Ludiq.Peek.Editor.Utility;
 using UnityEditor;
 using UnityEditor.Experimental.SceneManagement;
 using UnityEditor.IMGUI.Controls;

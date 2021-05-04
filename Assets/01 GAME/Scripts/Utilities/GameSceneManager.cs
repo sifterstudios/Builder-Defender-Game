@@ -1,6 +1,6 @@
 using UnityEngine.SceneManagement;
 
-namespace BD.Utilities
+namespace Utilities
 {
     public static class GameSceneManager
     {
@@ -9,6 +9,7 @@ namespace BD.Utilities
             GameScene,
             MainMenuScene
         }
+
         public static void Load(Scene scene)
         {
             SceneManager.LoadScene(scene.ToString());

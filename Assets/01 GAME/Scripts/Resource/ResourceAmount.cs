@@ -1,8 +1,9 @@
-using BD.Resource.SO;
+using System;
+using Resource.SO;
 
-namespace BD.Resource
+namespace Resource
 {
-    [System.Serializable]
+    [Serializable]
     public class ResourceAmount
     {
         public ResourceTypeSO resourceType;

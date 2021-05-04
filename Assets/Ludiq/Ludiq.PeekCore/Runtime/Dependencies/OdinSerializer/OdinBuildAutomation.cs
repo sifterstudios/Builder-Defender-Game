@@ -1,17 +1,18 @@
-﻿#if UNITY_EDITOR
+﻿using Ludiq.OdinSerializer.Editor;
+
+#if UNITY_EDITOR
 namespace Ludiq.OdinSerializer.Utilities.Editor
 {
-    using Ludiq.OdinSerializer.Editor;
     using UnityEditor;
     using UnityEditor.Build;
     using System.IO;
     using System;
     using System.Collections.Generic;
-    using Ludiq.OdinSerializer.Utilities;
     using System.Reflection;
-#if UNITY_2018_1_OR_NEWER
+    #if UNITY_2018_1_OR_NEWER
     using UnityEditor.Build.Reporting;
-#endif
+
+    #endif
 
     public static class OdinBuildAutomation
     {
@@ -22,26 +23,37 @@ namespace Ludiq.OdinSerializer.Utilities.Editor
 
         static OdinBuildAutomation()
         {
-            var odinSerializerDir = new DirectoryInfo(typeof(AssemblyImportSettingsUtilities).Assembly.GetAssemblyDirectory())
-                .Parent.FullName.Replace('\\', '/').Replace("//", "/").TrimEnd('/');
+            var odinSerializerDir =
+                new DirectoryInfo(typeof(AssemblyImportSettingsUtilities).Assembly.GetAssemblyDirectory())
+                    .Parent.FullName.Replace('\\', '/').Replace("//", "/").TrimEnd('/');
 
             var unityDataPath = Environment.CurrentDirectory.Replace("\\", "//").Replace("//", "/").TrimEnd('/');
 
             if (!odinSerializerDir.StartsWith(unityDataPath))
             {
-                throw new FileNotFoundException("The referenced Odin Serializer assemblies are not inside the current Unity project - cannot use build automation script!");
+                throw new FileNotFoundException(
+                    "The referenced Odin Serializer assemblies are not inside the current Unity project - cannot use build automation script!");
             }
 
             odinSerializerDir = odinSerializerDir.Substring(unityDataPath.Length).TrimStart('/');
 
-            EditorAssemblyPath    = odinSerializerDir + "/EditorOnly/Ludiq.OdinSerializer.dll";
-            AOTAssemblyPath       = odinSerializerDir + "/AOT/Ludiq.OdinSerializer.dll";
-            JITAssemblyPath       = odinSerializerDir + "/JIT/Ludiq.OdinSerializer.dll";
+            EditorAssemblyPath = odinSerializerDir + "/EditorOnly/Ludiq.OdinSerializer.dll";
+            AOTAssemblyPath = odinSerializerDir + "/AOT/Ludiq.OdinSerializer.dll";
+            JITAssemblyPath = odinSerializerDir + "/JIT/Ludiq.OdinSerializer.dll";
             GenerateAssembliesDir = odinSerializerDir + "/Generated";
 
-            if  (!File.Exists(EditorAssemblyPath))  throw new FileNotFoundException("Make sure all release configurations specified in the Visual Studio project are built.", EditorAssemblyPath);
-            else if (!File.Exists(AOTAssemblyPath)) throw new FileNotFoundException("Make sure all release configurations specified in the Visual Studio project are built.", AOTAssemblyPath);
-            else if (!File.Exists(JITAssemblyPath)) throw new FileNotFoundException("Make sure all release configurations specified in the Visual Studio project are built.", JITAssemblyPath);
+            if (!File.Exists(EditorAssemblyPath))
+                throw new FileNotFoundException(
+                    "Make sure all release configurations specified in the Visual Studio project are built.",
+                    EditorAssemblyPath);
+            else if (!File.Exists(AOTAssemblyPath))
+                throw new FileNotFoundException(
+                    "Make sure all release configurations specified in the Visual Studio project are built.",
+                    AOTAssemblyPath);
+            else if (!File.Exists(JITAssemblyPath))
+                throw new FileNotFoundException(
+                    "Make sure all release configurations specified in the Visual Studio project are built.",
+                    JITAssemblyPath);
         }
 
         private static string GetAssemblyDirectory(this Assembly assembly)
@@ -57,20 +69,25 @@ namespace Ludiq.OdinSerializer.Utilities.Editor
             try
             {
                 // The EditorOnly dll should aways have the same import settings. But lets just make sure.
-                AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, EditorAssemblyPath, OdinAssemblyImportSettings.IncludeInEditorOnly);
+                AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, EditorAssemblyPath,
+                    OdinAssemblyImportSettings.IncludeInEditorOnly);
 
                 if (AssemblyImportSettingsUtilities.IsJITSupported(
                     platform,
                     AssemblyImportSettingsUtilities.GetCurrentScriptingBackend(),
                     AssemblyImportSettingsUtilities.GetCurrentApiCompatibilityLevel()))
                 {
-                    AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, AOTAssemblyPath, OdinAssemblyImportSettings.ExcludeFromAll);
-                    AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, JITAssemblyPath, OdinAssemblyImportSettings.IncludeInBuildOnly);
+                    AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, AOTAssemblyPath,
+                        OdinAssemblyImportSettings.ExcludeFromAll);
+                    AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, JITAssemblyPath,
+                        OdinAssemblyImportSettings.IncludeInBuildOnly);
                 }
                 else
                 {
-                    AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, AOTAssemblyPath, OdinAssemblyImportSettings.IncludeInBuildOnly);
-                    AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, JITAssemblyPath, OdinAssemblyImportSettings.ExcludeFromAll);
+                    AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, AOTAssemblyPath,
+                        OdinAssemblyImportSettings.IncludeInBuildOnly);
+                    AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, JITAssemblyPath,
+                        OdinAssemblyImportSettings.ExcludeFromAll);
 
                     // Generates dll that contains all serialized generic type variants needed at runtime.
                     List<Type> types;
@@ -86,7 +103,7 @@ namespace Ludiq.OdinSerializer.Utilities.Editor
                 AssetDatabase.Refresh();
             }
         }
-        
+
         public static void OnPostprocessBuild()
         {
             // Delete Generated AOT support dll after build so it doesn't pollute the project.
@@ -99,47 +116,53 @@ namespace Ludiq.OdinSerializer.Utilities.Editor
         }
     }
 
-#if UNITY_2018_1_OR_NEWER
+    #if UNITY_2018_1_OR_NEWER
     public class OdinPreBuildAutomation : IPreprocessBuildWithReport
-#else
+        #else
     public class OdinPreBuildAutomation : IPreprocessBuild
-#endif
+        #endif
     {
-        public int callbackOrder { get { return -1000; } }
+        public int callbackOrder
+        {
+            get { return -1000; }
+        }
 
-#if UNITY_2018_1_OR_NEWER
-	    public void OnPreprocessBuild(BuildReport report)
-	    {
+        #if UNITY_2018_1_OR_NEWER
+        public void OnPreprocessBuild(BuildReport report)
+        {
             OdinBuildAutomation.OnPreprocessBuild();
-	    }
-#else
+        }
+        #else
         public void OnPreprocessBuild(BuildTarget target, string path)
         {
             OdinBuildAutomation.OnPreprocessBuild();
         }
-#endif
+        #endif
     }
 
-#if UNITY_2018_1_OR_NEWER
+    #if UNITY_2018_1_OR_NEWER
     public class OdinPostBuildAutomation : IPostprocessBuildWithReport
-#else
+        #else
     public class OdinPostBuildAutomation : IPostprocessBuild
-#endif
+        #endif
     {
-        public int callbackOrder { get { return -1000; } }
+        public int callbackOrder
+        {
+            get { return -1000; }
+        }
 
-#if UNITY_2018_1_OR_NEWER
-	    public void OnPostprocessBuild(BuildReport report)
-	    {
+        #if UNITY_2018_1_OR_NEWER
+        public void OnPostprocessBuild(BuildReport report)
+        {
             OdinBuildAutomation.OnPostprocessBuild();
-	    }
-#else
+        }
+        #else
         public void OnPostprocessBuild(BuildTarget target, string path)
         {
             OdinBuildAutomation.OnPostprocessBuild();
 
         }
-#endif
+        #endif
     }
 }
 #endif

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0c80417ff09456b820cf7bb307cae6, type: 3}
   m_Name: GoldHarvester
   m_EditorClassIdentifier: 
-  namestring: Wood Harvester
+  nameString: 
   prefab: {fileID: 1711329839754814629, guid: 9f02efa6ffa29fd4fa32fafc8797d1f9, type: 3}
   hasResourceGeneratorData: 1
   resourceGeneratorData:
@@ -24,8 +24,8 @@ MonoBehaviour:
   minConstructionRadius: 7
   constructionResourceCostArray:
   - resourceType: {fileID: 11400000, guid: 7186882e384914648b8b140146e6e3de, type: 2}
-    amount: 50
+    amount: 150
   - resourceType: {fileID: 11400000, guid: cc750a121534b55479310ddd4f57e67f, type: 2}
-    amount: 50
+    amount: 150
   healthAmountMax: 100
-  constructionTimerMax: 5
+  constructionTimerMax: 15

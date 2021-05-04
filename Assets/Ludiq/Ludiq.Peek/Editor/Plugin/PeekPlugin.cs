@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Ludiq.Peek;
+using Ludiq.Ludiq.Peek.Editor.Plugin;
 using Ludiq.PeekCore;
 using UnityEditor;
 using UnityEngine;
@@ -9,13 +9,11 @@ using UnityEngine;
 [assembly: MapToProduct(typeof(PeekPlugin), PeekProduct.ID)]
 [assembly: RegisterPluginDependency(PeekPlugin.ID, LudiqCore.ID)]
 
-namespace Ludiq.Peek
+namespace Ludiq.Ludiq.Peek.Editor.Plugin
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	[PluginRuntimeAssembly(ID + ".Runtime")]
-	public class PeekPlugin : Plugin
+	public class PeekPlugin : global::Ludiq.PeekCore.Plugin
 	{
 		public PeekPlugin() : base(ID)
 		{

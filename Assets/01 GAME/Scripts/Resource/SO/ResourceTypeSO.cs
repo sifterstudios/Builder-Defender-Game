@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BD.Resource.SO
+namespace Resource.SO
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/ResourceType")]
     public class ResourceTypeSO : ScriptableObject
@@ -9,6 +9,5 @@ namespace BD.Resource.SO
         public string nameShort;
         public Sprite sprite;
         public string colorHex;
-
     }
 }

@@ -1,53 +1,75 @@
 using System;
-using BD.Building;
-using BD.Health;
 using BD.Sound;
+using Building;
+using Camera;
+using Health;
+using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace BD.Enemy
+namespace Enemy
 {
     public class Enemy : MonoBehaviour
     {
+        HealthSystem _healthSystem;
+        float _lookForTargetTimer;
+        readonly float _lookForTargetTimerMax = .2f;
         Rigidbody2D _rigidbody2D;
         Transform _targetTransform;
-        float _lookForTargetTimer;
-        float _lookForTargetTimerMax = .2f;
-        HealthSystem _healthSystem;
-
-        public static Enemy Create(Vector3 position)
-        {
-            Transform pfEnemy = Resources.Load<Transform>("pfEnemy");
-            Transform enemyTransform = Instantiate(pfEnemy, position, Quaternion.identity);
-
-            Enemy enemy = enemyTransform.GetComponent<Enemy>();
-            return enemy;
-        }
 
         void Start()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             if (BuildingManager.Instance.GetHqBuilding() != null)
-            {
                 _targetTransform = BuildingManager.Instance.GetHqBuilding().transform;
-            }
 
             _healthSystem = GetComponent<HealthSystem>();
-            _healthSystem.OnDamaged += (sender, args) => SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
+            _healthSystem.OnDamaged += HealthSystem_OnDamaged;
             _healthSystem.OnDied += OnHealthSystem_OnDied;
             _lookForTargetTimer = Random.Range(0f, _lookForTargetTimerMax);
-        }
-
-        void OnHealthSystem_OnDied(object sender, EventArgs args)
-        {
-            SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
-            Destroy(gameObject);
         }
 
         void Update()
         {
             HandleMovement();
             HandleTargeting();
+        }
+
+        void OnCollisionEnter2D(Collision2D other)
+        {
+            var building = other.gameObject.GetComponent<Building.Building>();
+            if (building != null)
+            {
+                var healthSystemCollider = building.GetComponent<HealthSystem>();
+                healthSystemCollider.Damage(10);
+                _healthSystem.Damage(999);
+            }
+        }
+
+        public static Enemy Create(Vector3 position)
+        {
+            var pfEnemy = Resources.Load<Transform>("pfEnemy");
+            var enemyTransform = Instantiate(pfEnemy, position, Quaternion.identity);
+
+            var enemy = enemyTransform.GetComponent<Enemy>();
+            return enemy;
+        }
+
+        void HealthSystem_OnDamaged(object sender, EventArgs args)
+        {
+            SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
+            CinemachineShake.Instance.ShakeCamera(3f, .05f);
+            ChromaticAberrationEffect.Instance.SetWeight(.5f);
+        }
+
+        void OnHealthSystem_OnDied(object sender, EventArgs args)
+        {
+            SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
+            CinemachineShake.Instance.ShakeCamera(4f, .1f);
+            ChromaticAberrationEffect.Instance.SetWeight(.5f);
+            Instantiate(Resources.Load<Transform>("pfEnemyDieParticles"),
+                transform.position, quaternion.identity);
+            Destroy(gameObject);
         }
 
         void HandleTargeting()
@@ -64,33 +86,25 @@ namespace BD.Enemy
         {
             if (_targetTransform != null)
             {
-                Vector3 moveDir = (_targetTransform.position - transform.position).normalized;
+                var moveDir = (_targetTransform.position - transform.position).normalized;
 
-                float moveSpeed = 6f;
+                var moveSpeed = 4f;
                 _rigidbody2D.velocity = moveDir * moveSpeed;
             }
-            else _rigidbody2D.velocity = Vector2.zero;
-        }
-
-        void OnCollisionEnter2D(Collision2D other)
-        {
-            Building.Building building = other.gameObject.GetComponent<Building.Building>();
-            if (building != null)
+            else
             {
-                HealthSystem healthSystem = building.GetComponent<HealthSystem>();
-                healthSystem.Damage(10);
-                Destroy(gameObject);
+                _rigidbody2D.velocity = Vector2.zero;
             }
         }
 
         void LookForTargets()
         {
-            float targetMaxRadius = 10f;
-            Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(transform.position, targetMaxRadius);
+            var targetMaxRadius = 10f;
+            var collider2DArray = Physics2D.OverlapCircleAll(transform.position, targetMaxRadius);
 
-            foreach (Collider2D collider2D in collider2DArray)
+            foreach (var col in collider2DArray)
             {
-                Building.Building building = collider2D.GetComponent<Building.Building>();
+                var building = col.GetComponent<Building.Building>();
                 if (building != null)
                 {
                     //It's a building!
@@ -102,22 +116,16 @@ namespace BD.Enemy
                     {
                         if (Vector3.Distance(transform.position, building.transform.position) <
                             Vector3.Distance(transform.position, _targetTransform.transform.position))
-                        {
                             // New Building is closer!
                             _targetTransform = building.transform;
-                        }
                     }
                 }
             }
 
             if (_targetTransform == null)
-            {
                 // Found no targets within range;
                 if (BuildingManager.Instance.GetHqBuilding() != null)
-                {
                     _targetTransform = BuildingManager.Instance.GetHqBuilding().transform;
-                }
-            }
         }
     }
 }

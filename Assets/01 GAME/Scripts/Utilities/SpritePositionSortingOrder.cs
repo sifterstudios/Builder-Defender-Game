@@ -1,13 +1,13 @@
 using UnityEngine;
 
-namespace BD.Utilities
+namespace Utilities
 {
     public class SpritePositionSortingOrder : MonoBehaviour
     {
         [SerializeField] bool runOnce;
         [SerializeField] float positionOffsetY;
+        readonly float _precisionMultiplier = 5f;
         SpriteRenderer _spriteRenderer;
-        float _precisionMultiplier = 5f;
 
 
         void Awake()
@@ -17,12 +17,9 @@ namespace BD.Utilities
 
         void LateUpdate()
         {
-            _spriteRenderer.sortingOrder = (int) (-(transform.position.y + positionOffsetY)* _precisionMultiplier);
+            _spriteRenderer.sortingOrder = (int) (-(transform.position.y + positionOffsetY) * _precisionMultiplier);
 
-            if (runOnce)
-            {
-                Destroy(this);
-            }
+            if (runOnce) Destroy(this);
         }
     }
 }

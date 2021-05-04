@@ -1,19 +1,19 @@
 using System;
-using BD.Utilities;
 using TMPro;
 using UnityEngine;
+using Utilities;
 
-namespace BD.Enemy
+namespace Enemy
 {
     public class EnemyWaveUI : MonoBehaviour
     {
         [SerializeField] EnemyWaveManager enemyWaveManager;
+        UnityEngine.Camera _camera;
+        RectTransform _enemyClosestPositionIndicator;
+        RectTransform _enemyWaveSpawnPositionIndicator;
+        TextMeshProUGUI _waveMessageText;
 
         TextMeshProUGUI _waveNumberText;
-        TextMeshProUGUI _waveMessageText;
-        RectTransform _enemyWaveSpawnPositionIndicator;
-        RectTransform _enemyClosestPositionIndicator;
-        UnityEngine.Camera _camera;
 
         void Awake()
         {
@@ -41,26 +41,22 @@ namespace BD.Enemy
 
         void HandleNextWaveMessage()
         {
-            float nextWaveSpawnTimer = enemyWaveManager.GetNextWaveSpawnTimer();
+            var nextWaveSpawnTimer = enemyWaveManager.GetNextWaveSpawnTimer();
             if (nextWaveSpawnTimer <= 0f)
-            {
                 SetMessageText("");
-            }
             else
-            {
                 SetMessageText("Next Wave in " + nextWaveSpawnTimer.ToString("F1") + "s");
-            }
         }
 
         void HandleEnemyWaveSpawnPositionIndicator()
         {
-            Vector3 dirToNextSpawnPosition =
+            var dirToNextSpawnPosition =
                 (enemyWaveManager.GetSpawnPosition() - _camera.transform.position).normalized;
             _enemyWaveSpawnPositionIndicator.anchoredPosition = dirToNextSpawnPosition * 300f;
             _enemyWaveSpawnPositionIndicator.eulerAngles =
                 new Vector3(0, 0, UtilsClass.GetAngleFromVector(dirToNextSpawnPosition));
 
-            float distanceToNextSpawnPosition =
+            var distanceToNextSpawnPosition =
                 Vector3.Distance(enemyWaveManager.GetSpawnPosition(), _camera.transform.position);
             _enemyWaveSpawnPositionIndicator.gameObject.SetActive(distanceToNextSpawnPosition >
                                                                   _camera.orthographicSize * 1.5f);
@@ -68,13 +64,13 @@ namespace BD.Enemy
 
         void HandleEnemyClosestPositionIndicator()
         {
-            float targetMaxRadius = 9999f;
-            Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(_camera.transform.position, targetMaxRadius);
+            var targetMaxRadius = 9999f;
+            var collider2DArray = Physics2D.OverlapCircleAll(_camera.transform.position, targetMaxRadius);
 
             Enemy targetEnemy = null;
-            foreach (Collider2D col in collider2DArray)
+            foreach (var col in collider2DArray)
             {
-                Enemy enemy = col.GetComponent<Enemy>();
+                var enemy = col.GetComponent<Enemy>();
                 if (enemy != null)
                 {
                     //It's a enemy!
@@ -86,10 +82,8 @@ namespace BD.Enemy
                     {
                         if (Vector3.Distance(transform.position, enemy.transform.position) <
                             Vector3.Distance(transform.position, targetEnemy.transform.position))
-                        {
                             // New enemy is closer!
                             targetEnemy = enemy;
-                        }
                     }
                 }
             }
@@ -97,13 +91,13 @@ namespace BD.Enemy
 
             if (targetEnemy != null)
             {
-                Vector3 dirToClosestEnemy =
+                var dirToClosestEnemy =
                     (targetEnemy.transform.position - _camera.transform.position).normalized;
                 _enemyClosestPositionIndicator.anchoredPosition = dirToClosestEnemy * 250f;
                 _enemyClosestPositionIndicator.eulerAngles =
                     new Vector3(0, 0, UtilsClass.GetAngleFromVector(dirToClosestEnemy));
 
-                float distanceToClosestEnemy =
+                var distanceToClosestEnemy =
                     Vector3.Distance(targetEnemy.transform.position, _camera.transform.position);
                 _enemyClosestPositionIndicator.gameObject.SetActive(distanceToClosestEnemy >
                                                                     _camera.orthographicSize * 1.5f);

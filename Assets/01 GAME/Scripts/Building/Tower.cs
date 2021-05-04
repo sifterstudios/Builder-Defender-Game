@@ -1,15 +1,15 @@
 using UnityEngine;
 
-namespace BD.Building
+namespace Building
 {
     public class Tower : MonoBehaviour
     {
-        Enemy.Enemy _targetEnemy;
-        Vector3 _projectileSpawnPosition;
-        float _shootTimer;
         [SerializeField] float shootTimerMax;
         float _lookForTargetTimer;
-        float _lookForTargetTimerMax = .2f;
+        readonly float _lookForTargetTimerMax = .2f;
+        Vector3 _projectileSpawnPosition;
+        float _shootTimer;
+        Enemy.Enemy _targetEnemy;
 
         void Awake()
         {
@@ -24,12 +24,12 @@ namespace BD.Building
 
         void LookForTargets()
         {
-            float targetMaxRadius = 20f;
-            Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(transform.position, targetMaxRadius);
+            var targetMaxRadius = 20f;
+            var collider2DArray = Physics2D.OverlapCircleAll(transform.position, targetMaxRadius);
 
-            foreach (Collider2D col in collider2DArray)
+            foreach (var col in collider2DArray)
             {
-                Enemy.Enemy enemy = col.GetComponent<Enemy.Enemy>();
+                var enemy = col.GetComponent<Enemy.Enemy>();
                 if (enemy != null)
                 {
                     //It's a enemy!
@@ -41,10 +41,8 @@ namespace BD.Building
                     {
                         if (Vector3.Distance(transform.position, enemy.transform.position) <
                             Vector3.Distance(transform.position, _targetEnemy.transform.position))
-                        {
                             // New enemy is closer!
                             _targetEnemy = enemy;
-                        }
                     }
                 }
             }
@@ -66,10 +64,7 @@ namespace BD.Building
             if (_shootTimer <= 0f)
             {
                 _shootTimer += shootTimerMax;
-                if (_targetEnemy != null)
-                {
-                    ArrowProjectile.Create(_projectileSpawnPosition, _targetEnemy);
-                }
+                if (_targetEnemy != null) ArrowProjectile.Create(_projectileSpawnPosition, _targetEnemy);
             }
         }
     }

@@ -1,7 +1,7 @@
-using BD.Resource;
+using Resource;
 using UnityEngine;
 
-namespace BD.Building.SO
+namespace Building.SO
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/BuildingType")]
     public class BuildingTypeSO : ScriptableObject
@@ -18,12 +18,10 @@ namespace BD.Building.SO
 
         public string GetConstructionResourceCostString()
         {
-            string str = "";
-            foreach (ResourceAmount resourceAmount in constructionResourceCostArray)
-            {
+            var str = "";
+            foreach (var resourceAmount in constructionResourceCostArray)
                 str += "<color=#" + resourceAmount.resourceType.colorHex + ">" + resourceAmount.resourceType.nameShort +
                        resourceAmount.amount + "</color> ";
-            }
 
             return str;
         }

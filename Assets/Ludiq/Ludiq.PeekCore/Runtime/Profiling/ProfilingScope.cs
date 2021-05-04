@@ -1,6 +1,7 @@
 ﻿using System;
+using Ludiq.PeekCore;
 
-namespace Ludiq.PeekCore
+namespace Ludiq.Ludiq.PeekCore.Runtime.Profiling
 {
 	public struct ProfilingScope : IDisposable
 	{

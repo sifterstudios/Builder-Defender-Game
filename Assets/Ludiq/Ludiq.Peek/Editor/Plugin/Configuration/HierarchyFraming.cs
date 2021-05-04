@@ -1,8 +1,6 @@
-namespace Ludiq.Peek
+namespace Ludiq.Ludiq.Peek.Editor.Plugin.Configuration
 {
 	// ReSharper disable once RedundantUsingDirective
-	using PeekCore;
-
 	public enum HierarchyFramingOption
 	{
 		Never,

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace BD.Resource
+namespace Resource
 {
     public class ResourceGeneratorOverlay : MonoBehaviour
     {
@@ -11,11 +11,10 @@ namespace BD.Resource
         void Start()
         {
             _barTransform = transform.Find("bar");
-            ResourceGeneratorData resourceGeneratorData = _resourceGenerator.GetResourceGeneratorData();
+            var resourceGeneratorData = _resourceGenerator.GetResourceGeneratorData();
             transform.Find("icon").GetComponent<SpriteRenderer>().sprite = resourceGeneratorData.resourceType.sprite;
             transform.Find("text").GetComponent<TextMeshPro>()
                 .SetText(_resourceGenerator.GetAmountGeneratedPerSecond().ToString("F1"));
-
         }
 
         void Update()
